@@ -1,0 +1,7 @@
+{
+    "sweetpad.build.destination": {
+        "id": "iossimulator-73A075CB-E318-4A05-90AB-B6DAB9AD4B96",
+        "type": "iOSSimulator"
+    },
+    "sweetpad.build.scheme": "ChingshinApp"
+}

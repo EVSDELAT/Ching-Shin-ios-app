@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		061615F3FDBC4B8E8425F1A1 /* ShakingCupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E795F43061CBC7ED1EE /* ShakingCupView.swift */; };
+		0D853F99FC430C4E2E5C12CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877121A6F441EEDD673E7CA7 /* ContentView.swift */; };
+		12030C8415210A2E8A8986A5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDCA9E38BF827881581AEEA /* Models.swift */; };
+		19FC9B9E66F4D93F33FBFE6C /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721A7DC1B6046F610511370 /* App.swift */; };
+		1D380EB4D072131D004EA024 /* DrinkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A627F989B8B3760DF76D6D /* DrinkDetailView.swift */; };
+		3062ABA54823C762C45AC8C4 /* MemberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3A44668E8010644C4451 /* MemberCardView.swift */; };
+		43C2B2D3648D8C481FA44D12 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDCA9E38BF827881581AEEA /* Models.swift */; };
+		53B8121B690A8DD079752692 /* ShakingCupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E795F43061CBC7ED1EE /* ShakingCupView.swift */; };
+		659D25DAD26CA611BD36B666 /* StoreLocatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268834885F68BAD0307A149 /* StoreLocatorView.swift */; };
+		66FA570B6CFD8D090BD4AAF7 /* OrderProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B3A2415C7807A96B1D5CC /* OrderProgressView.swift */; };
+		6E93B8F5816C78DBD2EAB787 /* DrinkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A627F989B8B3760DF76D6D /* DrinkDetailView.swift */; };
+		733563D5F8B2D32B27F081FC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A65BFB0235EBE9A198615A /* MenuView.swift */; };
+		7B10F70C92BABF799212699E /* MemberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3A44668E8010644C4451 /* MemberCardView.swift */; };
+		7F88357896005221ED42C6E9 /* Drink3DThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F05EB5274D2EFF05AA2D6 /* Drink3DThumbnailView.swift */; };
+		9072D96D35AAF826BB5D8C24 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A65BFB0235EBE9A198615A /* MenuView.swift */; };
+		A0F1735A72D823D233669557 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB185495BCD6819998D260 /* CartView.swift */; };
+		AF2EC0E75ED141AA9029848B /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB185495BCD6819998D260 /* CartView.swift */; };
+		B3F4736386783ABC0F9DA804 /* OrderProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B3A2415C7807A96B1D5CC /* OrderProgressView.swift */; };
+		B68303D2540A3318320FDA3B /* StoreLocatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268834885F68BAD0307A149 /* StoreLocatorView.swift */; };
+		BDE5DAB7FB01960434499F85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877121A6F441EEDD673E7CA7 /* ContentView.swift */; };
+		C2BBB9D54B5E5396DB6C1BA4 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721A7DC1B6046F610511370 /* App.swift */; };
+		FAEDE68C6969602C17F8B620 /* Drink3DThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F05EB5274D2EFF05AA2D6 /* Drink3DThumbnailView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0721A7DC1B6046F610511370 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		21AB3A44668E8010644C4451 /* MemberCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCardView.swift; sourceTree = "<group>"; };
+		4268834885F68BAD0307A149 /* StoreLocatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreLocatorView.swift; sourceTree = "<group>"; };
+		44A627F989B8B3760DF76D6D /* DrinkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailView.swift; sourceTree = "<group>"; };
+		7FC5F86B2DEE2285918A1FD4 /* ChingShinApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ChingShinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80A68E795F43061CBC7ED1EE /* ShakingCupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakingCupView.swift; sourceTree = "<group>"; };
+		877121A6F441EEDD673E7CA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8A3B3A2415C7807A96B1D5CC /* OrderProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProgressView.swift; sourceTree = "<group>"; };
+		8FDCA9E38BF827881581AEEA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		9A0F05EB5274D2EFF05AA2D6 /* Drink3DThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink3DThumbnailView.swift; sourceTree = "<group>"; };
+		B7FB185495BCD6819998D260 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		C3A65BFB0235EBE9A198615A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		D4356D6D7DAED03ED0621810 /* ChingshinApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ChingshinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		162DA796E5EB514F186B4475 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0721A7DC1B6046F610511370 /* App.swift */,
+				B7FB185495BCD6819998D260 /* CartView.swift */,
+				877121A6F441EEDD673E7CA7 /* ContentView.swift */,
+				9A0F05EB5274D2EFF05AA2D6 /* Drink3DThumbnailView.swift */,
+				44A627F989B8B3760DF76D6D /* DrinkDetailView.swift */,
+				21AB3A44668E8010644C4451 /* MemberCardView.swift */,
+				C3A65BFB0235EBE9A198615A /* MenuView.swift */,
+				8FDCA9E38BF827881581AEEA /* Models.swift */,
+				8A3B3A2415C7807A96B1D5CC /* OrderProgressView.swift */,
+				80A68E795F43061CBC7ED1EE /* ShakingCupView.swift */,
+				4268834885F68BAD0307A149 /* StoreLocatorView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		28BE162DCFF209871A5FA296 = {
+			isa = PBXGroup;
+			children = (
+				162DA796E5EB514F186B4475 /* Sources */,
+				D8DE4A1D129035113A790AF1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8DE4A1D129035113A790AF1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4356D6D7DAED03ED0621810 /* ChingshinApp.app */,
+				7FC5F86B2DEE2285918A1FD4 /* ChingShinApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F96EDB9E7EB53ABA46CD3142 /* ChingShinApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3710527758299BAE7CF28373 /* Build configuration list for PBXNativeTarget "ChingShinApp" */;
+			buildPhases = (
+				B25659A9D6ADEE943B0CCB75 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChingShinApp;
+			packageProductDependencies = (
+			);
+			productName = ChingShinApp;
+			productReference = 7FC5F86B2DEE2285918A1FD4 /* ChingShinApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F99C966E4060656210BC7550 /* ChingshinApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2949BC57863C460B4453092A /* Build configuration list for PBXNativeTarget "ChingshinApp" */;
+			buildPhases = (
+				C59DA95FF73FD1D1BEBB22DE /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChingshinApp;
+			packageProductDependencies = (
+			);
+			productName = ChingshinApp;
+			productReference = D4356D6D7DAED03ED0621810 /* ChingshinApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D85C3C6E78E10E834EDDBBF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 06FD200B267C9FCE93E7A926 /* Build configuration list for PBXProject "ChingshinApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 28BE162DCFF209871A5FA296;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D8DE4A1D129035113A790AF1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F96EDB9E7EB53ABA46CD3142 /* ChingShinApp */,
+				F99C966E4060656210BC7550 /* ChingshinApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B25659A9D6ADEE943B0CCB75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19FC9B9E66F4D93F33FBFE6C /* App.swift in Sources */,
+				AF2EC0E75ED141AA9029848B /* CartView.swift in Sources */,
+				BDE5DAB7FB01960434499F85 /* ContentView.swift in Sources */,
+				FAEDE68C6969602C17F8B620 /* Drink3DThumbnailView.swift in Sources */,
+				1D380EB4D072131D004EA024 /* DrinkDetailView.swift in Sources */,
+				7B10F70C92BABF799212699E /* MemberCardView.swift in Sources */,
+				733563D5F8B2D32B27F081FC /* MenuView.swift in Sources */,
+				43C2B2D3648D8C481FA44D12 /* Models.swift in Sources */,
+				66FA570B6CFD8D090BD4AAF7 /* OrderProgressView.swift in Sources */,
+				53B8121B690A8DD079752692 /* ShakingCupView.swift in Sources */,
+				B68303D2540A3318320FDA3B /* StoreLocatorView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C59DA95FF73FD1D1BEBB22DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2BBB9D54B5E5396DB6C1BA4 /* App.swift in Sources */,
+				A0F1735A72D823D233669557 /* CartView.swift in Sources */,
+				0D853F99FC430C4E2E5C12CE /* ContentView.swift in Sources */,
+				7F88357896005221ED42C6E9 /* Drink3DThumbnailView.swift in Sources */,
+				6E93B8F5816C78DBD2EAB787 /* DrinkDetailView.swift in Sources */,
+				3062ABA54823C762C45AC8C4 /* MemberCardView.swift in Sources */,
+				9072D96D35AAF826BB5D8C24 /* MenuView.swift in Sources */,
+				12030C8415210A2E8A8986A5 /* Models.swift in Sources */,
+				B3F4736386783ABC0F9DA804 /* OrderProgressView.swift in Sources */,
+				061615F3FDBC4B8E8425F1A1 /* ShakingCupView.swift in Sources */,
+				659D25DAD26CA611BD36B666 /* StoreLocatorView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1BA9D12AB84E35E6A5FC2A9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8B74F9185FF4C2323A55A37C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		98FE6DA2109AC9D0DF659E37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "清心福全";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chingshin.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AD7F1EB68A5D1EB97283370D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "清心福全";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chingshin.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C29F2707252C4782A72BB879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "清心福全";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chingshin.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C32B7C8D2F699FE8FC11AD3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "清心福全";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chingshin.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06FD200B267C9FCE93E7A926 /* Build configuration list for PBXProject "ChingshinApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B74F9185FF4C2323A55A37C /* Debug */,
+				1BA9D12AB84E35E6A5FC2A9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2949BC57863C460B4453092A /* Build configuration list for PBXNativeTarget "ChingshinApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C29F2707252C4782A72BB879 /* Debug */,
+				98FE6DA2109AC9D0DF659E37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3710527758299BAE7CF28373 /* Build configuration list for PBXNativeTarget "ChingShinApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7F1EB68A5D1EB97283370D /* Debug */,
+				C32B7C8D2F699FE8FC11AD3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9D85C3C6E78E10E834EDDBBF /* Project object */;
+}

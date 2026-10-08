@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>清心福全 Ching Shin Fu Chuan - iOS App 點餐模擬</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #008B47;
+      --primary-light: #00A550;
+      --accent-red: #E60012;
+      --bg-gray: #F6F8F6;
+      --text-dark: #1F2937;
+      --text-muted: #6B7280;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      background-color: #111827;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* iPhone Frame Simulator */
+    .iphone-frame {
+      width: 390px;
+      height: 844px;
+      background: #ffffff;
+      border-radius: 48px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 12px #2d3748;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Dynamic Island Notch */
+    .notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 30px;
+      background-color: #000;
+      border-radius: 20px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 10px;
+    }
+    .notch-camera {
+      width: 10px;
+      height: 10px;
+      background: #1a202c;
+      border-radius: 50%;
+    }
+
+    /* Status Bar */
+    .status-bar {
+      height: 44px;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 14px;
+      font-weight: 600;
+      color: #000;
+      z-index: 999;
+      padding-bottom: 4px;
+    }
+
+    /* Main Container */
+    .app-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-gray);
+      overflow-y: auto;
+      position: relative;
+    }
+
+    /* Header */
+    .header {
+      background: #fff;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .logo-heart {
+      width: 38px;
+      height: 38px;
+      background: var(--accent-red);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 18px;
+    }
+    .brand-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Search Bar */
+    .search-box {
+      margin: 12px 16px;
+      background: #fff;
+      padding: 10px 14px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 14px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+
+    /* Banners */
+    .banner-scroll {
+      display: flex;
+      gap: 12px;
+      padding: 0 16px 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .banner-card {
+      min-width: 260px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      border-radius: 16px;
+      padding: 14px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 139, 71, 0.2);
+    }
+    .banner-title {
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .banner-desc {
+      font-size: 11px;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+
+    /* Category Tabs */
+    .category-scroll {
+      display: flex;
+      gap: 8px;
+      padding: 0 16px 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .cat-btn {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      background: #E5E7EB;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 13px;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cat-btn.active {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 139, 71, 0.3);
+    }
+
+    /* Drink List */
+    .drink-list {
+      padding: 0 16px 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .drink-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 12px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .drink-card:active {
+      transform: scale(0.98);
+    }
+    .drink-icon {
+      width: 65px;
+      height: 65px;
+      border-radius: 14px;
+      background: #E8F5E9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      color: var(--primary);
+    }
+    .drink-info {
+      flex: 1;
+    }
+    .drink-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge-hot {
+      background: var(--accent-red);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 10px;
+    }
+    .drink-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 4px 0;
+      line-height: 1.3;
+    }
+    .drink-price {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .add-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    /* Floating Cart Bar */
+    .cart-bar {
+      position: absolute;
+      bottom: 60px;
+      left: 16px;
+      right: 16px;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      border-radius: 20px;
+      padding: 12px 16px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 20px rgba(0, 139, 71, 0.4);
+      cursor: pointer;
+      transform: translateY(120px);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 100;
+    }
+    .cart-bar.visible {
+      transform: translateY(0);
+    }
+    .cart-badge {
+      width: 22px;
+      height: 22px;
+      background: var(--accent-red);
+      border-radius: 50%;
+      position: absolute;
+      top: -6px;
+      left: 30px;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Custom Modal Sheet */
+    .modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 500;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-sheet {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-radius: 28px 28px 0 0;
+      padding: 20px;
+      z-index: 600;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0, 0, 0.2, 1);
+      max-height: 85%;
+      overflow-y: auto;
+    }
+    .modal-sheet.active {
+      transform: translateY(0);
+    }
+
+    /* Animated Cup Container */
+    .cup-stage {
+      height: 160px;
+      background: #E8F5E9;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .tea-cup {
+      width: 70px;
+      height: 95px;
+      background: linear-gradient(to bottom, #008B47 0%, #006432 100%);
+      clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .tea-cup.shaking {
+      animation: shake 0.4s ease-in-out infinite;
+    }
+    @keyframes shake {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-8deg) translateY(-2px); }
+      75% { transform: rotate(8deg) translateY(2px); }
+    }
+
+    /* Custom Options */
+    .option-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin: 14px 0 8px;
+    }
+    .option-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      padding: 6px 14px;
+      border-radius: 16px;
+      background: #F3F4F6;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-dark);
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: all 0.2s;
+    }
+    .chip.selected {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 16px;
+      margin-top: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 139, 71, 0.3);
+    }
+
+    /* Progress Overlay */
+    .progress-screen {
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      z-index: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    .progress-screen.active {
+      transform: translateY(0);
+    }
+
+    /* Tab Bar */
+    .tab-bar {
+      height: 56px;
+      background: #fff;
+      border-top: 1px solid #E5E7EB;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .tab-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      color: var(--text-muted);
+      font-size: 10px;
+      font-weight: 600;
+    }
+    .tab-item.active {
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="iphone-frame">
+    <!-- Notch -->
+    <div class="notch">
+      <div class="notch-camera"></div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>9:41</span>
+      <span><i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-battery-full"></i></span>
+    </div>
+
+    <!-- App Container -->
+    <div class="app-container">
+      <!-- Header -->
+      <div class="header">
+        <div class="logo-heart"><i class="fa-solid fa-heart"></i></div>
+        <div>
+          <div class="brand-title">清心福全</div>
+          <div class="brand-sub">用心調配 ‧ 經典手搖飲</div>
+        </div>
+      </div>
+
+      <!-- Search Box -->
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>搜尋烏龍綠茶、隱藏版、珍珠鮮奶...</span>
+      </div>
+
+      <!-- Banners -->
+      <div class="banner-scroll">
+        <div class="banner-card">
+          <div>
+            <div class="banner-title">隱藏版特調 🧋</div>
+            <div class="banner-desc">蜂蜜烏龍鮮奶茶 甜美登場</div>
+          </div>
+          <i class="fa-solid fa-sparkles" style="font-size:24px;"></i>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="category-scroll">
+        <button class="cat-btn active">清心推薦</button>
+        <button class="cat-btn">精選純茶</button>
+        <button class="cat-btn">鮮奶/奶茶</button>
+        <button class="cat-btn">鮮果/特調</button>
+        <button class="cat-btn">隱藏版特調</button>
+      </div>
+
+      <!-- Drink List -->
+      <div class="drink-list">
+        <div class="drink-card" onclick="openCustomModal('烏龍綠茶', 40, '清心福全經典熱銷冠軍，嚴選高山烏龍與清香綠茶。')">
+          <div class="drink-icon"><i class="fa-solid fa-leaf"></i></div>
+          <div class="drink-info">
+            <div class="drink-name">烏龍綠茶 <span class="badge-hot">HOT</span></div>
+            <div class="drink-desc">清心福全經典熱銷冠軍，嚴選高山烏龍與清香綠茶。</div>
+            <div class="drink-price">NT$ 40</div>
+          </div>
+          <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+
+        <div class="drink-card" onclick="openCustomModal('隱藏版 - 蜂蜜烏龍鮮奶茶', 75, '老闆私人推廣款！純天然香醇蜂蜜點綴濃郁烏龍奶茶。')">
+          <div class="drink-icon" style="background:#FFF9C4; color:#E6A100;"><i class="fa-solid fa-sparkles"></i></div>
+          <div class="drink-info">
+            <div class="drink-name">隱藏版 - 蜂蜜烏龍鮮奶茶 <span class="badge-hot">HOT</span></div>
+            <div class="drink-desc">老闆私人推廣款！純天然香醇蜂蜜點綴濃郁烏龍奶茶。</div>
+            <div class="drink-price">NT$ 75</div>
+          </div>
+          <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+
+        <div class="drink-card" onclick="openCustomModal('珍珠鮮奶茶', 65, 'Q彈手作黑糖珍珠，搭配純濃鮮奶與厚香紅茶。')">
+          <div class="drink-icon" style="background:#EFEBE9; color:#795548;"><i class="fa-solid fa-wine-glass-empty"></i></div>
+          <div class="drink-info">
+            <div class="drink-name">珍珠鮮奶茶 <span class="badge-hot">HOT</span></div>
+            <div class="drink-desc">Q彈手作黑糖珍珠，搭配純濃鮮奶與厚香紅茶。</div>
+            <div class="drink-price">NT$ 65</div>
+          </div>
+          <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+
+        <div class="drink-card" onclick="openCustomModal('優多綠茶', 55, '雙倍酸甜乳酸菌與清新綠茶碰撞。')">
+          <div class="drink-icon" style="background:#F1F8E9; color:#689F38;"><i class="fa-solid fa-sun"></i></div>
+          <div class="drink-info">
+            <div class="drink-name">優多綠茶</div>
+            <div class="drink-desc">雙倍酸甜乳酸菌與清新綠茶碰撞。</div>
+            <div class="drink-price">NT$ 55</div>
+          </div>
+          <button class="add-btn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+
+      <!-- Floating Cart Bar -->
+      <div class="cart-bar" id="cartBar" onclick="showProgressScreen()">
+        <i class="fa-solid fa-basket-shopping" style="font-size:20px;"></i>
+        <div class="cart-badge" id="cartCount">1</div>
+        <div style="flex:1;">
+          <div style="font-weight:700; font-size:14px;">已點餐點 (點擊送出)</div>
+          <div style="font-size:11px; opacity:0.85;">清心福全 點餐模擬測試</div>
+        </div>
+        <div style="font-weight:800; font-size:16px;" id="cartTotal">NT$ 75</div>
+      </div>
+
+      <!-- Customization Modal Sheet -->
+      <div class="modal-overlay" id="modalOverlay" onclick="closeCustomModal()"></div>
+      <div class="modal-sheet" id="modalSheet">
+        <div class="cup-stage">
+          <div class="tea-cup" id="animCup">
+            <i class="fa-solid fa-heart" style="color:red; font-size:16px;"></i>
+          </div>
+          <div style="font-size:11px; color:#666; margin-top:8px;">點擊調整甜度冰量，搖搖杯會互動哦！</div>
+        </div>
+
+        <h3 id="modalDrinkName" style="font-size:18px;">飲料名稱</h3>
+        <div id="modalDrinkDesc" style="font-size:12px; color:#666; margin:4px 0 12px;">描述...</div>
+
+        <div class="option-title">甜度選擇</div>
+        <div class="option-chips">
+          <div class="chip" onclick="selectChip(this)">正常糖 (100%)</div>
+          <div class="chip selected" onclick="selectChip(this)">少糖 (70%)</div>
+          <div class="chip" onclick="selectChip(this)">半糖 (50%)</div>
+          <div class="chip" onclick="selectChip(this)">微糖 (30%)</div>
+          <div class="chip" onclick="selectChip(this)">無糖 (0%)</div>
+        </div>
+
+        <div class="option-title">冰量選擇</div>
+        <div class="option-chips">
+          <div class="chip selected" onclick="selectChip(this)">正常冰</div>
+          <div class="chip" onclick="selectChip(this)">少冰</div>
+          <div class="chip" onclick="selectChip(this)">微冰</div>
+          <div class="chip" onclick="selectChip(this)">去冰</div>
+          <div class="chip" onclick="selectChip(this)">熱飲</div>
+        </div>
+
+        <div class="option-title">美味加料</div>
+        <div class="option-chips">
+          <div class="chip selected" onclick="toggleChip(this)">波霸珍珠 (+10)</div>
+          <div class="chip" onclick="toggleChip(this)">椰果 (+10)</div>
+          <div class="chip" onclick="toggleChip(this)">仙草凍 (+10)</div>
+        </div>
+
+        <button class="btn-submit" onclick="addToCart()">加入購物車</button>
+      </div>
+
+      <!-- Simulated Order Progress Screen for Boss Demo -->
+      <div class="progress-screen" id="progressScreen">
+        <div style="font-size:64px; color:var(--primary); margin-bottom:12px;">
+          <i class="fa-solid fa-glass-water-droplet animate-bounce"></i>
+        </div>
+        <h2 style="color:var(--primary); font-size:22px; margin-bottom:6px;">手搖飲料調配中 🧋</h2>
+        <p style="color:#666; font-size:13px; text-align:center; margin-bottom:24px;">吧檯手正在為您精準製作清心福全手搖飲...</p>
+
+        <div style="width:100%; background:#E5E7EB; border-radius:10px; height:8px; overflow:hidden; margin-bottom:24px;">
+          <div style="width:75%; height:100%; background:var(--primary); transition:width 1s;"></div>
+        </div>
+
+        <div style="width:100%; background:#F9FAFB; border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:700; color:var(--primary);">
+            <i class="fa-solid fa-circle-check"></i> 訂單已接收 (清心總店)
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:700; color:var(--primary);">
+            <i class="fa-solid fa-spinner fa-spin"></i> 吧檯手用力搖晃調配中
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; font-size:14px; color:#9CA3AF;">
+            <i class="fa-solid fa-circle"></i> 封口包裝標籤
+          </div>
+        </div>
+
+        <button class="btn-submit" style="margin-top:24px;" onclick="closeProgressScreen()">展示完成！返回首頁</button>
+      </div>
+
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+      <div class="tab-item active"><i class="fa-solid fa-mug-hot" style="font-size:18px;"></i> 菜單點餐</div>
+      <div class="tab-item"><i class="fa-solid fa-tags" style="font-size:18px;"></i> 優惠活動</div>
+      <div class="tab-item"><i class="fa-solid fa-clock-rotate-left" style="font-size:18px;"></i> 歷史訂單</div>
+    </div>
+  </div>
+
+  <script>
+    let currentPrice = 40;
+    let itemCount = 0;
+    let totalPrice = 0;
+
+    function openCustomModal(name, price, desc) {
+      currentPrice = price;
+      document.getElementById('modalDrinkName').innerText = name;
+      document.getElementById('modalDrinkDesc').innerText = desc;
+      document.getElementById('modalOverlay').classList.add('active');
+      document.getElementById('modalSheet').classList.add('active');
+      shakeCup();
+    }
+
+    function closeCustomModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+      document.getElementById('modalSheet').classList.remove('active');
+    }
+
+    function selectChip(el) {
+      const parent = el.parentElement;
+      parent.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      shakeCup();
+    }
+
+    function toggleChip(el) {
+      el.classList.toggle('selected');
+      shakeCup();
+    }
+
+    function shakeCup() {
+      const cup = document.getElementById('animCup');
+      cup.classList.add('shaking');
+      setTimeout(() => cup.classList.remove('shaking'), 500);
+    }
+
+    function addToCart() {
+      itemCount++;
+      totalPrice += currentPrice;
+      document.getElementById('cartCount').innerText = itemCount;
+      document.getElementById('cartTotal').innerText = 'NT$ ' + totalPrice;
+      document.getElementById('cartBar').classList.add('visible');
+      closeCustomModal();
+    }
+
+    function showProgressScreen() {
+      document.getElementById('progressScreen').classList.add('active');
+    }
+
+    function closeProgressScreen() {
+      document.getElementById('progressScreen').classList.remove('active');
+    }
+  </script>
+</body>
+</html>

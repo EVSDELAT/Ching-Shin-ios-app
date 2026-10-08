@@ -1,0 +1,30 @@
+name: ChingshinApp
+options:
+  bundleIdPrefix: com.chingshin
+  deploymentTarget:
+    iOS: "16.0"
+targets:
+  ChingShinApp:
+    type: application
+    platform: iOS
+    sources: 
+      - Sources
+    settings:
+      GENERATE_INFOPLIST_FILE: YES
+      PRODUCT_BUNDLE_IDENTIFIER: com.chingshin.app
+      INFOPLIST_KEY_CFBundleDisplayName: "清心福全"
+      INFOPLIST_KEY_UILaunchScreen_Generation: YES
+      CURRENT_PROJECT_VERSION: 1
+      MARKETING_VERSION: 1.0.0
+  ChingshinApp:
+    type: application
+    platform: iOS
+    sources: 
+      - Sources
+    settings:
+      GENERATE_INFOPLIST_FILE: YES
+      PRODUCT_BUNDLE_IDENTIFIER: com.chingshin.app
+      INFOPLIST_KEY_CFBundleDisplayName: "清心福全"
+      INFOPLIST_KEY_UILaunchScreen_Generation: YES
+      CURRENT_PROJECT_VERSION: 1
+      MARKETING_VERSION: 1.0.0
