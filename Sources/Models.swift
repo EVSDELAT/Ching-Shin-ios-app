@@ -184,6 +184,13 @@ struct Store: Identifiable {
     let distance: String
     let isOpen: Bool
     let operatingHours: String
+    
+    var shortName: String {
+        if let idx = name.firstIndex(of: "(") {
+            return String(name[..<idx]).trimmingCharacters(in: .whitespaces)
+        }
+        return name
+    }
 }
 
 // MARK: - Drink Model
@@ -216,6 +223,7 @@ struct CartItem: Identifiable {
     var sugar: SugarLevel
     var ice: IceLevel
     var toppings: Set<Topping>
+    var note: String = ""
     var quantity: Int
     
     var unitPrice: Int {
@@ -233,6 +241,10 @@ struct CartItem: Identifiable {
         if !toppings.isEmpty {
             let toppingNames = toppings.map { $0.cleanName }.joined(separator: "+")
             parts.append("加: \(toppingNames)")
+        }
+        let cleanNote = note.trimmingCharacters(in: .whitespaces)
+        if !cleanNote.isEmpty {
+            parts.append("備註: \(cleanNote)")
         }
         return parts.joined(separator: " / ")
     }

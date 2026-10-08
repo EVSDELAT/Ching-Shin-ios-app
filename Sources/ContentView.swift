@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var isShowingSplash: Bool = true
     @AppStorage("isDarkMode") private var isDarkMode = false
+    @AppStorage("themeMode") private var themeMode: String = "system"
     
     @State private var cartItems: [CartItem] = []
     @State private var selectedDrink: Drink? = nil
@@ -177,7 +178,7 @@ struct ContentView: View {
                 }
             }
         }
-        .preferredColorScheme(isDarkMode ? .dark : .light)
+        .preferredColorScheme(themeMode == "light" ? .light : (themeMode == "dark" ? .dark : nil))
         .sheet(item: $selectedDrink) { drink in
             DrinkDetailView(drink: drink) { newItem in
                 cartItems.append(newItem)

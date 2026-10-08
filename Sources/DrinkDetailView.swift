@@ -11,6 +11,7 @@ struct DrinkDetailView: View {
     @State private var selectedSugar: SugarLevel = .half5
     @State private var selectedIce: IceLevel = .lessIce
     @State private var selectedToppings: Set<Topping> = []
+    @State private var noteText: String = ""
     @State private var quantity: Int = 1
     @State private var isToppingsExpanded: Bool = false
     
@@ -33,15 +34,15 @@ struct DrinkDetailView: View {
             ZStack(alignment: .bottom) {
                 AppTheme.bg(isDarkMode).ignoresSafeArea()
                 
-                VStack(spacing: 12) {
+                VStack(spacing: 10) {
                     // Compact Drink Header Card
                     HStack(spacing: 12) {
-                        Drink3DThumbnailView(style: drink.cupStyle, size: 65)
+                        Drink3DThumbnailView(style: drink.cupStyle, size: 60)
                         
                         VStack(alignment: .leading, spacing: 3) {
                             HStack {
                                 Text(drink.name)
-                                    .font(.system(size: 18, weight: .bold))
+                                    .font(.system(size: 17, weight: .bold))
                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 
                                 if drink.isHotItem {
@@ -65,19 +66,19 @@ struct DrinkDetailView: View {
                                     .font(.system(size: 11))
                                     .foregroundColor(AppTheme.textSecondary(isDarkMode))
                                 Text("NT$ \(unitPrice)")
-                                    .font(.system(size: 16, weight: .bold))
+                                    .font(.system(size: 15, weight: .bold))
                                     .foregroundColor(AppTheme.primaryGreen)
                             }
                         }
                         
                         Spacer(minLength: 0)
                     }
-                    .padding(12)
+                    .padding(10)
                     .background(AppTheme.cardBg(isDarkMode))
                     .clipShape(RoundedRectangle(cornerRadius: 14))
-                    .shadow(color: Color.black.opacity(isDarkMode ? 0.2 : 0.04), radius: 4, x: 0, y: 2)
+                    .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.04), radius: 4, x: 0, y: 2)
                     .padding(.horizontal, 14)
-                    .padding(.top, 8)
+                    .padding(.top, 6)
                     
                     // Section 1: Cup Size (容量規格)
                     CompactOptionRow(title: "容量規格") {
@@ -136,7 +137,7 @@ struct DrinkDetailView: View {
                         }
                     }
                     
-                    // Section 4: Toppings (Expandable Accordion - 預設收合省空間 - Mandatory Requirement #2)
+                    // Section 4: Toppings (Expandable Accordion) - Requirement 1: Removed "(珍珠/椰果...)" label
                     VStack(alignment: .leading, spacing: 6) {
                         Button(action: {
                             SoundManager.shared.playTapSound()
@@ -149,7 +150,7 @@ struct DrinkDetailView: View {
                                     Image(systemName: "plus.circle.fill")
                                         .font(.system(size: 12))
                                         .foregroundColor(AppTheme.primaryGreen)
-                                    Text("加購配料 (珍珠/椰果...)")
+                                    Text("加購配料")
                                         .font(.system(size: 13, weight: .bold))
                                         .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                     
@@ -170,8 +171,7 @@ struct DrinkDetailView: View {
                                     .font(.system(size: 11, weight: .bold))
                                     .foregroundColor(AppTheme.textSecondary(isDarkMode))
                             }
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 10)
+                            .padding(10)
                             .background(AppTheme.cardBg(isDarkMode))
                             .clipShape(RoundedRectangle(cornerRadius: 12))
                         }
@@ -202,9 +202,33 @@ struct DrinkDetailView: View {
                     }
                     .padding(.horizontal, 14)
                     
+                    // Section 5: Custom Remark / Note Input - Requirement 1: User manual note field
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack(spacing: 4) {
+                            Image(systemName: "square.and.pencil")
+                                .font(.system(size: 11))
+                                .foregroundColor(AppTheme.primaryGreen)
+                            Text("客製化備註 (選填)")
+                                .font(.system(size: 11, weight: .bold))
+                                .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                        }
+                        
+                        TextField("例如：珍珠多一點、厚奶、分開裝...", text: $noteText)
+                            .font(.system(size: 12))
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 7)
+                            .background(AppTheme.inputBg(isDarkMode))
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                    }
+                    .padding(8)
+                    .background(AppTheme.cardBg(isDarkMode))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .padding(.horizontal, 14)
+                    
                     Spacer(minLength: 0)
                 }
-                .padding(.bottom, 80)
+                .padding(.bottom, 75)
                 
                 // Sticky Action Bar (Quantity + Add to Cart Button)
                 VStack(spacing: 8) {
@@ -250,6 +274,7 @@ struct DrinkDetailView: View {
                                 sugar: selectedSugar,
                                 ice: selectedIce,
                                 toppings: selectedToppings,
+                                note: noteText,
                                 quantity: quantity
                             )
                             onAddToCart(newItem)
@@ -282,7 +307,7 @@ struct DrinkDetailView: View {
                     .padding(.horizontal, 14)
                     .padding(.vertical, 10)
                     .background(AppTheme.cardBg(isDarkMode))
-                    .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: -2)
+                    .shadow(color: Color.black.opacity(isDarkMode ? 0.4 : 0.1), radius: 8, x: 0, y: -2)
                 }
             }
             .navigationTitle("飲料客製化")
@@ -311,17 +336,17 @@ struct CompactOptionRow<Content: View>: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: 5) {
             Text(title)
-                .font(.system(size: 12, weight: .bold))
+                .font(.system(size: 11, weight: .bold))
                 .foregroundColor(AppTheme.textSecondary(isDarkMode))
             
             content
         }
-        .padding(10)
+        .padding(8)
         .background(AppTheme.cardBg(isDarkMode))
         .clipShape(RoundedRectangle(cornerRadius: 12))
-        .shadow(color: Color.black.opacity(isDarkMode ? 0.2 : 0.03), radius: 4, x: 0, y: 2)
+        .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.03), radius: 4, x: 0, y: 2)
         .padding(.horizontal, 14)
     }
 }
@@ -339,9 +364,9 @@ struct CompactChip: View {
                 .font(.system(size: 12, weight: isSelected ? .bold : .medium))
                 .foregroundColor(isSelected ? .white : AppTheme.textPrimary(isDark))
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 8)
+                .padding(.vertical, 7)
                 .padding(.horizontal, 4)
-                .background(isSelected ? AppTheme.primaryGreen : AppTheme.bg(isDark))
+                .background(isSelected ? AppTheme.primaryGreen : AppTheme.inputBg(isDark))
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
