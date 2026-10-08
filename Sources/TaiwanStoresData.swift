@@ -821,4 +821,13 @@ struct TaiwanStoresData {
         "新竹市", "新竹縣", "彰化縣", "屏東縣", "嘉義市", "嘉義縣", "雲林縣",
         "苗栗縣", "南投縣", "基隆市", "宜蘭縣", "花蓮縣", "台東縣", "澎湖縣"
     ]
+
+    static func districts(for city: String) -> [String] {
+        if city == "全部" || city.isEmpty {
+            return ["全部鄉鎮"]
+        }
+        let list = allStores.filter { $0.city == city }.map { $0.district }
+        let unique = Array(Set(list)).filter { !$0.isEmpty }.sorted()
+        return ["全部鄉鎮"] + unique
+    }
 }

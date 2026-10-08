@@ -4,13 +4,20 @@ struct ContentView: View {
     @State private var isShowingSplash: Bool = true
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("themeMode") private var themeMode: String = "light"
+    @Environment(\.colorScheme) private var colorScheme
     
     @State private var cartItems: [CartItem] = []
     @State private var selectedDrink: Drink? = nil
     @State private var selectedStore: Store = SampleData.sampleStores[0]
     @State private var orderMode: OrderMode = .takeout
     @State private var deliveryInfo: DeliveryInfo = DeliveryInfo()
-    @State private var userProfile: UserProfile = UserProfile()
+    @State private var userProfile: UserProfile = {
+        var profile = UserProfile()
+        if let savedBarcode = UserDefaults.standard.string(forKey: "userCarrierBarcode"), !savedBarcode.isEmpty {
+            profile.carrierBarcode = savedBarcode
+        }
+        return profile
+    }()
     
     @State private var isShowingCart: Bool = false
     @State private var isShowingStoreLocator: Bool = false
@@ -183,6 +190,15 @@ struct ContentView: View {
             }
         }
         .preferredColorScheme(themeMode == "light" ? .light : (themeMode == "dark" ? .dark : nil))
+        .onAppear {
+            syncDarkMode()
+        }
+        .onChange(of: themeMode) { _ in
+            syncDarkMode()
+        }
+        .onChange(of: colorScheme) { _ in
+            syncDarkMode()
+        }
         .sheet(item: $selectedDrink) { drink in
             DrinkDetailView(drink: drink) { newItem in
                 cartItems.append(newItem)
@@ -226,6 +242,16 @@ struct ContentView: View {
         }
     }
     
+    private func syncDarkMode() {
+        if themeMode == "dark" {
+            isDarkMode = true
+        } else if themeMode == "light" {
+            isDarkMode = false
+        } else {
+            isDarkMode = (colorScheme == .dark)
+        }
+    }
+    
     private func triggerCartBounce() {
         withAnimation(.spring(response: 0.2, dampingFraction: 0.4)) {
             cartBounceScale = 1.4
@@ -238,23 +264,28 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Store Locator Main View with Map Button (All Taiwan Stores)
+// MARK: - Store Locator Main View with Dropdowns & GPS (All Taiwan Stores)
 struct StoreLocatorMainView: View {
     @Binding var selectedStore: Store
     @Binding var selectedTab: Int
     @AppStorage("isDarkMode") private var isDarkMode = false
-    @State private var mapStoreTarget: Store? = nil
-    @State private var searchStoreText: String = ""
+    
     @State private var selectedCity: String = "全部"
+    @State private var selectedDistrict: String = "全部鄉鎮"
+    @State private var searchStoreText: String = ""
+    @State private var isLocating: Bool = false
+    @State private var locationNotice: String? = nil
+    @State private var mapStoreTarget: Store? = nil
     
     var filteredStores: [Store] {
         TaiwanStoresData.allStores.filter { store in
             let matchCity = (selectedCity == "全部") || store.city == selectedCity || store.address.hasPrefix(selectedCity)
+            let matchDistrict = (selectedDistrict == "全部鄉鎮") || store.district == selectedDistrict || store.address.contains(selectedDistrict)
             let matchSearch = searchStoreText.isEmpty ||
                               store.name.localizedCaseInsensitiveContains(searchStoreText) ||
                               store.address.localizedCaseInsensitiveContains(searchStoreText) ||
                               store.district.localizedCaseInsensitiveContains(searchStoreText)
-            return matchCity && matchSearch
+            return matchCity && matchDistrict && matchSearch
         }
     }
     
@@ -264,61 +295,172 @@ struct StoreLocatorMainView: View {
                 AppTheme.bg(isDarkMode).ignoresSafeArea()
                 
                 VStack(spacing: 0) {
-                    // Search Bar
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(AppTheme.textSecondary(isDarkMode))
-                        TextField("搜尋全台門市名稱、區、路名...", text: $searchStoreText)
-                            .font(.system(size: 14))
-                            .foregroundColor(AppTheme.textPrimary(isDarkMode))
-                        if !searchStoreText.isEmpty {
-                            Button(action: { searchStoreText = "" }) {
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                    // Top Filtering Controls
+                    VStack(spacing: 10) {
+                        // Dropdowns Row: 1. 縣市  2. 鄉鎮市區
+                        HStack(spacing: 10) {
+                            // Dropdown 1: 縣市
+                            Menu {
+                                ForEach(TaiwanStoresData.cities, id: \.self) { city in
+                                    Button(action: {
+                                        SoundManager.shared.playTapSound()
+                                        selectedCity = city
+                                        selectedDistrict = "全部鄉鎮"
+                                        locationNotice = nil
+                                    }) {
+                                        HStack {
+                                            Text(city)
+                                            if selectedCity == city {
+                                                Image(systemName: "checkmark")
+                                            }
+                                        }
+                                    }
+                                }
+                            } label: {
+                                HStack {
+                                    Image(systemName: "building.2.crop.circle")
+                                        .font(.system(size: 13))
+                                        .foregroundColor(AppTheme.primaryGreen)
+                                    Text(selectedCity == "全部" ? "1. 選擇縣市" : selectedCity)
+                                        .font(.system(size: 13, weight: .semibold))
+                                        .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                        .lineLimit(1)
+                                    Spacer()
+                                    Image(systemName: "chevron.up.chevron.down")
+                                        .font(.system(size: 11))
+                                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                }
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 10)
+                                .background(AppTheme.cardBg(isDarkMode))
+                                .clipShape(RoundedRectangle(cornerRadius: 12))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(AppTheme.border(isDarkMode), lineWidth: 1)
+                                )
+                            }
+                            
+                            // Dropdown 2: 鄉鎮市區
+                            Menu {
+                                ForEach(TaiwanStoresData.districts(for: selectedCity), id: \.self) { dist in
+                                    Button(action: {
+                                        SoundManager.shared.playTapSound()
+                                        selectedDistrict = dist
+                                        locationNotice = nil
+                                    }) {
+                                        HStack {
+                                            Text(dist)
+                                            if selectedDistrict == dist {
+                                                Image(systemName: "checkmark")
+                                            }
+                                        }
+                                    }
+                                }
+                            } label: {
+                                HStack {
+                                    Image(systemName: "mappin.and.ellipse")
+                                        .font(.system(size: 13))
+                                        .foregroundColor(AppTheme.primaryGreen)
+                                    Text(selectedDistrict == "全部鄉鎮" ? "2. 選擇鄉鎮" : selectedDistrict)
+                                        .font(.system(size: 13, weight: .semibold))
+                                        .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                        .lineLimit(1)
+                                    Spacer()
+                                    Image(systemName: "chevron.up.chevron.down")
+                                        .font(.system(size: 11))
+                                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                }
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 10)
+                                .background(AppTheme.cardBg(isDarkMode))
+                                .clipShape(RoundedRectangle(cornerRadius: 12))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(AppTheme.border(isDarkMode), lineWidth: 1)
+                                )
                             }
                         }
-                    }
-                    .padding(12)
-                    .background(AppTheme.inputBg(isDarkMode))
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
-                    .padding(.horizontal, 16)
-                    .padding(.top, 12)
-                    
-                    // City Filter Horizontal Scroll
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 8) {
-                            ForEach(TaiwanStoresData.cities, id: \.self) { city in
-                                Button(action: {
-                                    SoundManager.shared.playTapSound()
-                                    selectedCity = city
-                                }) {
-                                    Text(city)
-                                        .font(.system(size: 13, weight: selectedCity == city ? .bold : .medium))
-                                        .padding(.horizontal, 14)
-                                        .padding(.vertical, 7)
-                                        .background(selectedCity == city ? AppTheme.primaryGreen : AppTheme.cardBg(isDarkMode))
-                                        .foregroundColor(selectedCity == city ? .white : AppTheme.textPrimary(isDarkMode))
-                                        .clipShape(Capsule())
-                                        .overlay(
-                                            Capsule()
-                                                .stroke(selectedCity == city ? Color.clear : AppTheme.border(isDarkMode), lineWidth: 1)
-                                        )
+                        
+                        // GPS Auto Location Button
+                        Button(action: {
+                            SoundManager.shared.playTapSound()
+                            isLocating = true
+                            LocationManager.shared.fetchCurrentLocation { district, address in
+                                isLocating = false
+                                for city in TaiwanStoresData.cities where city != "全部" {
+                                    if address.contains(city) {
+                                        selectedCity = city
+                                        break
+                                    }
+                                }
+                                let districtList = TaiwanStoresData.districts(for: selectedCity)
+                                if districtList.contains(district) {
+                                    selectedDistrict = district
+                                }
+                                locationNotice = "已定位至：\(selectedCity) \(selectedDistrict)"
+                                SoundManager.shared.playAddToCartSound()
+                            }
+                        }) {
+                            HStack(spacing: 8) {
+                                if isLocating {
+                                    ProgressView().tint(.white).scaleEffect(0.8)
+                                } else {
+                                    Image(systemName: "location.fill")
+                                        .font(.system(size: 13))
+                                }
+                                Text(isLocating ? "抓取手機 GPS 定位中..." : "📍 自動定位 (依目前 GPS 篩選最近門市)")
+                                    .font(.system(size: 13, weight: .bold))
+                                Spacer()
+                                Image(systemName: "arrow.triangle.turn.up.right.diamond.fill")
+                                    .font(.system(size: 12))
+                            }
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 10)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color(hex: "008B47"), Color(hex: "006834")]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                            .shadow(color: AppTheme.primaryGreen.opacity(0.3), radius: 5, x: 0, y: 2)
+                        }
+                        
+                        // Search Bar
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                            TextField("搜尋全台門市名稱、街道...", text: $searchStoreText)
+                                .font(.system(size: 13))
+                                .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                            if !searchStoreText.isEmpty {
+                                Button(action: { searchStoreText = "" }) {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
                                 }
                             }
                         }
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 10)
+                        .padding(10)
+                        .background(AppTheme.inputBg(isDarkMode))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        
+                        // Results Count & Notice
+                        HStack {
+                            if let notice = locationNotice {
+                                Text(notice)
+                                    .font(.system(size: 11, weight: .bold))
+                                    .foregroundColor(AppTheme.primaryGreen)
+                            } else {
+                                Text("全台門市共 \(TaiwanStoresData.allStores.count) 家 ‧ 目前篩選出 \(filteredStores.count) 家")
+                                    .font(.system(size: 11))
+                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                            }
+                            Spacer()
+                        }
                     }
-                    
-                    // Results count
-                    HStack {
-                        Text("全台門市共 \(TaiwanStoresData.allStores.count) 家 ‧ 目前篩選出 \(filteredStores.count) 家")
-                            .font(.system(size: 12))
-                            .foregroundColor(AppTheme.textSecondary(isDarkMode))
-                        Spacer()
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 6)
+                    .padding(14)
                     
                     // Stores List
                     ScrollView {
@@ -340,6 +482,7 @@ struct StoreLocatorMainView: View {
                                                 Text(store.name)
                                                     .font(.system(size: 15, weight: .bold))
                                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                                    .lineLimit(1)
                                                 Spacer()
                                                 if store.id == selectedStore.id {
                                                     Text("目前選擇")
@@ -355,6 +498,7 @@ struct StoreLocatorMainView: View {
                                             Text(store.address)
                                                 .font(.system(size: 12))
                                                 .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                                .lineLimit(1)
                                             
                                             HStack(spacing: 10) {
                                                 HStack(spacing: 4) {
@@ -429,4 +573,3 @@ struct StoreLocatorMainView: View {
         }
     }
 }
-

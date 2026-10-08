@@ -41,9 +41,10 @@ struct SettingsView: View {
                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 
                                 Picker("主題模式", selection: $themeMode) {
-                                    Text("☀️ 淺色模式 (預設)").tag("light")
-                                                                        Text("💻 系統預設").tag("system")
-                                                                    }
+                                    Text("☀️ 淺色").tag("light")
+                                    Text("🌙 深色 (純黑)").tag("dark")
+                                    Text("💻 系統").tag("system")
+                                }
                                 .pickerStyle(.segmented)
                                 .onChange(of: themeMode) { newMode in
                                     SoundManager.shared.playTapSound()

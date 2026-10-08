@@ -3,3 +3,7 @@ DerivedData/
 *.xcworkspace
 xcuserdata/
 *.bundle
+
+build_device/
+build_sim/
+Payload/
