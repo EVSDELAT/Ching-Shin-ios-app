@@ -158,7 +158,7 @@ struct SettingsView: View {
                                     }
                                     
                                     VStack(alignment: .leading, spacing: 2) {
-                                        Text("清心福全 iOS App")
+                                        Text("清心福全線上訂購系統")
                                             .font(.system(size: 17, weight: .bold))
                                             .foregroundColor(.white)
                                         Text("Ching Shin Fu Chuan Official App")

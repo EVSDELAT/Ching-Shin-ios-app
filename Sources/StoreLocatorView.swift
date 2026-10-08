@@ -108,7 +108,7 @@ struct StoreLocatorView: View {
                     }
                 }
             }
-            .navigationTitle("選擇清心福全門市")
+            .navigationTitle("門市據點")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

@@ -188,13 +188,20 @@ struct ContentView: View {
         .sheet(isPresented: $isShowingCart) {
             CartView(
                 cartItems: $cartItems,
-                orderMode: orderMode,
-                deliveryInfo: deliveryInfo,
+                orderMode: $orderMode,
+                selectedStore: $selectedStore,
+                deliveryInfo: $deliveryInfo,
                 onCheckout: {
                     pendingCheckoutItems = cartItems
                     isShowingCart = false
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         isShowingOrderProgress = true
+                    }
+                },
+                onOpenStoreLocator: {
+                    isShowingCart = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        isShowingStoreLocator = true
                     }
                 }
             )
@@ -319,7 +326,7 @@ struct StoreLocatorMainView: View {
                 }
                 .padding(.vertical, 6)
             }
-            .navigationTitle("台南市清心福全門市據點")
+            .navigationTitle("門市據點")
             .sheet(item: $mapStoreTarget) { store in
                 StoreMapSheet(store: store)
             }

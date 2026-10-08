@@ -52,28 +52,23 @@ struct MenuView: View {
                     // Top Bar (Official Brand Logo Badge & Mode Switcher)
                     VStack(spacing: 8) {
                         HStack {
-                            // Official Brand Logo (Clean Pill Badge Container)
-                            HStack(spacing: 4) {
-                                if let logoPath = Bundle.main.path(forResource: "brand_logo", ofType: "png"),
-                                   let uiImage = UIImage(contentsOfFile: logoPath) {
-                                    Image(uiImage: uiImage)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(height: 22)
-                                } else {
+                            // Official Brand Logo (Seamless Transparent PNG)
+                            if let logoPath = Bundle.main.path(forResource: "brand_logo", ofType: "png"),
+                               let uiImage = UIImage(contentsOfFile: logoPath) {
+                                Image(uiImage: uiImage)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 32)
+                            } else {
+                                HStack(spacing: 4) {
                                     Image(systemName: "heart.fill")
-                                        .font(.system(size: 16))
+                                        .font(.system(size: 18))
                                         .foregroundColor(.red)
                                     Text("清心福全")
-                                        .font(.system(size: 16, weight: .black))
+                                        .font(.system(size: 18, weight: .black))
                                         .foregroundColor(AppTheme.primaryGreen)
                                 }
                             }
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 5)
-                            .background(Color.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .shadow(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 1)
                             
                             Spacer()
                             

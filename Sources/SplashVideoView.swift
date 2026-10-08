@@ -16,7 +16,6 @@ struct SplashVideoView: View {
                 VideoPlayerContainerView(player: player)
                     .ignoresSafeArea()
             } else {
-                // Fallback brand animated splash if video is loading or unsupported
                 VStack(spacing: 24) {
                     Spacer()
                     
@@ -36,8 +35,8 @@ struct SplashVideoView: View {
                     }
                     
                     VStack(spacing: 8) {
-                        Text("清心福全")
-                            .font(.system(size: 32, weight: .bold))
+                        Text("清心福全線上訂購系統")
+                            .font(.system(size: 28, weight: .bold))
                             .foregroundColor(.white)
                         
                         Text("Ching Shin Fu Chuan · 1987")
@@ -49,13 +48,13 @@ struct SplashVideoView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .onAppear {
-                    withAnimation(.easeInOut(duration: 1.0).repeatForever(autoreverses: true)) {
+                    withAnimation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true)) {
                         pulseLogo = true
                     }
                 }
             }
             
-            // Modern Minimalist 'X' Close Button (Mandatory User Requirement #7)
+            // Close 'X' Button
             Button(action: {
                 SoundManager.shared.playTapSound()
                 player?.pause()
@@ -74,7 +73,6 @@ struct SplashVideoView: View {
                     Circle()
                         .stroke(Color.white.opacity(0.3), lineWidth: 1)
                 )
-                .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: 3)
                 .padding(.top, 56)
                 .padding(.trailing, 20)
             }
@@ -103,13 +101,14 @@ struct SplashVideoView: View {
         }
         
         guard let url = videoURL else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                 onFinished()
             }
             return
         }
         
         let avPlayer = AVPlayer(url: url)
+        avPlayer.isMuted = true // User requirement: No audio in intro video
         self.player = avPlayer
         self.isVideoReady = true
         
@@ -122,6 +121,7 @@ struct SplashVideoView: View {
         }
         
         avPlayer.play()
+        avPlayer.rate = 2.0 // User requirement: Speed up playback animation
     }
 }
 

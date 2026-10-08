@@ -2,15 +2,18 @@ import SwiftUI
 
 struct CartView: View {
     @Binding var cartItems: [CartItem]
-    @State var orderMode: OrderMode
-    @State var deliveryInfo: DeliveryInfo
+    @Binding var orderMode: OrderMode
+    @Binding var selectedStore: Store
+    @Binding var deliveryInfo: DeliveryInfo
     var onCheckout: () -> Void
+    var onOpenStoreLocator: () -> Void
     
     @Environment(\.dismiss) private var dismiss
     @AppStorage("isDarkMode") private var isDarkMode = false
     
     @State private var selectedCoupon: AppCoupon? = AppCoupon.sampleCoupons[1] // Default: 本月獨享禮券 ($20)
     @State private var showCouponSheet: Bool = false
+    @State private var showDeliverySetupSheet: Bool = false
     
     var subtotal: Int {
         cartItems.reduce(0, { $0 + $1.totalPrice })
@@ -36,7 +39,7 @@ struct CartView: View {
                 
                 ScrollView {
                     VStack(spacing: 16) {
-                        // Section 1: Order Mode Switcher (Takeout vs Delivery - Requirement #5)
+                        // Section 1: Order Mode Switcher & Store/Address Selector (Requirement #2)
                         VStack(spacing: 10) {
                             HStack {
                                 Text("選擇取餐/配送方式")
@@ -61,7 +64,7 @@ struct CartView: View {
                                     .foregroundColor(orderMode == .takeout ? .white : AppTheme.textPrimary(isDarkMode))
                                     .frame(maxWidth: .infinity)
                                     .padding(.vertical, 10)
-                                    .background(orderMode == .takeout ? Color(hex: "008B47") : Color.clear)
+                                    .background(orderMode == .takeout ? AppTheme.primaryGreen : Color.clear)
                                     .clipShape(Capsule())
                                 }
                                 
@@ -80,7 +83,7 @@ struct CartView: View {
                                     .foregroundColor(orderMode == .delivery ? .white : AppTheme.textPrimary(isDarkMode))
                                     .frame(maxWidth: .infinity)
                                     .padding(.vertical, 10)
-                                    .background(orderMode == .delivery ? Color(hex: "008B47") : Color.clear)
+                                    .background(orderMode == .delivery ? AppTheme.primaryGreen : Color.clear)
                                     .clipShape(Capsule())
                                 }
                             }
@@ -89,76 +92,154 @@ struct CartView: View {
                             .clipShape(Capsule())
                             .overlay(Capsule().stroke(AppTheme.border(isDarkMode), lineWidth: 1))
                             
-                            // Address Card
-                            HStack(spacing: 10) {
-                                Image(systemName: orderMode == .takeout ? "mappin.circle.fill" : "location.fill")
-                                    .font(.system(size: 18))
-                                    .foregroundColor(Color(hex: "008B47"))
-                                
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(orderMode == .takeout ? "自取門市: 清心福全 台南總店(西門二店)" : "外送地址: \(deliveryInfo.address)")
-                                        .font(.system(size: 12, weight: .bold))
-                                        .foregroundColor(AppTheme.textPrimary(isDarkMode))
-                                    Text(orderMode == .takeout ? "地址: 台南市中西區西門路二段222號" : "電話: \(deliveryInfo.phone) (備註: \(deliveryInfo.notes))")
-                                        .font(.system(size: 11))
-                                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
-                                        .lineLimit(1)
+                            // Store & Location Cards (Interactive & Syncing with Main Page)
+                            if orderMode == .takeout {
+                                Button(action: {
+                                    SoundManager.shared.playTapSound()
+                                    onOpenStoreLocator()
+                                }) {
+                                    HStack(spacing: 10) {
+                                        Image(systemName: "mappin.circle.fill")
+                                            .font(.system(size: 18))
+                                            .foregroundColor(AppTheme.primaryGreen)
+                                        
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            HStack(spacing: 4) {
+                                                Text("自取門市: \(selectedStore.shortName)")
+                                                    .font(.system(size: 12, weight: .bold))
+                                                    .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                                Image(systemName: "chevron.right")
+                                                    .font(.system(size: 9, weight: .bold))
+                                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                            }
+                                            Text("地址: \(selectedStore.address)")
+                                                .font(.system(size: 11))
+                                                .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                                .lineLimit(1)
+                                        }
+                                        Spacer()
+                                    }
+                                    .padding(10)
+                                    .background(AppTheme.bg(isDarkMode))
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
                                 }
-                                Spacer()
+                            } else {
+                                VStack(spacing: 8) {
+                                    // Store Selector Pill for Delivery
+                                    Button(action: {
+                                        SoundManager.shared.playTapSound()
+                                        onOpenStoreLocator()
+                                    }) {
+                                        HStack(spacing: 10) {
+                                            Image(systemName: "storefront.fill")
+                                                .font(.system(size: 16))
+                                                .foregroundColor(AppTheme.primaryGreen)
+                                            
+                                            VStack(alignment: .leading, spacing: 2) {
+                                                HStack(spacing: 4) {
+                                                    Text("外送門市: \(selectedStore.shortName)")
+                                                        .font(.system(size: 12, weight: .bold))
+                                                        .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                                    Image(systemName: "chevron.right")
+                                                        .font(.system(size: 9, weight: .bold))
+                                                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                                }
+                                                Text("地址: \(selectedStore.address)")
+                                                    .font(.system(size: 11))
+                                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                                    .lineLimit(1)
+                                            }
+                                            Spacer()
+                                        }
+                                        .padding(10)
+                                        .background(AppTheme.bg(isDarkMode))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    }
+                                    
+                                    // Delivery Address Selector Pill
+                                    Button(action: {
+                                        SoundManager.shared.playTapSound()
+                                        showDeliverySetupSheet = true
+                                    }) {
+                                        HStack(spacing: 10) {
+                                            Image(systemName: "location.fill")
+                                                .font(.system(size: 16))
+                                                .foregroundColor(AppTheme.primaryGreen)
+                                            
+                                            VStack(alignment: .leading, spacing: 2) {
+                                                HStack(spacing: 4) {
+                                                    Text("配送地址: \(deliveryInfo.address)")
+                                                        .font(.system(size: 12, weight: .bold))
+                                                        .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                                    Image(systemName: "chevron.right")
+                                                        .font(.system(size: 9, weight: .bold))
+                                                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                                }
+                                                Text("電話: \(deliveryInfo.phone) (備註: \(deliveryInfo.notes))")
+                                                    .font(.system(size: 11))
+                                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                                    .lineLimit(1)
+                                            }
+                                            Spacer()
+                                        }
+                                        .padding(10)
+                                        .background(AppTheme.bg(isDarkMode))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    }
+                                }
                             }
-                            .padding(10)
-                            .background(AppTheme.bg(isDarkMode))
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
                         }
                         .padding(14)
                         .background(AppTheme.cardBg(isDarkMode))
                         .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .shadow(color: Color.black.opacity(isDarkMode ? 0.2 : 0.04), radius: 6, x: 0, y: 2)
+                        .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.04), radius: 6, x: 0, y: 2)
                         .padding(.horizontal, 16)
                         .padding(.top, 10)
                         
                         // Section 2: Cart Drink Items List
                         VStack(alignment: .leading, spacing: 12) {
                             HStack {
-                                Text("已點飲料明細 (\(cartItems.count)項)")
-                                    .font(.system(size: 15, weight: .bold))
+                                Text("已點飲料明細 (\(cartItems.reduce(0, { $0 + $1.quantity }))項)")
+                                    .font(.system(size: 14, weight: .bold))
                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 Spacer()
                             }
                             
-                            VStack(spacing: 10) {
-                                ForEach(Array(cartItems.enumerated()), id: \.offset) { index, item in
-                                    CartItemRowView(
-                                        item: item,
-                                        onDecrease: {
-                                            SoundManager.shared.playTapSound()
-                                            if cartItems[index].quantity > 1 {
-                                                cartItems[index].quantity -= 1
-                                            } else {
-                                                cartItems.remove(at: index)
-                                            }
-                                        },
-                                        onIncrease: {
-                                            SoundManager.shared.playTapSound()
-                                            cartItems[index].quantity += 1
+                            if cartItems.isEmpty {
+                                VStack(spacing: 10) {
+                                    Image(systemName: "cart")
+                                        .font(.system(size: 36))
+                                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                    Text("購物車目前是空的")
+                                        .font(.system(size: 13))
+                                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                }
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 30)
+                            } else {
+                                VStack(spacing: 10) {
+                                    ForEach(cartItems) { item in
+                                        CartItemRowView(item: item, isDark: isDarkMode) { action in
+                                            handleItemAction(item: item, action: action)
                                         }
-                                    )
+                                    }
                                 }
                             }
                         }
                         .padding(14)
                         .background(AppTheme.cardBg(isDarkMode))
                         .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .shadow(color: Color.black.opacity(isDarkMode ? 0.2 : 0.04), radius: 6, x: 0, y: 2)
+                        .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.04), radius: 6, x: 0, y: 2)
                         .padding(.horizontal, 16)
                         
-                        // Section 3: Coupon Discount Picker (Requirement #5)
+                        // Section 3: Member Coupon Picker Sheet Trigger
                         VStack(alignment: .leading, spacing: 10) {
                             HStack {
                                 Image(systemName: "ticket.fill")
-                                    .foregroundColor(Color(hex: "008B47"))
+                                    .font(.system(size: 14))
+                                    .foregroundColor(AppTheme.primaryGreen)
                                 Text("優惠券折扣折抵")
-                                    .font(.system(size: 15, weight: .bold))
+                                    .font(.system(size: 14, weight: .bold))
                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 Spacer()
                             }
@@ -168,57 +249,53 @@ struct CartView: View {
                                 showCouponSheet = true
                             }) {
                                 HStack {
-                                    if let coupon = selectedCoupon {
-                                        VStack(alignment: .leading, spacing: 2) {
-                                            HStack(spacing: 6) {
-                                                Text(coupon.title)
-                                                    .font(.system(size: 13, weight: .bold))
-                                                    .foregroundColor(Color(hex: "008B47"))
-                                                Text("(\(coupon.subtitle))")
-                                                    .font(.system(size: 11))
-                                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
-                                            }
-                                            Text(subtotal >= coupon.minSpend ? "已成功折抵 -NT$ \(couponDiscount)" : "未符合滿額門檻 $ \(coupon.minSpend)")
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        if let coupon = selectedCoupon {
+                                            Text(coupon.title)
+                                                .font(.system(size: 13, weight: .bold))
+                                                .foregroundColor(AppTheme.primaryGreen)
+                                            Text("已成功折抵 -\(couponDiscount) 元")
                                                 .font(.system(size: 11, weight: .bold))
-                                                .foregroundColor(subtotal >= coupon.minSpend ? .red : .orange)
+                                                .foregroundColor(AppTheme.accentRed)
+                                        } else {
+                                            Text("未選擇優惠券")
+                                                .font(.system(size: 13))
+                                                .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                            Text("點擊選擇可用的專屬優惠券")
+                                                .font(.system(size: 11))
+                                                .foregroundColor(AppTheme.textSecondary(isDarkMode))
                                         }
-                                    } else {
-                                        Text("選擇優惠券 (目前未套用折扣)")
-                                            .font(.system(size: 13))
-                                            .foregroundColor(AppTheme.textSecondary(isDarkMode))
                                     }
                                     
                                     Spacer()
                                     
                                     Image(systemName: "chevron.right")
                                         .font(.system(size: 12, weight: .bold))
-                                        .foregroundColor(Color(hex: "008B47"))
+                                        .foregroundColor(AppTheme.primaryGreen)
                                 }
                                 .padding(12)
-                                .background(AppTheme.bg(isDarkMode))
+                                .background(AppTheme.primaryGreen.opacity(0.08))
                                 .clipShape(RoundedRectangle(cornerRadius: 12))
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 12)
-                                        .stroke(Color(hex: "008B47").opacity(0.4), lineWidth: 1)
+                                        .stroke(AppTheme.primaryGreen.opacity(0.3), lineWidth: 1)
                                 )
                             }
                         }
                         .padding(14)
                         .background(AppTheme.cardBg(isDarkMode))
                         .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .shadow(color: Color.black.opacity(isDarkMode ? 0.2 : 0.04), radius: 6, x: 0, y: 2)
+                        .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.04), radius: 6, x: 0, y: 2)
                         .padding(.horizontal, 16)
                         
-                        // Section 4: Pricing Breakdown Summary Card
+                        // Section 4: Price Breakdown Card
                         VStack(spacing: 10) {
                             HStack {
                                 Text("金額試算明細")
-                                    .font(.system(size: 15, weight: .bold))
+                                    .font(.system(size: 14, weight: .bold))
                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 Spacer()
                             }
-                            
-                            Divider()
                             
                             HStack {
                                 Text("飲料小計")
@@ -232,25 +309,25 @@ struct CartView: View {
                             
                             if couponDiscount > 0 {
                                 HStack {
-                                    Text("優惠券折扣")
+                                    Text("優惠券折抵")
                                         .font(.system(size: 13))
-                                        .foregroundColor(.red)
+                                        .foregroundColor(AppTheme.accentRed)
                                     Spacer()
                                     Text("- NT$ \(couponDiscount)")
                                         .font(.system(size: 14, weight: .bold))
-                                        .foregroundColor(.red)
+                                        .foregroundColor(AppTheme.accentRed)
                                 }
                             }
                             
                             if orderMode == .delivery {
                                 HStack {
-                                    Text("外送服務費 (滿$150免運)")
+                                    Text("外送服務費 (\(subtotal >= deliveryInfo.minDeliveryThreshold ? "滿$150免運" : "未滿$150"))")
                                         .font(.system(size: 13))
                                         .foregroundColor(AppTheme.textSecondary(isDarkMode))
                                     Spacer()
-                                    Text(deliveryFee > 0 ? "+ NT$ \(deliveryFee)" : "免外送費 $0")
+                                    Text(deliveryFee == 0 ? "免費" : "+ NT$ \(deliveryFee)")
                                         .font(.system(size: 14, weight: .bold))
-                                        .foregroundColor(deliveryFee > 0 ? Color.orange : Color(hex: "008B47"))
+                                        .foregroundColor(deliveryFee == 0 ? AppTheme.primaryGreen : AppTheme.accentGold)
                                 }
                             }
                             
@@ -258,219 +335,248 @@ struct CartView: View {
                             
                             HStack {
                                 Text("應付總金額")
-                                    .font(.system(size: 16, weight: .bold))
+                                    .font(.system(size: 15, weight: .bold))
                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 Spacer()
                                 Text("NT$ \(finalTotal)")
-                                    .font(.system(size: 20, weight: .bold))
-                                    .foregroundColor(Color(hex: "008B47"))
+                                    .font(.system(size: 20, weight: .black))
+                                    .foregroundColor(AppTheme.primaryGreen)
                             }
                         }
                         .padding(14)
                         .background(AppTheme.cardBg(isDarkMode))
                         .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .shadow(color: Color.black.opacity(isDarkMode ? 0.2 : 0.04), radius: 6, x: 0, y: 2)
+                        .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.04), radius: 6, x: 0, y: 2)
                         .padding(.horizontal, 16)
-                        .padding(.bottom, 100)
+                        .padding(.bottom, 90)
                     }
                 }
                 
-                // Sticky Action Bar (Confirm & Order)
+                // Bottom Submit Order Sticky Button
                 VStack {
                     Button(action: {
-                        SoundManager.shared.playOrderSuccessSound()
-                        onCheckout()
+                        if !cartItems.isEmpty {
+                            SoundManager.shared.playOrderSuccessSound()
+                            onCheckout()
+                        }
                     }) {
-                        HStack(spacing: 8) {
+                        HStack {
                             Image(systemName: "paperplane.fill")
                                 .font(.system(size: 15))
                             Text("確認點餐 ‧ 送出訂單")
                                 .font(.system(size: 16, weight: .bold))
                             Spacer()
                             Text("NT$ \(finalTotal)")
-                                .font(.system(size: 18, weight: .bold))
+                                .font(.system(size: 18, weight: .black))
                         }
                         .foregroundColor(.white)
                         .padding(.horizontal, 20)
                         .padding(.vertical, 14)
                         .background(
                             LinearGradient(
-                                gradient: Gradient(colors: [Color(hex: "008B47"), Color(hex: "006834")]),
+                                gradient: Gradient(colors: cartItems.isEmpty ? [Color.gray, Color.gray] : [Color(hex: "008B47"), Color(hex: "006834")]),
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
                         )
                         .clipShape(Capsule())
-                        .shadow(color: Color(hex: "008B47").opacity(0.35), radius: 8, x: 0, y: 4)
+                        .shadow(color: AppTheme.primaryGreen.opacity(0.35), radius: 8, x: 0, y: 4)
                     }
+                    .disabled(cartItems.isEmpty)
                 }
                 .padding(.horizontal, 16)
-                .padding(.bottom, 20)
+                .padding(.bottom, 16)
                 .background(AppTheme.cardBg(isDarkMode).opacity(0.95))
             }
             .navigationTitle("購物車與點餐明細")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("關閉") {
-                        dismiss()
-                    }
-                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                    Button("關閉") { dismiss() }
+                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
                 }
             }
             .sheet(isPresented: $showCouponSheet) {
-                CouponSelectSheet(selectedCoupon: $selectedCoupon, subtotal: subtotal)
+                CouponSelectSheet(
+                    selectedCoupon: $selectedCoupon,
+                    subtotal: subtotal,
+                    isPresented: $showCouponSheet
+                )
             }
+            .sheet(isPresented: $showDeliverySetupSheet) {
+                DeliverySetupSheet(deliveryInfo: $deliveryInfo, isPresented: $showDeliverySetupSheet)
+            }
+        }
+    }
+    
+    private func handleItemAction(item: CartItem, action: CartRowAction) {
+        guard let index = cartItems.firstIndex(where: { $0.id == item.id }) else { return }
+        switch action {
+        case .increment:
+            cartItems[index].quantity += 1
+        case .decrement:
+            if cartItems[index].quantity > 1 {
+                cartItems[index].quantity -= 1
+            } else {
+                cartItems.remove(at: index)
+            }
+        case .delete:
+            cartItems.remove(at: index)
         }
     }
 }
 
-// Subview for Cart Item Row
+enum CartRowAction {
+    case increment, decrement, delete
+}
+
+// Cart Item Row Component
 struct CartItemRowView: View {
     let item: CartItem
-    let onDecrease: () -> Void
-    let onIncrease: () -> Void
-    @AppStorage("isDarkMode") private var isDarkMode = false
+    let isDark: Bool
+    let onAction: (CartRowAction) -> Void
     
     var body: some View {
         HStack(spacing: 12) {
-            Drink3DThumbnailView(style: item.drink.cupStyle, size: 50)
+            Drink3DThumbnailView(style: item.drink.cupStyle, size: 45)
             
             VStack(alignment: .leading, spacing: 3) {
                 Text(item.drink.name)
-                    .font(.system(size: 15, weight: .bold))
-                    .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundColor(AppTheme.textPrimary(isDark))
                 
                 Text(item.customizationSummary)
                     .font(.system(size: 11))
-                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
-                    .lineLimit(1)
+                    .foregroundColor(AppTheme.textSecondary(isDark))
+                    .lineLimit(2)
                 
                 Text("NT$ \(item.unitPrice) / 杯")
                     .font(.system(size: 12, weight: .bold))
-                    .foregroundColor(Color(hex: "008B47"))
+                    .foregroundColor(AppTheme.primaryGreen)
             }
             
             Spacer()
             
             VStack(alignment: .trailing, spacing: 6) {
                 Text("NT$ \(item.totalPrice)")
-                    .font(.system(size: 15, weight: .bold))
-                    .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundColor(AppTheme.textPrimary(isDark))
                 
                 HStack(spacing: 8) {
-                    Button(action: onDecrease) {
+                    Button(action: {
+                        SoundManager.shared.playTapSound()
+                        onAction(.decrement)
+                    }) {
                         Image(systemName: "minus.circle.fill")
-                            .font(.system(size: 16))
-                            .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                            .font(.system(size: 18))
+                            .foregroundColor(AppTheme.textSecondary(isDark))
                     }
                     
                     Text("\(item.quantity)")
                         .font(.system(size: 13, weight: .bold))
-                        .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                        .foregroundColor(AppTheme.textPrimary(isDark))
                     
-                    Button(action: onIncrease) {
+                    Button(action: {
+                        SoundManager.shared.playTapSound()
+                        onAction(.increment)
+                    }) {
                         Image(systemName: "plus.circle.fill")
-                            .font(.system(size: 16))
-                            .foregroundColor(Color(hex: "008B47"))
+                            .font(.system(size: 18))
+                            .foregroundColor(AppTheme.primaryGreen)
                     }
                 }
             }
         }
         .padding(10)
-        .background(AppTheme.bg(isDarkMode))
+        .background(AppTheme.bg(isDark))
         .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }
 
-// Coupon Selection Sheet Component
+// Coupon Select Sheet Component
 struct CouponSelectSheet: View {
     @Binding var selectedCoupon: AppCoupon?
     let subtotal: Int
-    @Environment(\.dismiss) private var dismiss
+    @Binding var isPresented: Bool
     @AppStorage("isDarkMode") private var isDarkMode = false
     
-    let coupons = AppCoupon.sampleCoupons
+    let coupons: [AppCoupon] = AppCoupon.sampleCoupons
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 AppTheme.bg(isDarkMode).ignoresSafeArea()
                 
-                List {
-                    Section(header: Text("選擇可套用的優惠券")) {
+                ScrollView {
+                    VStack(spacing: 12) {
                         Button(action: {
                             SoundManager.shared.playTapSound()
                             selectedCoupon = nil
-                            dismiss()
+                            isPresented = false
                         }) {
                             HStack {
-                                Text("不使用優惠券")
-                                    .font(.system(size: 14, weight: .bold))
+                                Text("不使用任何優惠券")
+                                    .font(.system(size: 14, weight: .medium))
                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 Spacer()
                                 if selectedCoupon == nil {
                                     Image(systemName: "checkmark.circle.fill")
-                                        .foregroundColor(Color(hex: "008B47"))
+                                        .foregroundColor(AppTheme.primaryGreen)
                                 }
                             }
+                            .padding(14)
+                            .background(AppTheme.cardBg(isDarkMode))
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
                         }
+                        .padding(.horizontal, 16)
+                        .padding(.top, 10)
                         
                         ForEach(coupons) { coupon in
-                            let isEligible = subtotal >= coupon.minSpend
-                            let discountAmt = coupon.calculateDiscount(subtotal: subtotal)
-                            
+                            let isQualified = subtotal >= coupon.minSpend
                             Button(action: {
-                                if isEligible {
+                                if isQualified {
                                     SoundManager.shared.playTapSound()
                                     selectedCoupon = coupon
-                                    dismiss()
+                                    isPresented = false
                                 }
                             }) {
                                 HStack(spacing: 12) {
-                                    ZStack {
-                                        Circle()
-                                            .fill(isEligible ? Color(hex: "008B47") : Color.gray.opacity(0.3))
-                                            .frame(width: 40, height: 40)
-                                        Image(systemName: "ticket.fill")
+                                    VStack(spacing: 2) {
+                                        Text(coupon.discountBadgeText)
+                                            .font(.system(size: 16, weight: .black))
                                             .foregroundColor(.white)
-                                            .font(.system(size: 18))
+                                        Text(coupon.badge)
+                                            .font(.system(size: 9, weight: .bold))
+                                            .foregroundColor(Color(hex: "FEF08A"))
                                     }
+                                    .frame(width: 80, height: 60)
+                                    .background(isQualified ? AppTheme.primaryGreen : Color.gray)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
                                     
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        HStack(spacing: 6) {
-                                            Text(coupon.title)
-                                                .font(.system(size: 14, weight: .bold))
-                                                .foregroundColor(AppTheme.textPrimary(isDarkMode))
-                                            Text(coupon.badge)
-                                                .font(.system(size: 9, weight: .bold))
-                                                .foregroundColor(.white)
-                                                .padding(.horizontal, 6)
-                                                .padding(.vertical, 2)
-                                                .background(Color(hex: "008B47"))
-                                                .clipShape(Capsule())
-                                        }
-                                        
-                                        Text(coupon.subtitle)
-                                            .font(.system(size: 12))
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        Text(coupon.title)
+                                            .font(.system(size: 14, weight: .bold))
+                                            .foregroundColor(isQualified ? AppTheme.textPrimary(isDarkMode) : AppTheme.textSecondary(isDarkMode))
+                                        Text("滿 $\(coupon.minSpend) 即可折抵優惠")
+                                            .font(.system(size: 11))
                                             .foregroundColor(AppTheme.textSecondary(isDarkMode))
-                                        
-                                        Text(isEligible ? "可折抵 NT$ \(discountAmt)" : "未滿 $ \(coupon.minSpend) 門檻 (差 $ \(coupon.minSpend - subtotal))")
-                                            .font(.system(size: 11, weight: .bold))
-                                            .foregroundColor(isEligible ? Color(hex: "008B47") : .orange)
                                     }
                                     
                                     Spacer()
                                     
-                                    if selectedCoupon?.id == coupon.id {
+                                    if selectedCoupon == coupon {
                                         Image(systemName: "checkmark.circle.fill")
                                             .font(.system(size: 20))
-                                            .foregroundColor(Color(hex: "008B47"))
+                                            .foregroundColor(AppTheme.primaryGreen)
                                     }
                                 }
-                                .padding(.vertical, 4)
+                                .padding(12)
+                                .background(AppTheme.cardBg(isDarkMode))
+                                .clipShape(RoundedRectangle(cornerRadius: 14))
+                                .opacity(isQualified ? 1.0 : 0.5)
                             }
-                            .disabled(!isEligible)
+                            .disabled(!isQualified)
+                            .padding(.horizontal, 16)
                         }
                     }
                 }
@@ -479,10 +585,8 @@ struct CouponSelectSheet: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("完成") {
-                        dismiss()
-                    }
-                    .foregroundColor(Color(hex: "008B47"))
+                    Button("完成") { isPresented = false }
+                        .foregroundColor(AppTheme.primaryGreen)
                 }
             }
         }

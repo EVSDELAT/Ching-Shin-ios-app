@@ -191,7 +191,7 @@ struct MemberCardView: View {
                         .frame(height: 185)
                         .padding(.horizontal, 20)
                         
-                        // Carrier Barcode Card (電子發票載具條碼 - Mandatory Feature)
+                        // Carrier Barcode Card (電子發票手機載具條碼)
                         VStack(alignment: .leading, spacing: 8) {
                             HStack {
                                 Image(systemName: "barcode.viewfinder")
@@ -237,15 +237,7 @@ struct MemberCardView: View {
                         .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.04), radius: 6, x: 0, y: 2)
                         .padding(.horizontal, 20)
                         
-                        // Quick Privileges Grid
-                        HStack(spacing: 10) {
-                            PrivilegePill(icon: "cup.and.saucer.fill", title: "寄杯管家", subtitle: "2 杯待領取")
-                            PrivilegePill(icon: "gift.fill", title: "點數兌換", subtitle: "可兌換 4 禮包")
-                            PrivilegePill(icon: "tag.fill", title: "專屬券包", subtitle: "\(coupons.count) 張可用")
-                        }
-                        .padding(.horizontal, 20)
-                        
-                        // Coupon Section
+                        // Coupon Section (Deleted PrivilegePill per user requirement #1)
                         VStack(alignment: .leading, spacing: 12) {
                             HStack {
                                 Image(systemName: "ticket.fill")
@@ -265,7 +257,7 @@ struct MemberCardView: View {
                             }
                             .padding(.horizontal, 20)
                         }
-                        .padding(.bottom, 160) // Extra padding so it clears bottom tab bar
+                        .padding(.bottom, 160)
                     }
                 }
             }
@@ -280,43 +272,7 @@ struct MemberCardView: View {
     }
 }
 
-// Privilege Pill
-struct PrivilegePill: View {
-    let icon: String
-    let title: String
-    let subtitle: String
-    @AppStorage("isDarkMode") private var isDarkMode = false
-    
-    var body: some View {
-        Button(action: { SoundManager.shared.playTapSound() }) {
-            VStack(spacing: 4) {
-                ZStack {
-                    Circle()
-                        .fill(AppTheme.primaryGreen.opacity(0.12))
-                        .frame(width: 32, height: 32)
-                    Image(systemName: icon)
-                        .font(.system(size: 14))
-                        .foregroundColor(AppTheme.primaryGreen)
-                }
-                
-                Text(title)
-                    .font(.system(size: 12, weight: .bold))
-                    .foregroundColor(AppTheme.textPrimary(isDarkMode))
-                
-                Text(subtitle)
-                    .font(.system(size: 10))
-                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 10)
-            .background(AppTheme.cardBg(isDarkMode))
-            .clipShape(RoundedRectangle(cornerRadius: 14))
-            .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.03), radius: 4, x: 0, y: 2)
-        }
-    }
-}
-
-// Coupon Card View (Clean Badge Format)
+// Coupon Card View
 struct CouponCardView: View {
     let coupon: AppCoupon
     let isDark: Bool

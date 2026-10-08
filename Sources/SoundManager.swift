@@ -22,7 +22,7 @@ class SoundManager {
     // Play light click sound on tap
     func playTapSound() {
         guard isSoundEnabled else { return }
-        AudioServicesPlaySystemSound(1104) // Standard iOS camera/tap sound
+        AudioServicesPlaySystemSound(1104) // Soft iOS tap
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()
     }
@@ -30,15 +30,15 @@ class SoundManager {
     // Play add-to-cart sound
     func playAddToCartSound() {
         guard isSoundEnabled else { return }
-        AudioServicesPlaySystemSound(1057) // Tink sound
+        AudioServicesPlaySystemSound(1057) // Soft tink sound
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
     }
     
-    // Play order success sound
+    // Play order success sound (Soft pleasant chime)
     func playOrderSuccessSound() {
         guard isSoundEnabled else { return }
-        AudioServicesPlaySystemSound(1025) // Modern notification / chime
+        AudioServicesPlaySystemSound(1054) // Soft iOS success chime
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
     }
