@@ -26,6 +26,10 @@
 		659D25DAD26CA611BD36B666 /* StoreLocatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268834885F68BAD0307A149 /* StoreLocatorView.swift */; };
 		66FA570B6CFD8D090BD4AAF7 /* OrderProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B3A2415C7807A96B1D5CC /* OrderProgressView.swift */; };
 		B3F4736386783ABC0F9DA805 /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B3A2415C7807A96B1D5DD /* OrderHistoryView.swift */; };
+		B3F4736386783ABC0F9DA807 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B3A2415C7807A96B1D5FF /* LocationManager.swift */; };
+		66FA570B6CFD8D090BD4AAFA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B3A2415C7807A96B1D5FF /* LocationManager.swift */; };
+		B3F4736386783ABC0F9DA806 /* TaiwanStoresData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B3A2415C7807A96B1D5EE /* TaiwanStoresData.swift */; };
+		66FA570B6CFD8D090BD4AAF9 /* TaiwanStoresData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B3A2415C7807A96B1D5EE /* TaiwanStoresData.swift */; };
 		66FA570B6CFD8D090BD4AAF8 /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B3A2415C7807A96B1D5DD /* OrderHistoryView.swift */; };
 		6E93B8F5816C78DBD2EAB787 /* DrinkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A627F989B8B3760DF76D6D /* DrinkDetailView.swift */; };
 		733563D5F8B2D32B27F081FC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A65BFB0235EBE9A198615A /* MenuView.swift */; };
@@ -65,6 +69,8 @@
 		877121A6F441EEDD673E7CA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8A3B3A2415C7807A96B1D5CC /* OrderProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProgressView.swift; sourceTree = "<group>"; };
 		8A3B3A2415C7807A96B1D5DD /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
+		8A3B3A2415C7807A96B1D5FF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		8A3B3A2415C7807A96B1D5EE /* TaiwanStoresData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaiwanStoresData.swift; sourceTree = "<group>"; };
 		8F633B99B1442032D528A012 /* StoreMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMapView.swift; sourceTree = "<group>"; };
 		8FDCA9E38BF827881581AEEA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		9266D3C53CCEEDB978217167 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
@@ -92,6 +98,8 @@
 				8FDCA9E38BF827881581AEEA /* Models.swift */,
 				8A3B3A2415C7807A96B1D5CC /* OrderProgressView.swift */,
 				8A3B3A2415C7807A96B1D5DD /* OrderHistoryView.swift */,
+				8A3B3A2415C7807A96B1D5FF /* LocationManager.swift */,
+				8A3B3A2415C7807A96B1D5EE /* TaiwanStoresData.swift */,
 				C5E4EF70934EEA7C2CF08428 /* SettingsView.swift */,
 				80A68E795F43061CBC7ED1EE /* ShakingCupView.swift */,
 				B5B9F86B96964C3E3A63FC34 /* SoundManager.swift */,
@@ -242,6 +250,8 @@
 				43C2B2D3648D8C481FA44D12 /* Models.swift in Sources */,
 				66FA570B6CFD8D090BD4AAF7 /* OrderProgressView.swift in Sources */,
 				66FA570B6CFD8D090BD4AAF8 /* OrderHistoryView.swift in Sources */,
+				66FA570B6CFD8D090BD4AAFA /* LocationManager.swift in Sources */,
+				66FA570B6CFD8D090BD4AAF9 /* TaiwanStoresData.swift in Sources */,
 				963C3075373DA551FDED1544 /* SettingsView.swift in Sources */,
 				53B8121B690A8DD079752692 /* ShakingCupView.swift in Sources */,
 				31884DA9553E7381DF4E0D32 /* SoundManager.swift in Sources */,
@@ -266,6 +276,8 @@
 				12030C8415210A2E8A8986A5 /* Models.swift in Sources */,
 				B3F4736386783ABC0F9DA804 /* OrderProgressView.swift in Sources */,
 				B3F4736386783ABC0F9DA805 /* OrderHistoryView.swift in Sources */,
+				B3F4736386783ABC0F9DA807 /* LocationManager.swift in Sources */,
+				B3F4736386783ABC0F9DA806 /* TaiwanStoresData.swift in Sources */,
 				E7314DE4812C807DBEEF1FC1 /* SettingsView.swift in Sources */,
 				061615F3FDBC4B8E8425F1A1 /* ShakingCupView.swift in Sources */,
 				C4BDA133CFD063AE4E293C12 /* SoundManager.swift in Sources */,
@@ -405,6 +417,7 @@
 				CURRENT_PROJECT_VERSION = 4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "清心福全";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "需要您的定位權限以自動帶入外送地址與推薦附近的清心福全門市";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -425,6 +438,7 @@
 				CURRENT_PROJECT_VERSION = 4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "清心福全";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "需要您的定位權限以自動帶入外送地址與推薦附近的清心福全門市";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -445,6 +459,7 @@
 				CURRENT_PROJECT_VERSION = 4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "清心福全";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "需要您的定位權限以自動帶入外送地址與推薦附近的清心福全門市";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,6 +480,7 @@
 				CURRENT_PROJECT_VERSION = 4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "清心福全";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "需要您的定位權限以自動帶入外送地址與推薦附近的清心福全門市";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

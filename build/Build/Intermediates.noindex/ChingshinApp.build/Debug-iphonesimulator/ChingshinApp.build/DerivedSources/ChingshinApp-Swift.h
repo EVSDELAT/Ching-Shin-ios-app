@@ -347,6 +347,9 @@ extern "C" {
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreFoundation;
+@import CoreLocation;
+@import Foundation;
+@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -369,6 +372,16 @@ extern "C" {
 #endif
 
 #if defined(__OBJC__)
+
+@class CLLocationManager;
+@class CLLocation;
+SWIFT_CLASS("_TtC12ChingshinApp15LocationManager")
+@interface LocationManager : NSObject <CLLocationManagerDelegate>
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)locationManagerDidChangeAuthorization:(CLLocationManager * _Nonnull)manager;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
+@end
 
 @class NSCoder;
 SWIFT_CLASS("_TtC12ChingshinApp12PlayerUIView")
@@ -735,6 +748,9 @@ extern "C" {
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreFoundation;
+@import CoreLocation;
+@import Foundation;
+@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -757,6 +773,16 @@ extern "C" {
 #endif
 
 #if defined(__OBJC__)
+
+@class CLLocationManager;
+@class CLLocation;
+SWIFT_CLASS("_TtC12ChingshinApp15LocationManager")
+@interface LocationManager : NSObject <CLLocationManagerDelegate>
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)locationManagerDidChangeAuthorization:(CLLocationManager * _Nonnull)manager;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
+@end
 
 @class NSCoder;
 SWIFT_CLASS("_TtC12ChingshinApp12PlayerUIView")

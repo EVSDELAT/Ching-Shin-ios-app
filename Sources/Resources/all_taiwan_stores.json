@@ -1,0 +1,6498 @@
+[
+  {
+    "name": "清心福全 水林店",
+    "city": "雲林縣",
+    "district": "水林鄉",
+    "address": "雲林縣水林鄉水林路313號",
+    "phone": "",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 尖豐店",
+    "city": "苗栗縣",
+    "district": "頭屋鄉",
+    "address": "苗栗縣頭屋鄉尖豐路128號",
+    "phone": "037-682313",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 鐵道店",
+    "city": "新竹市",
+    "district": "北區",
+    "address": "新竹市北區鐵道路二段425號",
+    "phone": "03-5351638",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 延平店",
+    "city": "新竹市",
+    "district": "北區",
+    "address": "新竹市北區延平路一段262號",
+    "phone": "03-5225585",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東大店",
+    "city": "新竹市",
+    "district": "北區",
+    "address": "新竹市北區東大路四段216號",
+    "phone": "03-5360134",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "新竹市",
+    "district": "北區",
+    "address": "新竹市北區西大路416號",
+    "phone": "03-5250586",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 四維店",
+    "city": "新竹市",
+    "district": "北區",
+    "address": "新竹市北區林森路261號",
+    "phone": "03-5280369",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 西大店",
+    "city": "新竹市",
+    "district": "北區",
+    "address": "新竹市北區西大路650號",
+    "phone": "03-5246611",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 北大店",
+    "city": "新竹市",
+    "district": "北區",
+    "address": "新竹市北區中山路213號",
+    "phone": "03-5235906",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 水田店",
+    "city": "新竹市",
+    "district": "北區",
+    "address": "新竹市北區水田街85號",
+    "phone": "03-5351622",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 知本店",
+    "city": "台東縣",
+    "district": "台東市",
+    "address": "台東縣台東市知本路三段146號",
+    "phone": "089-516658",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 更生店",
+    "city": "台東縣",
+    "district": "台東市",
+    "address": "台東縣台東市更生路286號",
+    "phone": "089-336603",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 正氣店",
+    "city": "台東縣",
+    "district": "台東市",
+    "address": "台東縣台東市正氣路483號",
+    "phone": "089-361687",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "台東縣",
+    "district": "台東市",
+    "address": "台東縣台東市正氣路201號",
+    "phone": "089-333513",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 興業店",
+    "city": "嘉義市",
+    "district": "西區",
+    "address": "嘉義市西區興業西路339號",
+    "phone": "05-2867213",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 友愛店",
+    "city": "嘉義市",
+    "district": "西區",
+    "address": "嘉義市西區友愛路164號",
+    "phone": "05-2348666",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 世賢店",
+    "city": "嘉義市",
+    "district": "西區",
+    "address": "嘉義市西區文化路647號",
+    "phone": "05-2346611",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 仁愛店",
+    "city": "嘉義市",
+    "district": "西區",
+    "address": "嘉義市西區仁愛路472號",
+    "phone": "05-2284233",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文山店",
+    "city": "新竹縣",
+    "district": "芎林鄉",
+    "address": "新竹縣芎林鄉文山路521號",
+    "phone": "03-5921567",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "雲林縣",
+    "district": "二崙鄉",
+    "address": "雲林縣二崙鄉中山路207號",
+    "phone": "05-5993388",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 明德店",
+    "city": "基隆市",
+    "district": "七堵區",
+    "address": "基隆市七堵區明德一路117號",
+    "phone": "02-24561782",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 百三店",
+    "city": "基隆市",
+    "district": "七堵區",
+    "address": "基隆市七堵區百三街44號",
+    "phone": "02-24526565",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 高應大店",
+    "city": "高雄市",
+    "district": "三民區",
+    "address": "高雄市三民區大昌一路14號",
+    "phone": "07-3975911",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 建工店",
+    "city": "高雄市",
+    "district": "三民區",
+    "address": "高雄市三民區建工路563號",
+    "phone": "07-3965865",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 熱河店",
+    "city": "高雄市",
+    "district": "三民區",
+    "address": "高雄市三民區熱河一街142號",
+    "phone": "07-3131316",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 鼎中店",
+    "city": "高雄市",
+    "district": "三民區",
+    "address": "高雄市三民區鼎中路363號",
+    "phone": "07-3981488",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 鼎力店",
+    "city": "高雄市",
+    "district": "三民區",
+    "address": "高雄市三民區鼎力路298號",
+    "phone": "07-3108565",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 義華店",
+    "city": "高雄市",
+    "district": "三民區",
+    "address": "高雄市三民區義華路387號",
+    "phone": "07-3810122",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 樹德店",
+    "city": "高雄市",
+    "district": "三民區",
+    "address": "高雄市三民區建興路111號",
+    "phone": "07-3868211",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 自立店",
+    "city": "高雄市",
+    "district": "三民區",
+    "address": "高雄市三民區自立一路79號",
+    "phone": "07-2873168",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 九如店",
+    "city": "高雄市",
+    "district": "三民區",
+    "address": "高雄市三民區延吉街54號",
+    "phone": "07-3805555",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民權店",
+    "city": "桃園市",
+    "district": "八德區",
+    "address": "桃園市八德區介壽路二段1157號",
+    "phone": "",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 介壽店",
+    "city": "桃園市",
+    "district": "八德區",
+    "address": "桃園市八德區介壽路一段14號",
+    "phone": "03-2180408",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 廣福店",
+    "city": "桃園市",
+    "district": "八德區",
+    "address": "桃園市八德區廣福路146號",
+    "phone": "03-3661986",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 廣福二店",
+    "city": "桃園市",
+    "district": "八德區",
+    "address": "桃園市八德區興豐路318號",
+    "phone": "03-3685238",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 富裕店",
+    "city": "桃園市",
+    "district": "八德區",
+    "address": "桃園市八德區中華路169號",
+    "phone": "03-2171126",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 博愛店",
+    "city": "桃園市",
+    "district": "八德區",
+    "address": "桃園市八德區介壽路二段408號",
+    "phone": "03-3776169",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 和平店",
+    "city": "桃園市",
+    "district": "八德區",
+    "address": "桃園市八德區和平路228號",
+    "phone": "03-3641987",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 永豐店",
+    "city": "桃園市",
+    "district": "八德區",
+    "address": "桃園市八德區永豐路595號",
+    "phone": "03-3697758",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 勝興店",
+    "city": "苗栗縣",
+    "district": "三義鄉",
+    "address": "苗栗縣三義鄉中正路170-5號",
+    "phone": "037-878811",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民生店",
+    "city": "南投縣",
+    "district": "水里鄉",
+    "address": "南投縣水里鄉民生路303號",
+    "phone": "049-2871991",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 金門店",
+    "city": "金門縣",
+    "district": "金城鎮",
+    "address": "金門縣金城鎮民生路37-3號",
+    "phone": "082-375113",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "花蓮縣",
+    "district": "玉里鎮",
+    "address": "花蓮縣玉里鎮中山路二段66號",
+    "phone": "03-8882829",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 三星店",
+    "city": "宜蘭縣",
+    "district": "三星鄉",
+    "address": "宜蘭縣三星鄉三星路四段458號",
+    "phone": "03-9892988",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大崁店",
+    "city": "新北市",
+    "district": "八里區",
+    "address": "新北市八里區中山路一段96號",
+    "phone": "02-26182259",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 德行東店",
+    "city": "台北市",
+    "district": "士林區",
+    "address": "台北市士林區德行東路214號",
+    "phone": "02-28340211",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文大店",
+    "city": "台北市",
+    "district": "士林區",
+    "address": "台北市士林區光華路26巷4-2號",
+    "phone": "02-28626773",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 承德店",
+    "city": "台北市",
+    "district": "士林區",
+    "address": "台北市士林區承德路四段40巷145號",
+    "phone": "02-28861989",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 福華店",
+    "city": "台北市",
+    "district": "士林區",
+    "address": "台北市士林區福華路142號",
+    "phone": "02-28335151",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 陽明店",
+    "city": "台北市",
+    "district": "士林區",
+    "address": "台北市士林區文林路22號",
+    "phone": "02-28805757",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 社子店",
+    "city": "台北市",
+    "district": "士林區",
+    "address": "台北市士林區延平北路六段129號",
+    "phone": "02-28126988",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 天母店",
+    "city": "台北市",
+    "district": "士林區",
+    "address": "台北市士林區天母西路44號",
+    "phone": "02-28761717",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 蔣公店",
+    "city": "台中市",
+    "district": "大甲區",
+    "address": "台中市大甲區蔣公路223號",
+    "phone": "04-26882861",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 順天店",
+    "city": "台中市",
+    "district": "大甲區",
+    "address": "台中市大甲區順天路193號",
+    "phone": "04-26881565",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 通天店",
+    "city": "台中市",
+    "district": "大甲區",
+    "address": "台中市大甲區通天路218號",
+    "phone": "04-26811618",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 青年店",
+    "city": "台中市",
+    "district": "大甲區",
+    "address": "台中市大甲區青年路55號",
+    "phone": "04-26817080",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 光明店",
+    "city": "台中市",
+    "district": "大甲區",
+    "address": "台中市大甲區光明路19號",
+    "phone": "04-26761186",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 自由店",
+    "city": "新竹市",
+    "district": "東區",
+    "address": "新竹市東區自由路86號",
+    "phone": "03-5331577",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 關東店",
+    "city": "新竹市",
+    "district": "東區",
+    "address": "新竹市東區關東路2號",
+    "phone": "03-5670007",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 學府店",
+    "city": "新竹市",
+    "district": "東區",
+    "address": "新竹市東區學府路327號",
+    "phone": "03-5165200",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 寶山店",
+    "city": "新竹市",
+    "district": "東區",
+    "address": "新竹市東區寶山路122號",
+    "phone": "03-5629595",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 食品店",
+    "city": "新竹市",
+    "district": "東區",
+    "address": "新竹市東區食品路231號",
+    "phone": "03-5611367",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南大店",
+    "city": "新竹市",
+    "district": "東區",
+    "address": "新竹市東區南大路438號",
+    "phone": "03-5611316",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 明湖店",
+    "city": "新竹市",
+    "district": "東區",
+    "address": "新竹市東區南大路619號",
+    "phone": "03-5629787",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 金山店",
+    "city": "新竹市",
+    "district": "東區",
+    "address": "新竹市東區金山十街62號",
+    "phone": "03-6661608",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東門店",
+    "city": "新竹市",
+    "district": "東區",
+    "address": "新竹市東區東門街139號",
+    "phone": "03-5285058",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 忠孝店",
+    "city": "新竹市",
+    "district": "東區",
+    "address": "新竹市東區忠孝路245號",
+    "phone": "03-5721321",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新生店",
+    "city": "彰化縣",
+    "district": "二林鎮",
+    "address": "彰化縣二林鎮新生路10號",
+    "phone": "04-8958360",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 斗苑店",
+    "city": "彰化縣",
+    "district": "二林鎮",
+    "address": "彰化縣二林鎮斗苑路四段569號",
+    "phone": "04-8967711",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "彰化縣",
+    "district": "二林鎮",
+    "address": "彰化縣二林鎮中山路139號",
+    "phone": "04-8965569",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 吳鳳店",
+    "city": "嘉義市",
+    "district": "東區",
+    "address": "嘉義市東區吳鳳北路77號",
+    "phone": "05-2286518",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 台林店",
+    "city": "嘉義市",
+    "district": "東區",
+    "address": "嘉義市東區台林街122-1號",
+    "phone": "05-2763992",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大雅店",
+    "city": "嘉義市",
+    "district": "東區",
+    "address": "嘉義市東區大雅路二段656號",
+    "phone": "05-2779988",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 高鐵站前店",
+    "city": "新竹縣",
+    "district": "竹北市",
+    "address": "新竹縣竹北市高鐵二路36號",
+    "phone": "03-6683807",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 博愛店",
+    "city": "新竹縣",
+    "district": "竹北市",
+    "address": "新竹縣竹北市博愛街436號",
+    "phone": "03-5527263",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 仁愛店",
+    "city": "新竹縣",
+    "district": "竹北市",
+    "address": "新竹縣竹北市三民路257號",
+    "phone": "03-5533755",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 縣政店",
+    "city": "新竹縣",
+    "district": "竹北市",
+    "address": "新竹縣竹北市光明六路45號",
+    "phone": "03-5588658",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 博愛二店",
+    "city": "新竹縣",
+    "district": "竹北市",
+    "address": "新竹縣竹北市博愛街133號",
+    "phone": "03-5519335",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 光明店",
+    "city": "新竹縣",
+    "district": "竹北市",
+    "address": "新竹縣竹北市光明六路東一段255號",
+    "phone": "03-5503677",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文興店",
+    "city": "新竹縣",
+    "district": "竹北市",
+    "address": "新竹縣竹北市文興路一段196號",
+    "phone": "03-6682088",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正東店",
+    "city": "新竹縣",
+    "district": "竹北市",
+    "address": "新竹縣竹北市中正東路172號",
+    "phone": "03-5538176",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正西店",
+    "city": "新竹縣",
+    "district": "竹北市",
+    "address": "新竹縣竹北市中正西路81號",
+    "phone": "03-5518897",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 淡金店",
+    "city": "新北市",
+    "district": "三芝區",
+    "address": "新北市三芝區淡金路二段14號",
+    "phone": "02-26360700",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 馬光店",
+    "city": "雲林縣",
+    "district": "土庫鎮",
+    "address": "雲林縣土庫鎮馬光路70號",
+    "phone": "05-6653777",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中華店",
+    "city": "基隆市",
+    "district": "中山區",
+    "address": "基隆市中山區中華路5巷12號",
+    "phone": "02-24263737",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 復興店",
+    "city": "基隆市",
+    "district": "中山區",
+    "address": "基隆市中山區復興路160號",
+    "phone": "02-24373456",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 安一店",
+    "city": "基隆市",
+    "district": "中山區",
+    "address": "基隆市中山區安一路66號",
+    "phone": "02-24276761",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 義守中山店",
+    "city": "高雄市",
+    "district": "大社區",
+    "address": "高雄市大社區中山路209號",
+    "phone": "07-3526885",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 高鐵北店",
+    "city": "桃園市",
+    "district": "大園區",
+    "address": "桃園市大園區高鐵北路二段176號",
+    "phone": "03-2873029",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大觀店",
+    "city": "桃園市",
+    "district": "大園區",
+    "address": "桃園市大園區大觀路582號",
+    "phone": "03-3857008",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 菓林店",
+    "city": "桃園市",
+    "district": "大園區",
+    "address": "桃園市大園區菓林路41號",
+    "phone": "03-3933685",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中華店",
+    "city": "桃園市",
+    "district": "大園區",
+    "address": "桃園市大園區中華路13號",
+    "phone": "03-3853282",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正東店",
+    "city": "桃園市",
+    "district": "大園區",
+    "address": "桃園市大園區中正東路67號",
+    "phone": "03-3865968",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 富興店",
+    "city": "苗栗縣",
+    "district": "大湖鄉",
+    "address": "苗栗縣大湖鄉富興村25號",
+    "phone": "037-997022",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 廣濟店",
+    "city": "屏東縣",
+    "district": "內埔鄉",
+    "address": "屏東縣內埔鄉廣濟路96號",
+    "phone": "08-7690881",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 集山店",
+    "city": "南投縣",
+    "district": "竹山鎮",
+    "address": "南投縣竹山鎮集山路三段906號",
+    "phone": "049-2635221",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 集山二店",
+    "city": "南投縣",
+    "district": "竹山鎮",
+    "address": "南投縣竹山鎮集山路三段403號",
+    "phone": "049-2659139",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 社寮店",
+    "city": "南投縣",
+    "district": "竹山鎮",
+    "address": "南投縣竹山鎮集山路一段2071號",
+    "phone": "049-2622138",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 山外店",
+    "city": "金門縣",
+    "district": "金湖鎮",
+    "address": "金門縣金湖鎮黃海路9號",
+    "phone": "082-332238",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中華店",
+    "city": "花蓮縣",
+    "district": "吉安鄉",
+    "address": "花蓮縣吉安鄉中華路二段229號",
+    "phone": "03-8522719",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "花蓮縣",
+    "district": "吉安鄉",
+    "address": "花蓮縣吉安鄉中正路一段104號",
+    "phone": "03-8526120",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 花濃店",
+    "city": "花蓮縣",
+    "district": "吉安鄉",
+    "address": "花蓮縣吉安鄉建國路一段53-1號",
+    "phone": "03-8576667",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 利成店",
+    "city": "宜蘭縣",
+    "district": "五結鄉",
+    "address": "宜蘭縣五結鄉利成路一段26號",
+    "phone": "03-9500150",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 五結店",
+    "city": "宜蘭縣",
+    "district": "五結鄉",
+    "address": "宜蘭縣五結鄉五結路二段516號",
+    "phone": "03-9600699",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "宜蘭縣",
+    "district": "五結鄉",
+    "address": "宜蘭縣五結鄉中正路二段111號",
+    "phone": "03-9658099",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 協進店",
+    "city": "台南市",
+    "district": "中西區",
+    "address": "台南市中西區金華路四段42號",
+    "phone": "06-2216522",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 國華店",
+    "city": "台南市",
+    "district": "中西區",
+    "address": "台南市中西區府前路二段18號",
+    "phone": "06-2236822",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南寮店",
+    "city": "台東縣",
+    "district": "綠島鄉",
+    "address": "台東縣綠島鄉南寮村140號",
+    "phone": "089-672279",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 站前店",
+    "city": "台北市",
+    "district": "大同區",
+    "address": "台北市大同區長安西路52-1號",
+    "phone": "02-25110117捷運地下街南段(中山地下街A2~3號店舖）",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 迪化店",
+    "city": "台北市",
+    "district": "大同區",
+    "address": "台北市大同區南京西路233巷17號",
+    "phone": "02-25581177",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 寧夏店",
+    "city": "台北市",
+    "district": "大同區",
+    "address": "台北市大同區寧夏路25號",
+    "phone": "02-25581777",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 延平北店",
+    "city": "台北市",
+    "district": "大同區",
+    "address": "台北市大同區延平北路三段25-1號",
+    "phone": "02-25964768",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大龍店",
+    "city": "台北市",
+    "district": "大同區",
+    "address": "台北市大同區大龍街267號",
+    "phone": "02-25993301",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 塗城店",
+    "city": "台中市",
+    "district": "大里區",
+    "address": "台中市大里區塗城路766號",
+    "phone": "04-24933322",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 內新店",
+    "city": "台中市",
+    "district": "大里區",
+    "address": "台中市大里區新仁路二段75號",
+    "phone": "04-24836559",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 軟體園區店",
+    "city": "台中市",
+    "district": "大里區",
+    "address": "台中市大里區中興路一段288-11號",
+    "phone": "04-24960657",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新仁店",
+    "city": "台中市",
+    "district": "大里區",
+    "address": "台中市大里區新仁路一段123-9號",
+    "phone": "04-22759299",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 瑞和店",
+    "city": "台中市",
+    "district": "大里區",
+    "address": "台中市大里區塗城路575號",
+    "phone": "04-24936887",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 西湖店",
+    "city": "台中市",
+    "district": "大里區",
+    "address": "台中市大里區西湖路63號",
+    "phone": "04-24960805",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 仁愛店",
+    "city": "台中市",
+    "district": "大里區",
+    "address": "台中市大里區仁化路458-2號",
+    "phone": "04-24920357",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 國光店",
+    "city": "台中市",
+    "district": "大里區",
+    "address": "台中市大里區大里路238號",
+    "phone": "04-24079118",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 益民店",
+    "city": "台中市",
+    "district": "大里區",
+    "address": "台中市大里區益民路二段256號",
+    "phone": "04-24870618",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中興店",
+    "city": "台中市",
+    "district": "大里區",
+    "address": "台中市大里區中興路二段183-7號",
+    "phone": "04-24817168",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 光復店",
+    "city": "花蓮縣",
+    "district": "光復鄉",
+    "address": "花蓮縣光復鄉中山路二段309號",
+    "phone": "03-8700865",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 內湖店",
+    "city": "新竹市",
+    "district": "香山區",
+    "address": "新竹市香山區內湖路105號",
+    "phone": "03-5373799",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 牛埔東店",
+    "city": "新竹市",
+    "district": "香山區",
+    "address": "新竹市香山區牛埔東路292號",
+    "phone": "03-5306668",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大庄店",
+    "city": "新竹市",
+    "district": "香山區",
+    "address": "新竹市香山區大庄路46號",
+    "phone": "03-5387868",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 山腳店",
+    "city": "彰化縣",
+    "district": "大村鄉",
+    "address": "彰化縣大村鄉山腳路109-6號",
+    "phone": "04-8526687",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大仁店",
+    "city": "彰化縣",
+    "district": "大村鄉",
+    "address": "彰化縣大村鄉茄苳路一段38號",
+    "phone": "04-8536622",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 後庄新店",
+    "city": "嘉義縣",
+    "district": "中埔鄉",
+    "address": "嘉義縣中埔鄉中山路五段882號",
+    "phone": "05-2398123",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 北興店",
+    "city": "新竹縣",
+    "district": "竹東鎮",
+    "address": "新竹縣竹東鎮北興路一段608號",
+    "phone": "03-5941986",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 長春店",
+    "city": "新竹縣",
+    "district": "竹東鎮",
+    "address": "新竹縣竹東鎮長春路二段61號",
+    "phone": "03-5959843",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中豐店",
+    "city": "新竹縣",
+    "district": "竹東鎮",
+    "address": "新竹縣竹東鎮中豐路二段17號",
+    "phone": "03-5104577",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中興店",
+    "city": "新竹縣",
+    "district": "竹東鎮",
+    "address": "新竹縣竹東鎮長春路三段273號",
+    "phone": "03-5110866",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 延平店",
+    "city": "雲林縣",
+    "district": "大埤鄉",
+    "address": "雲林縣大埤鄉延平路三段6-2號",
+    "phone": "05-5916591",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中船店",
+    "city": "基隆市",
+    "district": "中正區",
+    "address": "基隆市中正區中船路88號",
+    "phone": "02-24260033",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 八斗子店",
+    "city": "基隆市",
+    "district": "中正區",
+    "address": "基隆市中正區北寧路392號",
+    "phone": "02-24696633",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 義一店",
+    "city": "基隆市",
+    "district": "中正區",
+    "address": "基隆市中正區義一路12號",
+    "phone": "02-24250713",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 海大店",
+    "city": "基隆市",
+    "district": "中正區",
+    "address": "基隆市中正區中正路782號",
+    "phone": "02-24626266",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全  光明店",
+    "city": "高雄市",
+    "district": "大寮區",
+    "address": "高雄市大寮區大寮路583號",
+    "phone": "07-7877272",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 埔頂店",
+    "city": "桃園市",
+    "district": "大溪區",
+    "address": "桃園市大溪區埔頂路二段112號",
+    "phone": "03-3900706",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 三元店",
+    "city": "桃園市",
+    "district": "大溪區",
+    "address": "桃園市大溪區員林路二段425號",
+    "phone": "03-3070123",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 復興店",
+    "city": "桃園市",
+    "district": "大溪區",
+    "address": "桃園市大溪區復興路19號",
+    "phone": "03-3874519",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 員林店",
+    "city": "桃園市",
+    "district": "大溪區",
+    "address": "桃園市大溪區員林路一段215-1號",
+    "phone": "03-3907517",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 五谷店",
+    "city": "苗栗縣",
+    "district": "公館鄉",
+    "address": "苗栗縣公館鄉五谷2鄰76號",
+    "phone": "037-229058",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大同店",
+    "city": "苗栗縣",
+    "district": "公館鄉",
+    "address": "苗栗縣公館鄉玉泉村362號",
+    "phone": "037-237711",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "屏東縣",
+    "district": "車城鄉",
+    "address": "屏東縣車城鄉中山路5-2號",
+    "phone": "08-8824316",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南雅店",
+    "city": "南投縣",
+    "district": "名間鄉",
+    "address": "南投縣名間鄉南雅街84號",
+    "phone": "049-2736068",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 廣興店",
+    "city": "宜蘭縣",
+    "district": "冬山鄉",
+    "address": "宜蘭縣冬山鄉廣興路30號",
+    "phone": "03-9510155",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 義成店",
+    "city": "宜蘭縣",
+    "district": "冬山鄉",
+    "address": "宜蘭縣冬山鄉義成路三段355號",
+    "phone": "03-9583999",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 冬山店",
+    "city": "宜蘭縣",
+    "district": "冬山鄉",
+    "address": "宜蘭縣冬山鄉冬山路一段1090號",
+    "phone": "03-9593177",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "台南市",
+    "district": "仁德區",
+    "address": "台南市仁德區中正路二段474號",
+    "phone": "06-2706369",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 集美店",
+    "city": "新北市",
+    "district": "三重區",
+    "address": "新北市三重區集美街136號",
+    "phone": "02-29738811",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 光復店",
+    "city": "新北市",
+    "district": "三重區",
+    "address": "新北市三重區光復路一段68巷42號",
+    "phone": "02-22781168",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 龍門店",
+    "city": "新北市",
+    "district": "三重區",
+    "address": "新北市三重區龍門路93號",
+    "phone": "02-29791121",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 長壽店",
+    "city": "新北市",
+    "district": "三重區",
+    "address": "新北市三重區三和路二段65號",
+    "phone": "02-29771000",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 溪尾店",
+    "city": "新北市",
+    "district": "三重區",
+    "address": "新北市三重區溪尾街243號",
+    "phone": "02-29883829",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 重陽店",
+    "city": "新北市",
+    "district": "三重區",
+    "address": "新北市三重區重陽路一段71號",
+    "phone": "02-29889932",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 自強店",
+    "city": "新北市",
+    "district": "三重區",
+    "address": "新北市三重區自強路一段208號",
+    "phone": "02-29881938",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 光明店",
+    "city": "新北市",
+    "district": "三重區",
+    "address": "新北市三重區光明路67-1號",
+    "phone": "02-29729559",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 正義南店",
+    "city": "新北市",
+    "district": "三重區",
+    "address": "新北市三重區正義南路35號",
+    "phone": "02-29782929",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 正義北店",
+    "city": "新北市",
+    "district": "三重區",
+    "address": "新北市三重區正義北路219號",
+    "phone": "02-29872998",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 台科大店",
+    "city": "台北市",
+    "district": "大安區",
+    "address": "台北市大安區基隆路四段43號(台科大學生活動中心第一餐廳)",
+    "phone": "02-27328277",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 師大店",
+    "city": "台北市",
+    "district": "大安區",
+    "address": "台北市大安區師大路108號",
+    "phone": "02-23658887",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 金山南店",
+    "city": "台北市",
+    "district": "大安區",
+    "address": "台北市大安區金山南路二段27-1號",
+    "phone": "02-23948058",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 忠孝SOGO店",
+    "city": "台北市",
+    "district": "大安區",
+    "address": "台北市大安區大安路一段31巷2號",
+    "phone": "02-27722031",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 和平東店",
+    "city": "台北市",
+    "district": "大安區",
+    "address": "台北市大安區和平東路三段294號",
+    "phone": "02-87327588",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 成功店",
+    "city": "台北市",
+    "district": "大安區",
+    "address": "台北市大安區復興南路二段151巷49號",
+    "phone": "02-27014040",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 市民店",
+    "city": "台北市",
+    "district": "大安區",
+    "address": "台北市大安區市民大道三段136號",
+    "phone": "02-27772151",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大安店",
+    "city": "台北市",
+    "district": "大安區",
+    "address": "台北市大安區大安路一段229號",
+    "phone": "02-23256696",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 遊園二店",
+    "city": "台中市",
+    "district": "大肚區",
+    "address": "台中市大肚區遊園路二段37號",
+    "phone": "04-26911908",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 沙田店",
+    "city": "台中市",
+    "district": "大肚區",
+    "address": "台中市大肚區沙田路二段548-2號",
+    "phone": "04-26990986",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 沙田二店",
+    "city": "台中市",
+    "district": "大肚區",
+    "address": "台中市大肚區沙田路一段327號",
+    "phone": "04-26932067",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 六甲店",
+    "city": "台南市",
+    "district": "六甲區",
+    "address": "台南市六甲區中正路452-2號",
+    "phone": "06-6986699",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 壯圍店",
+    "city": "宜蘭縣",
+    "district": "壯圍鄉",
+    "address": "宜蘭縣壯圍鄉壯五路323號",
+    "phone": "03-9388991",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新港店",
+    "city": "花蓮縣",
+    "district": "花蓮市",
+    "address": "花蓮縣花蓮市新港街67號",
+    "phone": "03-8325218",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 華西店",
+    "city": "花蓮縣",
+    "district": "花蓮市",
+    "address": "花蓮縣花蓮市民心里華西117-3號",
+    "phone": "03-8222997",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中美店",
+    "city": "花蓮縣",
+    "district": "花蓮市",
+    "address": "花蓮縣花蓮市中美路151號",
+    "phone": "03-8222993",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "花蓮縣",
+    "district": "花蓮市",
+    "address": "花蓮縣花蓮市中山路568號",
+    "phone": "03-8577963",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南平店",
+    "city": "彰化縣",
+    "district": "大城鄉",
+    "address": "彰化縣大城鄉南平路339號",
+    "phone": "04-8942288",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 八德店",
+    "city": "新竹縣",
+    "district": "湖口鄉",
+    "address": "新竹縣湖口鄉八德路三段67號",
+    "phone": "03-5996708",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 勝利店",
+    "city": "新竹縣",
+    "district": "湖口鄉",
+    "address": "新竹縣湖口鄉勝利路二段116號",
+    "phone": "03-5983277",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 成功店",
+    "city": "新竹縣",
+    "district": "湖口鄉",
+    "address": "新竹縣湖口鄉成功路92號",
+    "phone": "03-5997238",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民權店",
+    "city": "新竹縣",
+    "district": "湖口鄉",
+    "address": "新竹縣湖口鄉民權街36-2號",
+    "phone": "03-6993767",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 仁和店",
+    "city": "新竹縣",
+    "district": "湖口鄉",
+    "address": "新竹縣湖口鄉仁和路141號",
+    "phone": "03-6960522",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 工業店",
+    "city": "新竹縣",
+    "district": "湖口鄉",
+    "address": "新竹縣湖口鄉工業一路25號",
+    "phone": "03-5983077",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南榮店",
+    "city": "基隆市",
+    "district": "仁愛區",
+    "address": "基隆市仁愛區南榮路235號",
+    "phone": "02-24249777",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 孝三店",
+    "city": "基隆市",
+    "district": "仁愛區",
+    "address": "基隆市仁愛區忠二路39號",
+    "phone": "02-24288800",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 仁四店",
+    "city": "基隆市",
+    "district": "仁愛區",
+    "address": "基隆市仁愛區仁四路58號",
+    "phone": "02-24277676",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中興店",
+    "city": "高雄市",
+    "district": "大樹區",
+    "address": "高雄市大樹區九曲路646號",
+    "phone": "07-6512876",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 領航新生店",
+    "city": "桃園市",
+    "district": "中壢區",
+    "address": "桃園市中壢區新生路三段803號",
+    "phone": "03-4531229",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大崙店",
+    "city": "桃園市",
+    "district": "中壢區",
+    "address": "桃園市中壢區中正路三段148號",
+    "phone": "03-4980536",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 元化店",
+    "city": "桃園市",
+    "district": "中壢區",
+    "address": "桃園市中壢區元化路145號",
+    "phone": "03-4256222",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 青埔店",
+    "city": "桃園市",
+    "district": "中壢區",
+    "address": "桃園市中壢區永信路203號",
+    "phone": "03-2872893",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 嘉興店",
+    "city": "桃園市",
+    "district": "中壢區",
+    "address": "桃園市中壢區中北路二段477號",
+    "phone": "03-4375599",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新富店",
+    "city": "桃園市",
+    "district": "中壢區",
+    "address": "桃園市中壢區民族路六段652號",
+    "phone": "03-4936662",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 雙榮店",
+    "city": "桃園市",
+    "district": "中壢區",
+    "address": "桃園市中壢區民族路五段479號",
+    "phone": "03-4204568",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 環北店",
+    "city": "桃園市",
+    "district": "中壢區",
+    "address": "桃園市中壢區環北路533號",
+    "phone": "03-4552212",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 龍東店",
+    "city": "桃園市",
+    "district": "中壢區",
+    "address": "桃園市中壢區龍東路358號",
+    "phone": "03-4659066",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 龍昌店",
+    "city": "桃園市",
+    "district": "中壢區",
+    "address": "桃園市中壢區龍昌路276號",
+    "phone": "03-4560099",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 公義店",
+    "city": "苗栗縣",
+    "district": "竹南鎮",
+    "address": "苗栗縣竹南鎮公義路1126號",
+    "phone": "037-585577",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 公園店",
+    "city": "苗栗縣",
+    "district": "竹南鎮",
+    "address": "苗栗縣竹南鎮公園路108號",
+    "phone": "037-630060",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 龍山店",
+    "city": "苗栗縣",
+    "district": "竹南鎮",
+    "address": "苗栗縣竹南鎮龍山路三段333號",
+    "phone": "037-629992",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 龍鳳店",
+    "city": "苗栗縣",
+    "district": "竹南鎮",
+    "address": "苗栗縣竹南鎮龍山路一段127號",
+    "phone": "037-551695",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 光復店",
+    "city": "苗栗縣",
+    "district": "竹南鎮",
+    "address": "苗栗縣竹南鎮光復路204號",
+    "phone": "037-550919",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民治店",
+    "city": "苗栗縣",
+    "district": "竹南鎮",
+    "address": "苗栗縣竹南鎮民治街42號",
+    "phone": "037-551929",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中華店",
+    "city": "苗栗縣",
+    "district": "竹南鎮",
+    "address": "苗栗縣竹南鎮中華路105號",
+    "phone": "037-688848",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 玉田店",
+    "city": "屏東縣",
+    "district": "里港鄉",
+    "address": "屏東縣里港鄉玉田路67-5號",
+    "phone": "08-7721711",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 佑民店",
+    "city": "南投縣",
+    "district": "草屯鎮",
+    "address": "南投縣草屯鎮太平路一段209號",
+    "phone": "049-2391988",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 碧山南店",
+    "city": "南投縣",
+    "district": "草屯鎮",
+    "address": "南投縣草屯鎮碧山南路9號",
+    "phone": "049-2301088",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南開店",
+    "city": "南投縣",
+    "district": "草屯鎮",
+    "address": "南投縣草屯鎮中正路557-39號",
+    "phone": "049-2568568",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 虎山店",
+    "city": "南投縣",
+    "district": "草屯鎮",
+    "address": "南投縣草屯鎮虎山路505號",
+    "phone": "049-2312181",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 芬草店",
+    "city": "南投縣",
+    "district": "草屯鎮",
+    "address": "南投縣草屯鎮芬草路一段7號",
+    "phone": "049-2367586",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "南投縣",
+    "district": "草屯鎮",
+    "address": "南投縣草屯鎮中正路618號",
+    "phone": "049-2333886",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大學店",
+    "city": "新北市",
+    "district": "三峽區",
+    "address": "新北市三峽區國際一街36號",
+    "phone": "02-26731238",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大義店",
+    "city": "新北市",
+    "district": "三峽區",
+    "address": "新北市三峽區大義路11號",
+    "phone": "02-26742329",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文化店",
+    "city": "新北市",
+    "district": "三峽區",
+    "address": "新北市三峽區文化路16號",
+    "phone": "02-26742202",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中華店",
+    "city": "新北市",
+    "district": "三峽區",
+    "address": "新北市三峽區中華路21號",
+    "phone": "02-26747547",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新長春店",
+    "city": "台北市",
+    "district": "中山區",
+    "address": "台北市中山區長春路354號",
+    "phone": "02-27192519",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民生東店",
+    "city": "台北市",
+    "district": "中山區",
+    "address": "台北市中山區遼寧街43號",
+    "phone": "02-27733737",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 長春二店",
+    "city": "台北市",
+    "district": "中山區",
+    "address": "台北市中山區長春路120號",
+    "phone": "02-25315657",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 德惠店",
+    "city": "台北市",
+    "district": "中山區",
+    "address": "台北市中山區吉林路423號",
+    "phone": "02-25860202",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 復興北店",
+    "city": "台北市",
+    "district": "中山區",
+    "address": "台北市中山區復興北路514巷62號",
+    "phone": "02-25007119",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 松江店",
+    "city": "台北市",
+    "district": "中山區",
+    "address": "台北市中山區錦州街247-1號",
+    "phone": "02-25042858",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 光華店",
+    "city": "台北市",
+    "district": "中山區",
+    "address": "台北市中山區長安東路二段46號",
+    "phone": "02-25423939",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 北安店",
+    "city": "台北市",
+    "district": "中山區",
+    "address": "台北市中山區北安路595巷35號",
+    "phone": "02-25330098",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大直店",
+    "city": "台北市",
+    "district": "中山區",
+    "address": "台北市中山區北安路528號",
+    "phone": "02-25335922",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 學府店",
+    "city": "台中市",
+    "district": "大雅區",
+    "address": "台中市大雅區學府路162號",
+    "phone": "04-25601753",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 永和店",
+    "city": "台中市",
+    "district": "大雅區",
+    "address": "台中市大雅區永和路134-4號",
+    "phone": "04-25692373",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民生店",
+    "city": "台中市",
+    "district": "大雅區",
+    "address": "台中市大雅區民生路一段185號",
+    "phone": "04-25602727",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中清店",
+    "city": "台中市",
+    "district": "大雅區",
+    "address": "台中市大雅區中清路四段863號",
+    "phone": "04-25608516",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 瑞穗店",
+    "city": "花蓮縣",
+    "district": "瑞穗鄉",
+    "address": "花蓮縣瑞穗鄉中正南路一段5號",
+    "phone": "03-8870123",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 基金店",
+    "city": "基隆市",
+    "district": "安樂區",
+    "address": "基隆市安樂區基金一路196號",
+    "phone": "02-24316111",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 麥金店",
+    "city": "基隆市",
+    "district": "安樂區",
+    "address": "基隆市安樂區麥金路202號",
+    "phone": "02-24320380",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新東店",
+    "city": "苗栗縣",
+    "district": "苗栗市",
+    "address": "苗栗縣苗栗市新東街140號",
+    "phone": "037-360339",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 為公店",
+    "city": "苗栗縣",
+    "district": "苗栗市",
+    "address": "苗栗縣苗栗市為公路222號",
+    "phone": "037-270711",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 府前店",
+    "city": "苗栗縣",
+    "district": "苗栗市",
+    "address": "苗栗縣苗栗市府前路105號",
+    "phone": "037-370211",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文昌店",
+    "city": "苗栗縣",
+    "district": "苗栗市",
+    "address": "苗栗縣苗栗市玉清街16巷1號旁(玉清宮對面)",
+    "phone": "037-371336",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "苗栗縣",
+    "district": "苗栗市",
+    "address": "苗栗縣苗栗市中正路1062號",
+    "phone": "037-333259",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 陽明店",
+    "city": "宜蘭縣",
+    "district": "宜蘭市",
+    "address": "宜蘭縣宜蘭市校舍路133號",
+    "phone": "03-9389008",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 泰山店",
+    "city": "宜蘭縣",
+    "district": "宜蘭市",
+    "address": "宜蘭縣宜蘭市泰山路235號",
+    "phone": "03-9313166",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大仕店",
+    "city": "宜蘭縣",
+    "district": "宜蘭市",
+    "address": "宜蘭縣宜蘭市進士路110號",
+    "phone": "03-9361128",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 舊城南店",
+    "city": "宜蘭縣",
+    "district": "宜蘭市",
+    "address": "宜蘭縣宜蘭市舊城南路38號",
+    "phone": "03-9330763",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "宜蘭縣",
+    "district": "宜蘭市",
+    "address": "宜蘭縣宜蘭市中山路三段200號",
+    "phone": "03-9361661",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東港店",
+    "city": "宜蘭縣",
+    "district": "宜蘭市",
+    "address": "宜蘭縣宜蘭市東港路二段426號",
+    "phone": "03-9382566",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中華店",
+    "city": "彰化縣",
+    "district": "北斗鎮",
+    "address": "彰化縣北斗鎮中華路340號",
+    "phone": "04-8870161",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中華二店",
+    "city": "彰化縣",
+    "district": "北斗鎮",
+    "address": "彰化縣北斗鎮中華路46號",
+    "phone": "04-8876611",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中州店",
+    "city": "彰化縣",
+    "district": "北斗鎮",
+    "address": "彰化縣北斗鎮中州路二段532號",
+    "phone": "04-8875718",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文山店",
+    "city": "新竹縣",
+    "district": "新埔鎮",
+    "address": "新竹縣新埔鎮文山路犂頭山段889號",
+    "phone": "03-5886527",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "新竹縣",
+    "district": "新埔鎮",
+    "address": "新竹縣新埔鎮中正路716號",
+    "phone": "03-5888129",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "雲林縣",
+    "district": "元長鄉",
+    "address": "雲林縣元長鄉中山路22-10號",
+    "phone": "05-7889600",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 二苓店",
+    "city": "高雄市",
+    "district": "小港區",
+    "address": "高雄市小港區小港路299號",
+    "phone": "07-8218586",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 漢民店",
+    "city": "高雄市",
+    "district": "小港區",
+    "address": "高雄市小港區崇文路5號",
+    "phone": "07-8065885",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 金隆店",
+    "city": "桃園市",
+    "district": "平鎮區",
+    "address": "桃園市平鎮區金陵路三段110號",
+    "phone": "03-4596611",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 育達店",
+    "city": "桃園市",
+    "district": "平鎮區",
+    "address": "桃園市平鎮區育達路119號",
+    "phone": "03-4026683",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 宋屋店",
+    "city": "桃園市",
+    "district": "平鎮區",
+    "address": "桃園市平鎮區延平路三段39號",
+    "phone": "03-4020099",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 平東店",
+    "city": "桃園市",
+    "district": "平鎮區",
+    "address": "桃園市平鎮區平東路31號",
+    "phone": "03-4508889",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文化店",
+    "city": "桃園市",
+    "district": "平鎮區",
+    "address": "桃園市平鎮區文化街190號",
+    "phone": "03-2813131",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中豐店",
+    "city": "桃園市",
+    "district": "平鎮區",
+    "address": "桃園市平鎮區中豐路南勢二段159號",
+    "phone": "03-4392311",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 山頂店",
+    "city": "桃園市",
+    "district": "平鎮區",
+    "address": "桃園市平鎮區中豐路山頂段158號",
+    "phone": "03-4195123",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 義民店",
+    "city": "桃園市",
+    "district": "平鎮區",
+    "address": "桃園市平鎮區延平路二段98號",
+    "phone": "03-4029393",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 龍南店",
+    "city": "桃園市",
+    "district": "平鎮區",
+    "address": "桃園市平鎮區龍南路10號",
+    "phone": "03-4606166",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中央店",
+    "city": "桃園市",
+    "district": "平鎮區",
+    "address": "桃園市平鎮區中央路171號",
+    "phone": "03-4202777",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 林邊店",
+    "city": "屏東縣",
+    "district": "林邊鄉",
+    "address": "屏東縣林邊鄉中山路203號",
+    "phone": "08-8754681",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "南投縣",
+    "district": "南投市",
+    "address": "南投縣南投市中正路222-1號",
+    "phone": "049-2370589",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 彰南店",
+    "city": "南投縣",
+    "district": "南投市",
+    "address": "南投縣南投市集賢路42號",
+    "phone": "049-2235318",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南陽店",
+    "city": "南投縣",
+    "district": "南投市",
+    "address": "南投縣南投市南陽路82號",
+    "phone": "049-2205358",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南崗店",
+    "city": "南投縣",
+    "district": "南投市",
+    "address": "南投縣南投市南崗二路322號",
+    "phone": "049-2225532",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中興店",
+    "city": "南投縣",
+    "district": "南投市",
+    "address": "南投縣南投市南崗一路13號",
+    "phone": "049-2226630",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "南投縣",
+    "district": "南投市",
+    "address": "南投縣南投市中山街228號",
+    "phone": "049-2221317",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 玉井店",
+    "city": "台南市",
+    "district": "玉井區",
+    "address": "台南市玉井區中華路245號",
+    "phone": "06-5741668",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新中央店",
+    "city": "新北市",
+    "district": "土城區",
+    "address": "新北市土城區慶安街107號",
+    "phone": "02-22637528",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 員福店",
+    "city": "新北市",
+    "district": "土城區",
+    "address": "新北市土城區學府路二段18號",
+    "phone": "02-22638282",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 亞洲店",
+    "city": "新北市",
+    "district": "土城區",
+    "address": "新北市土城區亞洲路19號",
+    "phone": "02-29280000",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 學府店",
+    "city": "新北市",
+    "district": "土城區",
+    "address": "新北市土城區學府路一段144巷2號",
+    "phone": "02-22635050",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 頂埔店",
+    "city": "新北市",
+    "district": "土城區",
+    "address": "新北市土城區中央路四段89號",
+    "phone": "02-22690022",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 裕生店",
+    "city": "新北市",
+    "district": "土城區",
+    "address": "新北市土城區裕生路10號",
+    "phone": "02-22638618",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 清水店",
+    "city": "新北市",
+    "district": "土城區",
+    "address": "新北市土城區清水路62號",
+    "phone": "02-22637378",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 延吉店",
+    "city": "新北市",
+    "district": "土城區",
+    "address": "新北市土城區延吉街90號",
+    "phone": "02-82615779",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 安和店",
+    "city": "新北市",
+    "district": "土城區",
+    "address": "新北市土城區延和路35號",
+    "phone": "02-22631891",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 站前二店",
+    "city": "台北市",
+    "district": "中正區",
+    "address": "台北市中正區忠孝西路一段50-1號(站前地下街6號廣場)",
+    "phone": "02-22501177",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 公館店",
+    "city": "台北市",
+    "district": "中正區",
+    "address": "台北市中正區羅斯福路三段316巷1-6號",
+    "phone": "02-23682363",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 泉州店",
+    "city": "台北市",
+    "district": "中正區",
+    "address": "台北市中正區泉州街14號",
+    "phone": "02-23075200",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中華店",
+    "city": "台北市",
+    "district": "中正區",
+    "address": "台北市中正區中華路二段307巷6號",
+    "phone": "02-23091959",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 開封店",
+    "city": "台北市",
+    "district": "中正區",
+    "address": "台北市中正區開封街一段64號",
+    "phone": "02-23710880",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 信陽店",
+    "city": "台北市",
+    "district": "中正區",
+    "address": "台北市中正區信陽街6-1號",
+    "phone": "02-23753889",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 青島東店",
+    "city": "台北市",
+    "district": "中正區",
+    "address": "台北市中正區杭州南路一段10號",
+    "phone": "02-33225069",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 太平店",
+    "city": "台中市",
+    "district": "太平區",
+    "address": "台中市太平區太平路195號",
+    "phone": "04-22758779",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "台中市",
+    "district": "太平區",
+    "address": "台中市太平區中山路三段74號",
+    "phone": "04-23930885",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新福新店",
+    "city": "台中市",
+    "district": "太平區",
+    "address": "台中市太平區中山路四段203號",
+    "phone": "04-23950022",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 樹孝店",
+    "city": "台中市",
+    "district": "太平區",
+    "address": "台中市太平區樹孝路95號",
+    "phone": "04-23937717",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 樹德店",
+    "city": "台中市",
+    "district": "太平區",
+    "address": "台中市太平區樹德路93號",
+    "phone": "04-23952002",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 勤益店",
+    "city": "台中市",
+    "district": "太平區",
+    "address": "台中市太平區中山路一段272號",
+    "phone": "04-23918688",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東平店",
+    "city": "台中市",
+    "district": "太平區",
+    "address": "台中市太平區東平路495號",
+    "phone": "04-22730369",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中興店",
+    "city": "台中市",
+    "district": "太平區",
+    "address": "台中市太平區中興路140號",
+    "phone": "04-22758779",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中州店",
+    "city": "彰化縣",
+    "district": "田中鎮",
+    "address": "彰化縣田中鎮中州路一段90號",
+    "phone": "04-8763632",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 昇平店",
+    "city": "嘉義縣",
+    "district": "民雄鄉",
+    "address": "嘉義縣民雄鄉昇平路70號",
+    "phone": "05-2260297",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新興店",
+    "city": "新竹縣",
+    "district": "新豐鄉",
+    "address": "新竹縣新豐鄉新興路39號",
+    "phone": "03-5576815",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新市店",
+    "city": "新竹縣",
+    "district": "新豐鄉",
+    "address": "新竹縣新豐鄉新市路57號",
+    "phone": "03-5575388",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 建興店",
+    "city": "新竹縣",
+    "district": "新豐鄉",
+    "address": "新竹縣新豐鄉建興路一段143號",
+    "phone": "03-5578738",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文化店",
+    "city": "雲林縣",
+    "district": "斗六市",
+    "address": "雲林縣斗六市文化路191號",
+    "phone": "05-5351099",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 斗六店",
+    "city": "雲林縣",
+    "district": "斗六市",
+    "address": "雲林縣斗六市雲林路一段33號",
+    "phone": "05-5351906",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 深溪店",
+    "city": "基隆市",
+    "district": "信義區",
+    "address": "基隆市信義區深溪路106號",
+    "phone": "02-24662203",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東信店",
+    "city": "基隆市",
+    "district": "信義區",
+    "address": "基隆市信義區東信路184號",
+    "phone": "02-24660033",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 信二店",
+    "city": "基隆市",
+    "district": "信義區",
+    "address": "基隆市信義區信二路185號",
+    "phone": "02-24231587",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 仁雄店",
+    "city": "高雄市",
+    "district": "仁武區",
+    "address": "高雄市仁武區仁雄路42-8號",
+    "phone": "07-3741699",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 仁雄二店",
+    "city": "高雄市",
+    "district": "仁武區",
+    "address": "高雄市仁武區八德中路197號",
+    "phone": "07-3715616",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 仁武店",
+    "city": "高雄市",
+    "district": "仁武區",
+    "address": "高雄市仁武區中正路237-1號",
+    "phone": "07-3745616",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 藝文店",
+    "city": "桃園市",
+    "district": "桃園區",
+    "address": "桃園市桃園區南平路440號",
+    "phone": "03-3588823",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 龍壽店",
+    "city": "桃園市",
+    "district": "桃園區",
+    "address": "桃園市桃園區龍壽街52號",
+    "phone": "03-3709111",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 莊敬店",
+    "city": "桃園市",
+    "district": "桃園區",
+    "address": "桃園市桃園區莊敬路二段40號",
+    "phone": "03-3020915",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 國際店",
+    "city": "桃園市",
+    "district": "桃園區",
+    "address": "桃園市桃園區國際路二段430號",
+    "phone": "03-3609816",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 復興店",
+    "city": "桃園市",
+    "district": "桃園區",
+    "address": "桃園市桃園區復興路369-1號",
+    "phone": "03-3395755",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 寶山店",
+    "city": "桃園市",
+    "district": "桃園區",
+    "address": "桃園市桃園區寶山街70號",
+    "phone": "03-3568281",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 建國店",
+    "city": "桃園市",
+    "district": "桃園區",
+    "address": "桃園市桃園區桃鶯路347號",
+    "phone": "03-3761234",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 站前店",
+    "city": "桃園市",
+    "district": "桃園區",
+    "address": "桃園市桃園區復興路119-1號",
+    "phone": "03-3339009",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正二店",
+    "city": "桃園市",
+    "district": "桃園區",
+    "address": "桃園市桃園區中正路666號",
+    "phone": "03-3469977",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 龍安店",
+    "city": "桃園市",
+    "district": "桃園區",
+    "address": "桃園市桃園區龍安街172-2號",
+    "phone": "03-3780055",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 世界店",
+    "city": "苗栗縣",
+    "district": "苑裡鎮",
+    "address": "苗栗縣苑裡鎮新興路118號",
+    "phone": "037-851351",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 站前店",
+    "city": "苗栗縣",
+    "district": "苑裡鎮",
+    "address": "苗栗縣苑裡鎮為公路58號",
+    "phone": "037-867688",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 水底寮店",
+    "city": "屏東縣",
+    "district": "枋寮鄉",
+    "address": "屏東縣枋寮鄉中山路二段238-3號",
+    "phone": "08-8711111",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "屏東縣",
+    "district": "枋寮鄉",
+    "address": "屏東縣枋寮鄉中山路232號",
+    "phone": "08-8787656",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南盛店",
+    "city": "南投縣",
+    "district": "埔里鎮",
+    "address": "南投縣埔里鎮中山路二段163號",
+    "phone": "049-2990186",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 忠孝店",
+    "city": "南投縣",
+    "district": "埔里鎮",
+    "address": "南投縣埔里鎮忠孝路158號",
+    "phone": "049-2995339",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "南投縣",
+    "district": "埔里鎮",
+    "address": "南投縣埔里鎮中山路二段283號",
+    "phone": "049-2993156",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "南投縣",
+    "district": "埔里鎮",
+    "address": "南投縣埔里鎮中山路三段597號",
+    "phone": "049-2913008",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 北埔店",
+    "city": "花蓮縣",
+    "district": "新城鄉",
+    "address": "花蓮縣新城鄉北埔村民有街275號",
+    "phone": "03-8269806",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 員山店",
+    "city": "宜蘭縣",
+    "district": "員山鄉",
+    "address": "宜蘭縣員山鄉員山路一段156號",
+    "phone": "03-9232121",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新公園店",
+    "city": "台南市",
+    "district": "北區",
+    "address": "台南市北區公園路822-1號",
+    "phone": "06-2515816",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 武聖店",
+    "city": "台南市",
+    "district": "北區",
+    "address": "台南市北區武聖路28號",
+    "phone": "06-3580676",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 育德總店",
+    "city": "台南市",
+    "district": "北區",
+    "address": "台南市北區育德路520號",
+    "phone": "06-2519686",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文成店",
+    "city": "台南市",
+    "district": "北區",
+    "address": "台南市北區文賢三街128號",
+    "phone": "06-3581886",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 公園南店",
+    "city": "台南市",
+    "district": "北區",
+    "address": "台南市北區公園南路259號",
+    "phone": "06-2203718",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大興店",
+    "city": "台南市",
+    "district": "北區",
+    "address": "台南市北區中華北路一段136號",
+    "phone": "06-3501698",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 凌雲店",
+    "city": "新北市",
+    "district": "五股區",
+    "address": "新北市五股區成泰路三段482號",
+    "phone": "02-22936636",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 工商店",
+    "city": "新北市",
+    "district": "五股區",
+    "address": "新北市五股區工商路96號",
+    "phone": "02-82954587",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 碧湖店",
+    "city": "台北市",
+    "district": "內湖區",
+    "address": "台北市內湖區內湖路二段369號",
+    "phone": "02-87910234",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新明店",
+    "city": "台北市",
+    "district": "內湖區",
+    "address": "台北市內湖區新明路244號",
+    "phone": "02-27903186",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 港墘店",
+    "city": "台北市",
+    "district": "內湖區",
+    "address": "台北市內湖區內湖路一段737巷56號",
+    "phone": "02-27996737",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東湖店",
+    "city": "台北市",
+    "district": "內湖區",
+    "address": "台北市內湖區東湖路146號",
+    "phone": "02-26306626",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 西湖店",
+    "city": "台北市",
+    "district": "內湖區",
+    "address": "台北市內湖區內湖路一段285巷3號",
+    "phone": "02-87971968",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 日新店",
+    "city": "台中市",
+    "district": "中區",
+    "address": "台中市中區中山路321號",
+    "phone": "04-22262225",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大誠店",
+    "city": "台中市",
+    "district": "中區",
+    "address": "台中市中區大誠街92號",
+    "phone": "04-22073211",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中興店",
+    "city": "南投縣",
+    "district": "國姓鄉",
+    "address": "南投縣國姓鄉中興路213號",
+    "phone": "049-2721199",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "台南市",
+    "district": "白河區",
+    "address": "台南市白河區中山路6-1號",
+    "phone": "06-6830001",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 暖暖店",
+    "city": "基隆市",
+    "district": "暖暖區",
+    "address": "基隆市暖暖區東勢街1-15號",
+    "phone": "02-24579933",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "彰化縣",
+    "district": "田尾鄉",
+    "address": "彰化縣田尾鄉中山路二段509號",
+    "phone": "04-8238811",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 朴子二店",
+    "city": "嘉義縣",
+    "district": "朴子市",
+    "address": "嘉義縣朴子市應菜埔路37-24號",
+    "phone": "05-3796662",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 山通店",
+    "city": "嘉義縣",
+    "district": "朴子市",
+    "address": "嘉義縣朴子市海通路33號",
+    "phone": "05-3792288",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "新竹縣",
+    "district": "橫山鄉",
+    "address": "新竹縣橫山鄉中正路83號",
+    "phone": "03-5849155",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文元店",
+    "city": "雲林縣",
+    "district": "斗南鎮",
+    "address": "雲林縣斗南鎮延平路二段550-6號",
+    "phone": "05-5966258",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 寶來店",
+    "city": "高雄市",
+    "district": "六龜區",
+    "address": "高雄市六龜區中正路80號",
+    "phone": "07-6881226",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 水美店",
+    "city": "桃園市",
+    "district": "楊梅區",
+    "address": "桃園市楊梅區楊新路二段11號",
+    "phone": "",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 青山店",
+    "city": "桃園市",
+    "district": "楊梅區",
+    "address": "桃園市楊梅區青山一街11號",
+    "phone": "03-4967755",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 環南店",
+    "city": "桃園市",
+    "district": "楊梅區",
+    "address": "桃園市楊梅區環南路180號",
+    "phone": "03-4859164",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 富岡店",
+    "city": "桃園市",
+    "district": "楊梅區",
+    "address": "桃園市楊梅區民富路三段906號",
+    "phone": "03-4728822",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 環東店",
+    "city": "桃園市",
+    "district": "楊梅區",
+    "address": "桃園市楊梅區環東路470號",
+    "phone": "03-4753799",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 永美店",
+    "city": "桃園市",
+    "district": "楊梅區",
+    "address": "桃園市楊梅區永美路233號",
+    "phone": "03-4315569",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文化店",
+    "city": "桃園市",
+    "district": "楊梅區",
+    "address": "桃園市楊梅區文化街238號",
+    "phone": "03-4313631",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山北店",
+    "city": "桃園市",
+    "district": "楊梅區",
+    "address": "桃園市楊梅區中山北路二段162號",
+    "phone": "03-4317277",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大成店",
+    "city": "桃園市",
+    "district": "楊梅區",
+    "address": "桃園市楊梅區大成路186號",
+    "phone": "03-4789678",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "苗栗縣",
+    "district": "卓蘭鎮",
+    "address": "苗栗縣卓蘭鎮中山路89號",
+    "phone": "04-25891677",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東港店",
+    "city": "屏東縣",
+    "district": "東港鎮",
+    "address": "屏東縣東港鎮中山路83號",
+    "phone": "08-8327996",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "屏東縣",
+    "district": "東港鎮",
+    "address": "屏東縣東港鎮長春一路65號",
+    "phone": "08-8353626",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "花蓮縣",
+    "district": "壽豐鄉",
+    "address": "花蓮縣壽豐鄉中山路二段218號",
+    "phone": "03-8664466",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 金面店",
+    "city": "宜蘭縣",
+    "district": "頭城鎮",
+    "address": "宜蘭縣頭城鎮青雲路二段367號",
+    "phone": "03-9362068",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 青雲店",
+    "city": "宜蘭縣",
+    "district": "頭城鎮",
+    "address": "宜蘭縣頭城鎮青雲路三段50號",
+    "phone": "03-9777230",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 福美店",
+    "city": "新北市",
+    "district": "中和區",
+    "address": "新北市中和區福美路247號",
+    "phone": "02-22455111",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 圓通店",
+    "city": "新北市",
+    "district": "中和區",
+    "address": "新北市中和區圓通路256號",
+    "phone": "02-22462255",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 景安店",
+    "city": "新北市",
+    "district": "中和區",
+    "address": "新北市中和區景安路199號",
+    "phone": "02-29451118",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "新北市",
+    "district": "中和區",
+    "address": "新北市中和區自立路187號",
+    "phone": "02-29455118",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 連城店",
+    "city": "新北市",
+    "district": "中和區",
+    "address": "新北市中和區連城路315-1號",
+    "phone": "02-22266998",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 景新店",
+    "city": "新北市",
+    "district": "中和區",
+    "address": "新北市中和區景新街382號",
+    "phone": "02-29455299",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 橋和店",
+    "city": "新北市",
+    "district": "中和區",
+    "address": "新北市中和區橋和路105號",
+    "phone": "02-82454567",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 德光店",
+    "city": "新北市",
+    "district": "中和區",
+    "address": "新北市中和區德光路95號",
+    "phone": "02-29511488",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 漢生店",
+    "city": "新北市",
+    "district": "中和區",
+    "address": "新北市中和區中山路三段194號",
+    "phone": "02-82277898",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 興南新店",
+    "city": "新北市",
+    "district": "中和區",
+    "address": "新北市中和區興南路二段22號之3",
+    "phone": "02-29479666",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 政大店",
+    "city": "台北市",
+    "district": "文山區",
+    "address": "台北市文山區指南路二段61號",
+    "phone": "02-86610017",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 世新店",
+    "city": "台北市",
+    "district": "文山區",
+    "address": "台北市文山區木柵路一段165號",
+    "phone": "02-22363883",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 萬隆店",
+    "city": "台北市",
+    "district": "文山區",
+    "address": "台北市文山區羅斯福路五段190號",
+    "phone": "02-29305939",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 景文店",
+    "city": "台北市",
+    "district": "文山區",
+    "address": "台北市文山區景文街129號",
+    "phone": "02-29342121",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 辛亥店",
+    "city": "台北市",
+    "district": "文山區",
+    "address": "台北市文山區辛亥路四段247號",
+    "phone": "02-89351381",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 木新店",
+    "city": "台北市",
+    "district": "文山區",
+    "address": "台北市文山區木新路三段143號",
+    "phone": "02-29366236",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 豐勢店",
+    "city": "台中市",
+    "district": "石岡區",
+    "address": "台中市石岡區豐勢路766號",
+    "phone": "04-25821168",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 碇坪店",
+    "city": "新北市",
+    "district": "石碇區",
+    "address": "新北市石碇區碇坪路一段12號",
+    "phone": "02-26632060",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "彰化縣",
+    "district": "永靖鄉",
+    "address": "彰化縣永靖鄉中山路三段465號",
+    "phone": "04-8231119",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 瑚璉店",
+    "city": "彰化縣",
+    "district": "永靖鄉",
+    "address": "彰化縣永靖鄉瑚璉路212號",
+    "phone": "04-8244228",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "嘉義縣",
+    "district": "梅山鄉",
+    "address": "嘉義縣梅山鄉中山路276號",
+    "phone": "05-2626269",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 明德店",
+    "city": "新竹縣",
+    "district": "關西鎮",
+    "address": "新竹縣關西鎮明德路99號",
+    "phone": "03-5871288",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 勝利店",
+    "city": "高雄市",
+    "district": "左營區",
+    "address": "高雄市左營區左營大路45號",
+    "phone": "07-5856755",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 富國新店",
+    "city": "高雄市",
+    "district": "左營區",
+    "address": "高雄市左營區富國路198號",
+    "phone": "07-5563586",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 榮總店",
+    "city": "高雄市",
+    "district": "左營區",
+    "address": "高雄市左營區榮總路29號",
+    "phone": "07-3599199",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 華夏店",
+    "city": "高雄市",
+    "district": "左營區",
+    "address": "高雄市左營區華夏路1155號",
+    "phone": "07-3502661",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 重愛店",
+    "city": "高雄市",
+    "district": "左營區",
+    "address": "高雄市左營區重愛路10號",
+    "phone": "07-3101166",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 軍校店",
+    "city": "高雄市",
+    "district": "左營區",
+    "address": "高雄市左營區軍校路2巷54號",
+    "phone": "07-5812116",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中華店",
+    "city": "桃園市",
+    "district": "新屋區",
+    "address": "桃園市新屋區中華路247號",
+    "phone": "03-4870005",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 三民店",
+    "city": "苗栗縣",
+    "district": "後龍鎮",
+    "address": "苗栗縣後龍鎮三民路121號",
+    "phone": "037-724525",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 香楊店",
+    "city": "屏東縣",
+    "district": "長治鄉",
+    "address": "屏東縣長治鄉香楊路42號",
+    "phone": "08-7223098",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 龍潭店",
+    "city": "宜蘭縣",
+    "district": "礁溪鄉",
+    "address": "宜蘭縣礁溪鄉大坡路42-1號",
+    "phone": "03-9287292",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 礁溪店",
+    "city": "宜蘭縣",
+    "district": "礁溪鄉",
+    "address": "宜蘭縣礁溪鄉礁溪路五段2號",
+    "phone": "03-9886369",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "宜蘭縣",
+    "district": "礁溪鄉",
+    "address": "宜蘭縣礁溪鄉中山路二段180號",
+    "phone": "03-9888998",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正南店",
+    "city": "台南市",
+    "district": "永康區",
+    "address": "台南市永康區中正南路362號",
+    "phone": "06-2535676",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 蔦松店",
+    "city": "台南市",
+    "district": "永康區",
+    "address": "台南市永康區中正北路425號",
+    "phone": "06-2535965",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 鹽行店",
+    "city": "台南市",
+    "district": "永康區",
+    "address": "台南市永康區中正路505號",
+    "phone": "06-2542826",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 歐洲店",
+    "city": "台南市",
+    "district": "永康區",
+    "address": "台南市永康區中正路218號",
+    "phone": "06-2041787",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 復國店",
+    "city": "台南市",
+    "district": "永康區",
+    "address": "台南市永康區復國一路576號",
+    "phone": "06-2329678",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 崑山店",
+    "city": "台南市",
+    "district": "永康區",
+    "address": "台南市永康區大仁街75號",
+    "phone": "06-2720616",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 永康店",
+    "city": "台南市",
+    "district": "永康區",
+    "address": "台南市永康區中山路107號",
+    "phone": "06-2316211",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 崑大店",
+    "city": "台南市",
+    "district": "永康區",
+    "address": "台南市永康區大灣路913號",
+    "phone": "06-2057369",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大武店",
+    "city": "台南市",
+    "district": "永康區",
+    "address": "台南市永康區大武街22號",
+    "phone": "06-2525453(近奇美醫院)",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 致遠店",
+    "city": "台北市",
+    "district": "北投區",
+    "address": "台北市北投區尊賢街211號",
+    "phone": "02-28223996",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 知行店",
+    "city": "台北市",
+    "district": "北投區",
+    "address": "台北市北投區知行路287號",
+    "phone": "02-28583399",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 光明店",
+    "city": "台北市",
+    "district": "北投區",
+    "address": "台北市北投區光明路148號",
+    "phone": "02-28978088",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中和店",
+    "city": "台北市",
+    "district": "北投區",
+    "address": "台北市北投區中和街331號",
+    "phone": "02-28917784",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中央北店",
+    "city": "台北市",
+    "district": "北投區",
+    "address": "台北市北投區中央北路四段511號",
+    "phone": "02-28910379",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 興安店",
+    "city": "台中市",
+    "district": "北屯區",
+    "address": "台中市北屯區興安路一段290號",
+    "phone": "04-22475088",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大坑口店",
+    "city": "台中市",
+    "district": "北屯區",
+    "address": "台中市北屯區東山路一段139號",
+    "phone": "04-24376111",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東山店",
+    "city": "台中市",
+    "district": "北屯區",
+    "address": "台中市北屯區東山路一段220-15號",
+    "phone": "04-24376252",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 松竹店",
+    "city": "台中市",
+    "district": "北屯區",
+    "address": "台中市北屯區松竹路二段384號",
+    "phone": "04-22433303",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 遼寧店",
+    "city": "台中市",
+    "district": "北屯區",
+    "address": "台中市北屯區松竹路二段169號",
+    "phone": "04-22465578",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 熱河店",
+    "city": "台中市",
+    "district": "北屯區",
+    "address": "台中市北屯區熱河路二段180號",
+    "phone": "04-22470776",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 昌平店",
+    "city": "台中市",
+    "district": "北屯區",
+    "address": "台中市北屯區昌平路一段250-1號",
+    "phone": "04-22322998",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 后庄店",
+    "city": "台中市",
+    "district": "北屯區",
+    "address": "台中市北屯區后庄路22號",
+    "phone": "04-24258822",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 四平店",
+    "city": "台中市",
+    "district": "北屯區",
+    "address": "台中市北屯區四平路354-3號",
+    "phone": "04-24226883",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 北平店",
+    "city": "台中市",
+    "district": "北屯區",
+    "address": "台中市北屯區北平路三段165號",
+    "phone": "04-22347768",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 竹林店",
+    "city": "彰化縣",
+    "district": "竹塘鄉",
+    "address": "彰化縣竹塘鄉竹林路一段168號",
+    "phone": "04-8971897",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 北港二店",
+    "city": "雲林縣",
+    "district": "北港鎮",
+    "address": "雲林縣北港鎮民享路2號",
+    "phone": "05-7731166",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文橫店",
+    "city": "高雄市",
+    "district": "苓雅區",
+    "address": "高雄市苓雅區永康街160號",
+    "phone": "07-5369080",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 自強三店",
+    "city": "高雄市",
+    "district": "苓雅區",
+    "address": "高雄市苓雅區自強三路126號",
+    "phone": "07-2691296",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 福德新店",
+    "city": "高雄市",
+    "district": "苓雅區",
+    "address": "高雄市苓雅區福德三路255號",
+    "phone": "07-7221972",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 武慶店",
+    "city": "高雄市",
+    "district": "苓雅區",
+    "address": "高雄市苓雅區武慶三路124號",
+    "phone": "07-7211811",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 忠孝店",
+    "city": "高雄市",
+    "district": "苓雅區",
+    "address": "高雄市苓雅區忠孝二路113號",
+    "phone": "07-3301617",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 光華店",
+    "city": "高雄市",
+    "district": "苓雅區",
+    "address": "高雄市苓雅區光華二路432號",
+    "phone": "07-7136211",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大統店",
+    "city": "高雄市",
+    "district": "苓雅區",
+    "address": "高雄市苓雅區六合路25-2號",
+    "phone": "07-2240588",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大池店",
+    "city": "桃園市",
+    "district": "龍潭區",
+    "address": "桃園市龍潭區龍元路101號",
+    "phone": "03-4708099",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 聖亭店",
+    "city": "桃園市",
+    "district": "龍潭區",
+    "address": "桃園市龍潭區聖亭路八德段638-1號",
+    "phone": "03-4893777",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中原店",
+    "city": "桃園市",
+    "district": "龍潭區",
+    "address": "桃園市龍潭區中原路二段559號",
+    "phone": "03-4116386",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 百年店",
+    "city": "桃園市",
+    "district": "龍潭區",
+    "address": "桃園市龍潭區中豐路371號",
+    "phone": "03-4892996",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中興店",
+    "city": "桃園市",
+    "district": "龍潭區",
+    "address": "桃園市龍潭區中興路481-2號",
+    "phone": "03-4790111",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "桃園市",
+    "district": "龍潭區",
+    "address": "桃園市龍潭區中正路498號",
+    "phone": "03-4701199",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "苗栗縣",
+    "district": "通霄鎮",
+    "address": "苗栗縣通霄鎮通西里中山路165號",
+    "phone": "037-752168",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 佳冬店",
+    "city": "屏東縣",
+    "district": "佳冬鄉",
+    "address": "屏東縣佳冬鄉中山路49號",
+    "phone": "08-8661495",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民生店",
+    "city": "南投縣",
+    "district": "集集鎮",
+    "address": "南投縣集集鎮民生路192號",
+    "phone": "049-2760999",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 馬賽店",
+    "city": "宜蘭縣",
+    "district": "蘇澳鎮",
+    "address": "宜蘭縣蘇澳鎮大同路25號",
+    "phone": "03-9909099",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 江夏店",
+    "city": "宜蘭縣",
+    "district": "蘇澳鎮",
+    "address": "宜蘭縣蘇澳鎮江夏路37號",
+    "phone": "03-9961646",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "宜蘭縣",
+    "district": "蘇澳鎮",
+    "address": "宜蘭縣蘇澳鎮中山路一段349號",
+    "phone": "03-9952998",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 西港店",
+    "city": "台南市",
+    "district": "西港區",
+    "address": "台南市西港區新興街18號",
+    "phone": "06-7953070",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 樂華店",
+    "city": "新北市",
+    "district": "永和區",
+    "address": "新北市永和區永和路一段149號",
+    "phone": "02-29259565",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 宜安店",
+    "city": "新北市",
+    "district": "永和區",
+    "address": "新北市永和區中正路15號",
+    "phone": "02-29430181",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 永福店",
+    "city": "新北市",
+    "district": "永和區",
+    "address": "新北市永和區永貞路21號",
+    "phone": "02-89266600",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 得和店",
+    "city": "新北市",
+    "district": "永和區",
+    "address": "新北市永和區成功路二段97號",
+    "phone": "02-29255979",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 秀朗二店",
+    "city": "新北市",
+    "district": "永和區",
+    "address": "新北市永和區得和路107號",
+    "phone": "02-29235288",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 永貞店",
+    "city": "新北市",
+    "district": "永和區",
+    "address": "新北市永和區永貞路392號",
+    "phone": "02-29272298",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 饒河店",
+    "city": "台北市",
+    "district": "松山區",
+    "address": "台北市松山區八德路四段779號",
+    "phone": "02-25288288",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東興店",
+    "city": "台北市",
+    "district": "松山區",
+    "address": "台北市松山區南京東路五段234-2號",
+    "phone": "02-27629786",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 延吉店",
+    "city": "台北市",
+    "district": "松山區",
+    "address": "台北市松山區延吉街2-4號",
+    "phone": "02-25775296",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 立人店",
+    "city": "台中市",
+    "district": "北區",
+    "address": "台中市北區北平路二段19號",
+    "phone": "04-22922186",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 漢崇店",
+    "city": "台中市",
+    "district": "北區",
+    "address": "台中市北區漢口路四段238號",
+    "phone": "04-25348999",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 德化店",
+    "city": "台中市",
+    "district": "北區",
+    "address": "台中市北區永興街103號",
+    "phone": "04-22303038",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 漢口店",
+    "city": "台中市",
+    "district": "北區",
+    "address": "台中市北區漢口路三段102號",
+    "phone": "04-22928358",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 自強店",
+    "city": "台中市",
+    "district": "北區",
+    "address": "台中市北區進化路388號",
+    "phone": "04-23606628",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民權店",
+    "city": "台中市",
+    "district": "北區",
+    "address": "台中市北區民權路472-6號",
+    "phone": "04-22071588",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 三民店",
+    "city": "台中市",
+    "district": "北區",
+    "address": "台中市北區三民路三段253-3號",
+    "phone": "04-22339536",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "彰化縣",
+    "district": "花壇鄉",
+    "address": "彰化縣花壇鄉中山路二段20號",
+    "phone": "04-7862288",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 奉天店",
+    "city": "嘉義縣",
+    "district": "新港鄉",
+    "address": "嘉義縣新港鄉中山路123號",
+    "phone": "05-3749595",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "雲林縣",
+    "district": "四湖鄉",
+    "address": "雲林縣四湖鄉中正路418號",
+    "phone": "05-7872999",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 長壽店",
+    "city": "桃園市",
+    "district": "龜山區",
+    "address": "桃園市龜山區長壽路148號",
+    "phone": "03-3498777",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大崗店",
+    "city": "桃園市",
+    "district": "龜山區",
+    "address": "桃園市龜山區文化三路570號",
+    "phone": "03-3180422",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 德明店",
+    "city": "桃園市",
+    "district": "龜山區",
+    "address": "桃園市龜山區德明路99號",
+    "phone": "03-3292982",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 萬壽店",
+    "city": "桃園市",
+    "district": "龜山區",
+    "address": "桃園市龜山區東萬壽路12號",
+    "phone": "03-3492111",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 迴龍店",
+    "city": "桃園市",
+    "district": "龜山區",
+    "address": "桃園市龜山區萬壽路一段244號",
+    "phone": "02-82096042",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 忠義店",
+    "city": "桃園市",
+    "district": "龜山區",
+    "address": "桃園市龜山區忠義路二段335號",
+    "phone": "03-3278988",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 林口復興店",
+    "city": "桃園市",
+    "district": "龜山區",
+    "address": "桃園市龜山區復興北路53號",
+    "phone": "03-3277997",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中興店",
+    "city": "桃園市",
+    "district": "龜山區",
+    "address": "桃園市龜山區中興路370號",
+    "phone": "03-3207799",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 山鶯店",
+    "city": "桃園市",
+    "district": "龜山區",
+    "address": "桃園市龜山區中興路39號",
+    "phone": "03-3205678",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "苗栗縣",
+    "district": "銅鑼鄉",
+    "address": "苗栗縣銅鑼鄉中正路162-1號",
+    "phone": "037-981995",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 三民店",
+    "city": "屏東縣",
+    "district": "南州鄉",
+    "address": "屏東縣南州鄉三民路163號",
+    "phone": "08-8645566",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 復興店",
+    "city": "宜蘭縣",
+    "district": "羅東鎮",
+    "address": "宜蘭縣羅東鎮復興路二段215號",
+    "phone": "03-9558566",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 興東店",
+    "city": "宜蘭縣",
+    "district": "羅東鎮",
+    "address": "宜蘭縣羅東鎮中山路三段219號",
+    "phone": "03-9573292",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 維揚店",
+    "city": "宜蘭縣",
+    "district": "羅東鎮",
+    "address": "宜蘭縣羅東鎮維揚路72號",
+    "phone": "03-9515799",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 站前店",
+    "city": "宜蘭縣",
+    "district": "羅東鎮",
+    "address": "宜蘭縣羅東鎮公正路59號",
+    "phone": "03-9577322",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 倉前店",
+    "city": "宜蘭縣",
+    "district": "羅東鎮",
+    "address": "宜蘭縣羅東鎮倉前路62-1號",
+    "phone": "03-9571235",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 公正店",
+    "city": "宜蘭縣",
+    "district": "羅東鎮",
+    "address": "宜蘭縣羅東鎮公正路289-3號",
+    "phone": "03-9515177",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正南店",
+    "city": "宜蘭縣",
+    "district": "羅東鎮",
+    "address": "宜蘭縣羅東鎮中正南路133號",
+    "phone": "03-9531222",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 安平店",
+    "city": "台南市",
+    "district": "安平區",
+    "address": "台南市安平區安北路6號",
+    "phone": "06-2412986",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 明峰店",
+    "city": "新北市",
+    "district": "汐止區",
+    "address": "新北市汐止區明峰街180號",
+    "phone": "02-26948866",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 福德店",
+    "city": "新北市",
+    "district": "汐止區",
+    "address": "新北市汐止區同興路272號",
+    "phone": "02-26953131",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 連興店",
+    "city": "新北市",
+    "district": "汐止區",
+    "address": "新北市汐止區連興街131號",
+    "phone": "02-86915286",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 樟樹店",
+    "city": "新北市",
+    "district": "汐止區",
+    "address": "新北市汐止區樟樹一路139巷2號",
+    "phone": "02-26476696",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新台店",
+    "city": "新北市",
+    "district": "汐止區",
+    "address": "新北市汐止區大同路二段342號",
+    "phone": "02-26473111",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 忠孝東店",
+    "city": "新北市",
+    "district": "汐止區",
+    "address": "新北市汐止區忠孝東路394號",
+    "phone": "02-86478282",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民權店",
+    "city": "新北市",
+    "district": "汐止區",
+    "address": "新北市汐止區民權路二段102號",
+    "phone": "02-26600357",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南港店",
+    "city": "台北市",
+    "district": "南港區",
+    "address": "台北市南港區南港路三段20號",
+    "phone": "02-27882811",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 經貿店",
+    "city": "台北市",
+    "district": "南港區",
+    "address": "台北市南港區南港路一段154號",
+    "phone": "02-26532371",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "台中市",
+    "district": "外埔區",
+    "address": "台中市外埔區甲后路三段912號",
+    "phone": "04-26831683",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 彰南店",
+    "city": "彰化縣",
+    "district": "芬園鄉",
+    "address": "彰化縣芬園鄉彰南路四段107號",
+    "phone": "049-2520666",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 六桂店",
+    "city": "嘉義縣",
+    "district": "義竹鄉",
+    "address": "嘉義縣義竹鄉六桂村156-3號",
+    "phone": "05-3417877",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東林店",
+    "city": "高雄市",
+    "district": "林園區",
+    "address": "高雄市林園區東林西路287號",
+    "phone": "07-6426966",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "桃園市",
+    "district": "蘆竹區",
+    "address": "桃園市蘆竹區中山路85-1號",
+    "phone": "03-3213311",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 奉化店",
+    "city": "桃園市",
+    "district": "蘆竹區",
+    "address": "桃園市蘆竹區奉化路86號",
+    "phone": "03-3223456",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南崁店",
+    "city": "桃園市",
+    "district": "蘆竹區",
+    "address": "桃園市蘆竹區南崁路125號",
+    "phone": "03-2220918",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南山店",
+    "city": "桃園市",
+    "district": "蘆竹區",
+    "address": "桃園市蘆竹區南山路三段273號",
+    "phone": "03-3249768",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "桃園市",
+    "district": "蘆竹區",
+    "address": "桃園市蘆竹區南崁路296號",
+    "phone": "03-3220679",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大竹店",
+    "city": "桃園市",
+    "district": "蘆竹區",
+    "address": "桃園市蘆竹區大竹路428-7號",
+    "phone": "03-3135166",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 建國店",
+    "city": "苗栗縣",
+    "district": "頭份市",
+    "address": "苗栗縣頭份市建國路85號",
+    "phone": "037-596699",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文化店",
+    "city": "苗栗縣",
+    "district": "頭份市",
+    "address": "苗栗縣頭份市文化街231號",
+    "phone": "037-595757",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 尚順店",
+    "city": "苗栗縣",
+    "district": "頭份市",
+    "address": "苗栗縣頭份市東民三街20號",
+    "phone": "037-687666",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 信義店",
+    "city": "苗栗縣",
+    "district": "頭份市",
+    "address": "苗栗縣頭份市信義路55號",
+    "phone": "037-696911",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "苗栗縣",
+    "district": "頭份市",
+    "address": "苗栗縣頭份市中正一路507號",
+    "phone": "037-682289",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 恆春店",
+    "city": "屏東縣",
+    "district": "恆春鎮",
+    "address": "屏東縣恆春鎮中正路99號",
+    "phone": "08-8882681",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南灣店",
+    "city": "屏東縣",
+    "district": "恆春鎮",
+    "address": "屏東縣恆春鎮南灣路374號",
+    "phone": "08-8881414",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 港口店",
+    "city": "台南市",
+    "district": "安定區",
+    "address": "台南市安定區港南里港口145-1號",
+    "phone": "06-5931526",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 三井店",
+    "city": "新北市",
+    "district": "林口區",
+    "address": "新北市林口區文化二路一段66號",
+    "phone": "02-26008777",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 仁愛店",
+    "city": "新北市",
+    "district": "林口區",
+    "address": "新北市林口區仁愛路二段15號",
+    "phone": "02-26014455",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 忠孝店",
+    "city": "新北市",
+    "district": "林口區",
+    "address": "新北市林口區忠孝路292號",
+    "phone": "02-26005757",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 工六店",
+    "city": "新北市",
+    "district": "林口區",
+    "address": "新北市林口區中正路10號",
+    "phone": "02-86012022",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 忠孝東店",
+    "city": "台北市",
+    "district": "信義區",
+    "address": "台北市信義區忠孝東路五段743巷5號",
+    "phone": "02-87856169",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新松山店",
+    "city": "台北市",
+    "district": "信義區",
+    "address": "台北市信義區松山路590號",
+    "phone": "02-27272373",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 松仁店",
+    "city": "台北市",
+    "district": "信義區",
+    "address": "台北市信義區松仁路198號",
+    "phone": "02-27587181",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 世貿店",
+    "city": "台北市",
+    "district": "信義區",
+    "address": "台北市信義區吳興街144號",
+    "phone": "02-27323861",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 永吉店",
+    "city": "台北市",
+    "district": "信義區",
+    "address": "台北市信義區永吉路30巷73-2號",
+    "phone": "02-27611525",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 五分埔店",
+    "city": "台北市",
+    "district": "信義區",
+    "address": "台北市信義區松山路158-1號",
+    "phone": "02-27677158",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 黎福店",
+    "city": "台中市",
+    "district": "西屯區",
+    "address": "台中市西屯區黎明路三段200號",
+    "phone": "04-27070212",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 櫻花店",
+    "city": "台中市",
+    "district": "西屯區",
+    "address": "台中市西屯區櫻花路34號",
+    "phone": "04-24516122",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 福星店",
+    "city": "台中市",
+    "district": "西屯區",
+    "address": "台中市西屯區福星路592號",
+    "phone": "04-27081717",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 福星北店",
+    "city": "台中市",
+    "district": "西屯區",
+    "address": "台中市西屯區福星路325號",
+    "phone": "04-27061388",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 福林店",
+    "city": "台中市",
+    "district": "西屯區",
+    "address": "台中市西屯區西屯路三段151-7號",
+    "phone": "04-24632168",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 福林二店",
+    "city": "台中市",
+    "district": "西屯區",
+    "address": "台中市西屯區西屯路三段166-19號",
+    "phone": "04-24618866",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新青海店",
+    "city": "台中市",
+    "district": "西屯區",
+    "address": "台中市西屯區青海路一段156號",
+    "phone": "04-23175669",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 河南店",
+    "city": "台中市",
+    "district": "西屯區",
+    "address": "台中市西屯區河南路二段459-1號",
+    "phone": "04-27080185",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 市政店",
+    "city": "台中市",
+    "district": "西屯區",
+    "address": "台中市西屯區市政路614號",
+    "phone": "04-22515176",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中工店",
+    "city": "台中市",
+    "district": "西屯區",
+    "address": "台中市西屯區中工三路165號",
+    "phone": "04-23588876",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大武店",
+    "city": "屏東縣",
+    "district": "屏東市",
+    "address": "屏東縣屏東市大武路142號",
+    "phone": "08-7522929",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中興店",
+    "city": "屏東縣",
+    "district": "屏東市",
+    "address": "屏東縣屏東市大連路7-26號",
+    "phone": "08-7386399",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 龍華店",
+    "city": "屏東縣",
+    "district": "屏東市",
+    "address": "屏東縣屏東市龍華路182-1號",
+    "phone": "08-7528858",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 廣東店",
+    "city": "屏東縣",
+    "district": "屏東市",
+    "address": "屏東縣屏東市廣東路595號",
+    "phone": "08-7380311",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 勝利店",
+    "city": "屏東縣",
+    "district": "屏東市",
+    "address": "屏東縣屏東市勝利路196-3號",
+    "phone": "08-7652296",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 林森二店",
+    "city": "屏東縣",
+    "district": "屏東市",
+    "address": "屏東縣屏東市廣東路51號",
+    "phone": "08-7220688",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 王功店",
+    "city": "彰化縣",
+    "district": "芳苑鄉",
+    "address": "彰化縣芳苑鄉芳漢路王功段552號",
+    "phone": "04-8936700",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新社店",
+    "city": "雲林縣",
+    "district": "西螺鎮",
+    "address": "雲林縣西螺鎮福來路41號",
+    "phone": "05-5876687",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 公正店",
+    "city": "雲林縣",
+    "district": "西螺鎮",
+    "address": "雲林縣西螺鎮中山路91號",
+    "phone": "05-5878686",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 嘉興店",
+    "city": "高雄市",
+    "district": "岡山區",
+    "address": "高雄市岡山區嘉興路222號",
+    "phone": "07-6211816",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 站前店",
+    "city": "高雄市",
+    "district": "岡山區",
+    "address": "高雄市岡山區民有路18號",
+    "phone": "07-6226788",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 前峰店",
+    "city": "高雄市",
+    "district": "岡山區",
+    "address": "高雄市岡山區前峰路109-7號",
+    "phone": "07-6266516",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 岡山二店",
+    "city": "高雄市",
+    "district": "岡山區",
+    "address": "高雄市岡山區岡山路189號",
+    "phone": "07-6231282",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 本洲店",
+    "city": "高雄市",
+    "district": "岡山區",
+    "address": "高雄市岡山區本洲路339號",
+    "phone": "07-6219986",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 介壽店",
+    "city": "高雄市",
+    "district": "岡山區",
+    "address": "高雄市岡山區介壽西路65號",
+    "phone": "07-6261161",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 忠愛店",
+    "city": "桃園市",
+    "district": "觀音區",
+    "address": "桃園市觀音區忠愛路一段15號",
+    "phone": "03-4981311",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 莊敬店",
+    "city": "桃園市",
+    "district": "觀音區",
+    "address": "桃園市觀音區莊敬路416號",
+    "phone": "03-4838553",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新坡店",
+    "city": "桃園市",
+    "district": "觀音區",
+    "address": "桃園市觀音區中山路二段600號",
+    "phone": "03-4986533",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "桃園市",
+    "district": "觀音區",
+    "address": "桃園市觀音區中山路143號",
+    "phone": "03-4737979",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 工業店",
+    "city": "桃園市",
+    "district": "觀音區",
+    "address": "桃園市觀音區成功路二段893號",
+    "phone": "03-4761526",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大觀店",
+    "city": "桃園市",
+    "district": "觀音區",
+    "address": "桃園市觀音區大觀路二段111號",
+    "phone": "03-4761626",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 北安店",
+    "city": "台南市",
+    "district": "安南區",
+    "address": "台南市安南區北安路三段149號",
+    "phone": "06-2474663",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 安和店",
+    "city": "台南市",
+    "district": "安南區",
+    "address": "台南市安南區安和路四段562號",
+    "phone": "06-3568737",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 海佃店",
+    "city": "台南市",
+    "district": "安南區",
+    "address": "台南市安南區海佃路二段373號",
+    "phone": "06-2560928",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 安中店",
+    "city": "台南市",
+    "district": "安南區",
+    "address": "台南市安南區安中路四段53號",
+    "phone": "06-2557826",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 湳雅店",
+    "city": "新北市",
+    "district": "板橋區",
+    "address": "新北市板橋區南雅南路一段81號",
+    "phone": "02-22725586",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 金門店",
+    "city": "新北市",
+    "district": "板橋區",
+    "address": "新北市板橋區金門街314號",
+    "phone": "02-26756695",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 龍興店",
+    "city": "新北市",
+    "district": "板橋區",
+    "address": "新北市板橋區龍興街9號",
+    "phone": "02-82751077",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 僑中店",
+    "city": "新北市",
+    "district": "板橋區",
+    "address": "新北市板橋區僑中一街124巷1弄1號",
+    "phone": "02-22711155",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 館前西店",
+    "city": "新北市",
+    "district": "板橋區",
+    "address": "新北市板橋區館前西路73號",
+    "phone": "02-29666108",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 廣明店",
+    "city": "新北市",
+    "district": "板橋區",
+    "address": "新北市板橋區四川路二段47巷2弄1號",
+    "phone": "02-89678282",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 漢生西店",
+    "city": "新北市",
+    "district": "板橋區",
+    "address": "新北市板橋區漢生西路84號",
+    "phone": "02-22533389",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 裕民店",
+    "city": "新北市",
+    "district": "板橋區",
+    "address": "新北市板橋區裕民街102號",
+    "phone": "02-22586680",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 莒光店",
+    "city": "新北市",
+    "district": "板橋區",
+    "address": "新北市板橋區莒光路31號",
+    "phone": "02-82585111",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 重慶店",
+    "city": "新北市",
+    "district": "板橋區",
+    "address": "新北市板橋區重慶路232號",
+    "phone": "02-89530676",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 峨眉店",
+    "city": "台北市",
+    "district": "萬華區",
+    "address": "台北市萬華區峨眉街49號1樓08店位",
+    "phone": "02-23815598",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 寶興店",
+    "city": "台北市",
+    "district": "萬華區",
+    "address": "台北市萬華區寶興街94號",
+    "phone": "02-23328618",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 龍山店",
+    "city": "台北市",
+    "district": "萬華區",
+    "address": "台北市萬華區廣州街217號",
+    "phone": "02-23026069",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 康定店",
+    "city": "台北市",
+    "district": "萬華區",
+    "address": "台北市萬華區康定路322號",
+    "phone": "02-23024378",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 昆明店",
+    "city": "台北市",
+    "district": "萬華區",
+    "address": "台北市萬華區昆明街132號",
+    "phone": "02-23111818",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 成都店",
+    "city": "台北市",
+    "district": "萬華區",
+    "address": "台北市萬華區成都路30號",
+    "phone": "02-23143280",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 精誠新店",
+    "city": "台中市",
+    "district": "西區",
+    "address": "台中市西區精誠路232號",
+    "phone": "04-23208812",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 勤美店",
+    "city": "台中市",
+    "district": "西區",
+    "address": "台中市西區美村路一段199號",
+    "phone": "04-23020677",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 美村店",
+    "city": "台中市",
+    "district": "西區",
+    "address": "台中市西區美村路一段666號",
+    "phone": "04-23785129",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 林森店",
+    "city": "台中市",
+    "district": "西區",
+    "address": "台中市西區林森路249號",
+    "phone": "04-23718119",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "屏東縣",
+    "district": "崁頂鄉",
+    "address": "屏東縣崁頂鄉中正路98號",
+    "phone": "08-8635835",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 信義店",
+    "city": "彰化縣",
+    "district": "伸港鄉",
+    "address": "彰化縣伸港鄉中山路47號",
+    "phone": "04-7987286",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中興店",
+    "city": "彰化縣",
+    "district": "伸港鄉",
+    "address": "彰化縣伸港鄉中興路二段346號",
+    "phone": "04-7998222",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "新北市",
+    "district": "金山區",
+    "address": "新北市金山區中山路127號",
+    "phone": "02-24987528",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 阿蓮店",
+    "city": "高雄市",
+    "district": "阿蓮區",
+    "address": "高雄市阿蓮區中正路484號",
+    "phone": "07-6321676",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南紡店",
+    "city": "台南市",
+    "district": "東區",
+    "address": "台南市東區裕農路595號",
+    "phone": "06-2358886",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 崇學店",
+    "city": "台南市",
+    "district": "東區",
+    "address": "台南市東區崇學路116號",
+    "phone": "06-2690558",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 裕信店",
+    "city": "台南市",
+    "district": "東區",
+    "address": "台南市東區裕信路368號",
+    "phone": "06-3317966",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 甲后店",
+    "city": "台中市",
+    "district": "后里區",
+    "address": "台中市后里區甲后路一段600號",
+    "phone": "04-25567995",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 公安店",
+    "city": "台中市",
+    "district": "后里區",
+    "address": "台中市后里區公安路56號",
+    "phone": "04-25588827",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 官田店",
+    "city": "台南市",
+    "district": "官田區",
+    "address": "台南市官田區文化街123號",
+    "phone": "06-5791919",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 社斗店",
+    "city": "彰化縣",
+    "district": "社頭鄉",
+    "address": "彰化縣社頭鄉社斗路一段362號",
+    "phone": "04-8725568",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 光復店",
+    "city": "雲林縣",
+    "district": "虎尾鎮",
+    "address": "雲林縣虎尾鎮光復路379號",
+    "phone": "05-6332728",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 仁愛店",
+    "city": "雲林縣",
+    "district": "虎尾鎮",
+    "address": "雲林縣虎尾鎮中正路91號",
+    "phone": "05-6337565",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "雲林縣",
+    "district": "虎尾鎮",
+    "address": "雲林縣虎尾鎮中正路294號",
+    "phone": "05-6362366",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 工專店",
+    "city": "雲林縣",
+    "district": "虎尾鎮",
+    "address": "雲林縣虎尾鎮工專路92號",
+    "phone": "05-6327575",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 美濃店",
+    "city": "高雄市",
+    "district": "美濃區",
+    "address": "高雄市美濃區中興路一段764號",
+    "phone": "07-6815311",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 美濃二店",
+    "city": "高雄市",
+    "district": "美濃區",
+    "address": "高雄市美濃區中正路一段9號",
+    "phone": "07-6818811",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 琉球店",
+    "city": "屏東縣",
+    "district": "琉球鄉",
+    "address": "屏東縣琉球鄉中正路172-7號",
+    "phone": "08-8611197",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 泰林店",
+    "city": "新北市",
+    "district": "泰山區",
+    "address": "新北市泰山區泰林路二段195號",
+    "phone": "02-29002662",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 明志店",
+    "city": "新北市",
+    "district": "泰山區",
+    "address": "新北市泰山區明志路三段178號",
+    "phone": "02-29047979",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 明志二店",
+    "city": "新北市",
+    "district": "泰山區",
+    "address": "新北市泰山區明志路二段63號",
+    "phone": "02-22977188",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 成功店",
+    "city": "台中市",
+    "district": "沙鹿區",
+    "address": "台中市沙鹿區成功東街95號",
+    "phone": "04-26625777",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 鎮南店",
+    "city": "台中市",
+    "district": "沙鹿區",
+    "address": "台中市沙鹿區興安路1號",
+    "phone": "04-26367373",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 靜宜店",
+    "city": "台中市",
+    "district": "沙鹿區",
+    "address": "台中市沙鹿區英才路11-2號",
+    "phone": "04-26523388",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 竹林店",
+    "city": "台中市",
+    "district": "沙鹿區",
+    "address": "台中市沙鹿區中山路184-1號",
+    "phone": "04-26633939",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中興店",
+    "city": "台中市",
+    "district": "沙鹿區",
+    "address": "台中市沙鹿區向上路七段18號",
+    "phone": "04-26368327",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 彰新店",
+    "city": "彰化縣",
+    "district": "和美鎮",
+    "address": "彰化縣和美鎮彰新路二段533號",
+    "phone": "04-7330952",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 彰美店",
+    "city": "彰化縣",
+    "district": "和美鎮",
+    "address": "彰化縣和美鎮彰美路六段101號",
+    "phone": "04-7576222",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 道周店",
+    "city": "彰化縣",
+    "district": "和美鎮",
+    "address": "彰化縣和美鎮道周路361號",
+    "phone": "04-7572911",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "雲林縣",
+    "district": "莿桐鄉",
+    "address": "雲林縣莿桐鄉中山路163號",
+    "phone": "05-5848588",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 七賢店",
+    "city": "高雄市",
+    "district": "前金區",
+    "address": "高雄市前金區七賢二路158-1號",
+    "phone": "07-2851968",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 萬丹店",
+    "city": "屏東縣",
+    "district": "萬丹鄉",
+    "address": "屏東縣萬丹鄉萬丹路一段432號",
+    "phone": "08-7772881",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 社皮店",
+    "city": "屏東縣",
+    "district": "萬丹鄉",
+    "address": "屏東縣萬丹鄉大昌路539號",
+    "phone": "08-7076858",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 延平店",
+    "city": "台南市",
+    "district": "佳里區",
+    "address": "台南市佳里區延平路20號",
+    "phone": "06-7217077",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 老街店",
+    "city": "新北市",
+    "district": "淡水區",
+    "address": "新北市淡水區公明街33號",
+    "phone": "02-28218222",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新市店",
+    "city": "新北市",
+    "district": "淡水區",
+    "address": "新北市淡水區新市一路一段95號",
+    "phone": "02-26291133",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 圭柔山店",
+    "city": "新北市",
+    "district": "淡水區",
+    "address": "新北市淡水區淡金路三段258號",
+    "phone": "02-26261179",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 水源店",
+    "city": "新北市",
+    "district": "淡水區",
+    "address": "新北市淡水區水源街二段64號",
+    "phone": "02-26290033",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 崁頂店",
+    "city": "新北市",
+    "district": "淡水區",
+    "address": "新北市淡水區新市二路三段102號",
+    "phone": "02-88091179",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 沙崙店",
+    "city": "新北市",
+    "district": "淡水區",
+    "address": "新北市淡水區沙崙路120號",
+    "phone": "02-28058108",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 淡大店",
+    "city": "新北市",
+    "district": "淡水區",
+    "address": "新北市淡水區北新路182巷28號",
+    "phone": "02-26297899",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 真理店",
+    "city": "新北市",
+    "district": "淡水區",
+    "address": "新北市淡水區新民街138號",
+    "phone": "02-26290135",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 淡金店",
+    "city": "新北市",
+    "district": "淡水區",
+    "address": "新北市淡水區淡金路四段536號",
+    "phone": "02-28013088",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 英專店",
+    "city": "新北市",
+    "district": "淡水區",
+    "address": "新北市淡水區英專路50號",
+    "phone": "02-26297722",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 樂成店",
+    "city": "台中市",
+    "district": "東區",
+    "address": "台中市東區樂業路200號",
+    "phone": "04-22115329",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大智店",
+    "city": "台中市",
+    "district": "東區",
+    "address": "台中市東區大智路59號",
+    "phone": "04-22258299",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 十甲店",
+    "city": "台中市",
+    "district": "東區",
+    "address": "台中市東區十甲路412號",
+    "phone": "04-22152515",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "彰化縣",
+    "district": "秀水鄉",
+    "address": "彰化縣秀水鄉中山路369號",
+    "phone": "04-7686255",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 雲三店",
+    "city": "雲林縣",
+    "district": "麥寮鄉",
+    "address": "雲林縣麥寮鄉仁德西路二段250號",
+    "phone": "05-6915166",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中興店",
+    "city": "雲林縣",
+    "district": "麥寮鄉",
+    "address": "雲林縣麥寮鄉中興路65號",
+    "phone": "05-6938976",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 鎮興店",
+    "city": "高雄市",
+    "district": "前鎮區",
+    "address": "高雄市前鎮區鎮興路145-1號",
+    "phone": "07-8126161",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 瑞隆店",
+    "city": "高雄市",
+    "district": "前鎮區",
+    "address": "高雄市前鎮區瑞隆路326-1號",
+    "phone": "07-7212945",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 隆興店",
+    "city": "高雄市",
+    "district": "前鎮區",
+    "address": "高雄市前鎮區瑞和街163號",
+    "phone": "07-7610687",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 復興店",
+    "city": "高雄市",
+    "district": "前鎮區",
+    "address": "高雄市前鎮區復興三路327號",
+    "phone": "07-3388816",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 佛德店",
+    "city": "高雄市",
+    "district": "前鎮區",
+    "address": "高雄市前鎮區佛德街12號",
+    "phone": "07-8232345",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 萬巒店",
+    "city": "屏東縣",
+    "district": "萬巒鄉",
+    "address": "屏東縣萬巒鄉褒忠路163號",
+    "phone": "08-7812331",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 灣裡店",
+    "city": "台南市",
+    "district": "南區",
+    "address": "台南市南區灣裡路281號",
+    "phone": "06-2621382",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 國民店",
+    "city": "台南市",
+    "district": "南區",
+    "address": "台南市南區國民路243號",
+    "phone": "06-2683398",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 夏林店",
+    "city": "台南市",
+    "district": "南區",
+    "address": "台南市南區夏林路1-31號",
+    "phone": "06-2410566",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 金華創始店",
+    "city": "台南市",
+    "district": "南區",
+    "address": "台南市南區金華路二段15巷25號",
+    "phone": "06-2658812",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 北深新店",
+    "city": "新北市",
+    "district": "深坑區",
+    "address": "新北市深坑區北深路三段171號",
+    "phone": "02-86626171",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "台中市",
+    "district": "東勢區",
+    "address": "台中市東勢區中山路58號",
+    "phone": "04-25875779",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 員鹿店",
+    "city": "彰化縣",
+    "district": "埔心鄉",
+    "address": "彰化縣埔心鄉員鹿路二段381號",
+    "phone": "04-8285198",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "雲林縣",
+    "district": "崙背鄉",
+    "address": "雲林縣崙背鄉中山路242號",
+    "phone": "05-6969882",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 蚵寮二店",
+    "city": "高雄市",
+    "district": "梓官區",
+    "address": "高雄市梓官區光明路148號",
+    "phone": "07-6170923",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中崙店",
+    "city": "高雄市",
+    "district": "梓官區",
+    "address": "高雄市梓官區中崙路300號",
+    "phone": "07-6170279",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 仙吉店",
+    "city": "屏東縣",
+    "district": "新園鄉",
+    "address": "屏東縣新園鄉仙吉路57號",
+    "phone": "08-8682881",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 柳營店",
+    "city": "台南市",
+    "district": "柳營區",
+    "address": "台南市柳營區東昇里542之1號",
+    "phone": "06-6220688",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 嶺東店",
+    "city": "台中市",
+    "district": "南屯區",
+    "address": "台中市南屯區永春南路43號",
+    "phone": "04-23801107",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 干城店",
+    "city": "台中市",
+    "district": "南屯區",
+    "address": "台中市南屯區黎明路二段514號",
+    "phone": "04-22547722",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 萬和店",
+    "city": "台中市",
+    "district": "南屯區",
+    "address": "台中市南屯區南屯路二段688號",
+    "phone": "04-23802478",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 向上新店",
+    "city": "台中市",
+    "district": "南屯區",
+    "address": "台中市南屯區向上路二段426號",
+    "phone": "04-23807711",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 寶山店",
+    "city": "台中市",
+    "district": "南屯區",
+    "address": "台中市南屯區五權西路三段97號",
+    "phone": "04-23820569",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 黎明店",
+    "city": "台中市",
+    "district": "南屯區",
+    "address": "台中市南屯區黎明路一段118號",
+    "phone": "04-24701935",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南屯店",
+    "city": "台中市",
+    "district": "南屯區",
+    "address": "台中市南屯區南屯路二段105號",
+    "phone": "04-24755185",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東興店",
+    "city": "台中市",
+    "district": "南屯區",
+    "address": "台中市南屯區東興路二段276號",
+    "phone": "04-24725212",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 向心南店",
+    "city": "台中市",
+    "district": "南屯區",
+    "address": "台中市南屯區向心南路958號",
+    "phone": "04-24758366",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文山店",
+    "city": "台中市",
+    "district": "南屯區",
+    "address": "台中市南屯區忠勇路99-1號",
+    "phone": "04-23801885",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 彰水店",
+    "city": "彰化縣",
+    "district": "埔鹽鄉",
+    "address": "彰化縣埔鹽鄉彰水路一段300號",
+    "phone": "04-8660582",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 神農店",
+    "city": "高雄市",
+    "district": "鳥松區",
+    "address": "高雄市鳥松區神農路501號",
+    "phone": "07-7332358",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 延平店",
+    "city": "屏東縣",
+    "district": "潮州鎮",
+    "address": "屏東縣潮州鎮延平路84號",
+    "phone": "08-7881161",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 興中店",
+    "city": "台南市",
+    "district": "麻豆區",
+    "address": "台南市麻豆區興中路186-3號",
+    "phone": "06-5725091",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 明燈店",
+    "city": "新北市",
+    "district": "瑞芳區",
+    "address": "新北市瑞芳區明燈路三段45號",
+    "phone": "02-24977676",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 忠孝店",
+    "city": "台中市",
+    "district": "南區",
+    "address": "台中市南區忠孝路186號",
+    "phone": "04-22233088",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 高工店",
+    "city": "台中市",
+    "district": "南區",
+    "address": "台中市南區高工路321號",
+    "phone": "04-22602277",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 復興店",
+    "city": "台中市",
+    "district": "南區",
+    "address": "台中市南區復興路三段262號",
+    "phone": "04-22223006",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 健康店",
+    "city": "台中市",
+    "district": "南區",
+    "address": "台中市南區美村南路19號",
+    "phone": "04-22651117",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南門店",
+    "city": "台中市",
+    "district": "南區",
+    "address": "台中市南區南門路111號",
+    "phone": "04-22856262",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 工學店",
+    "city": "台中市",
+    "district": "南區",
+    "address": "台中市南區工學路147號",
+    "phone": "04-22611711",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大慶店",
+    "city": "台中市",
+    "district": "南區",
+    "address": "台中市南區文心南路691號",
+    "phone": "04-22627938",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 三民店",
+    "city": "彰化縣",
+    "district": "員林市",
+    "address": "彰化縣員林市三民東街328號",
+    "phone": "04-8399818",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 靜修店",
+    "city": "彰化縣",
+    "district": "員林市",
+    "address": "彰化縣員林市靜修路76號",
+    "phone": "04-8393768",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 員東店",
+    "city": "彰化縣",
+    "district": "員林市",
+    "address": "彰化縣員林市員東路一段33號",
+    "phone": "04-8334000",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "彰化縣",
+    "district": "員林市",
+    "address": "彰化縣員林市中正路254號",
+    "phone": "04-8392281",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "彰化縣",
+    "district": "員林市",
+    "address": "彰化縣員林市中山路二段53號",
+    "phone": "04-8325881",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大同店",
+    "city": "彰化縣",
+    "district": "員林市",
+    "address": "彰化縣員林市大同路二段134號",
+    "phone": "04-8380868",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 湖內店",
+    "city": "高雄市",
+    "district": "湖內區",
+    "address": "高雄市湖內區中正路一段526-1號",
+    "phone": "07-6997745",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大湖店",
+    "city": "高雄市",
+    "district": "湖內區",
+    "address": "高雄市湖內區民權路9-1號",
+    "phone": "07-6931582",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東方店",
+    "city": "高雄市",
+    "district": "湖內區",
+    "address": "高雄市湖內區中山路一段233-2號",
+    "phone": "07-6930582",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 維新店",
+    "city": "屏東縣",
+    "district": "鹽埔鄉",
+    "address": "屏東縣鹽埔鄉維新路167-1號",
+    "phone": "08-7939168",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 善化店",
+    "city": "台南市",
+    "district": "善化區",
+    "address": "台南市善化區大成路206號",
+    "phone": "06-5831119",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "新北市",
+    "district": "新店區",
+    "address": "新北市新店區中正路503號之6",
+    "phone": "02-22181211",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 五峰店",
+    "city": "新北市",
+    "district": "新店區",
+    "address": "新北市新店區中正路11號",
+    "phone": "02-29155685",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 安民店",
+    "city": "新北市",
+    "district": "新店區",
+    "address": "新北市新店區安民街189-6號",
+    "phone": "02-22129196",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民族店",
+    "city": "新北市",
+    "district": "新店區",
+    "address": "新北市新店區民族路191號",
+    "phone": "02-89118580",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 碧潭店",
+    "city": "新北市",
+    "district": "新店區",
+    "address": "新北市新店區北新路一段67號",
+    "phone": "02-29178811",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 安康店",
+    "city": "新北市",
+    "district": "新店區",
+    "address": "新北市新店區安康路二段146-1號",
+    "phone": "02-86661032",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 北新店",
+    "city": "新北市",
+    "district": "新店區",
+    "address": "新北市新店區北新路三段62號",
+    "phone": "02-29113966",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 豐洲店",
+    "city": "台中市",
+    "district": "神岡區",
+    "address": "台中市神岡區豐洲路186號",
+    "phone": "04-25122805",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民生店",
+    "city": "台中市",
+    "district": "神岡區",
+    "address": "台中市神岡區民生路27-5號",
+    "phone": "04-25626569",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "台中市",
+    "district": "神岡區",
+    "address": "台中市神岡區中山路1196-1號",
+    "phone": "04-25626969",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大洲店",
+    "city": "台中市",
+    "district": "神岡區",
+    "address": "台中市神岡區大洲路313號",
+    "phone": "04-25227575",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 三民店",
+    "city": "台中市",
+    "district": "神岡區",
+    "address": "台中市神岡區三民路626號",
+    "phone": "04-25821868",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 社口店",
+    "city": "台中市",
+    "district": "神岡區",
+    "address": "台中市神岡區中山路474號",
+    "phone": "04-25652278",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 彰水店",
+    "city": "彰化縣",
+    "district": "埤頭鄉",
+    "address": "彰化縣埤頭鄉彰水路三段458號",
+    "phone": "04-8911122",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 斗苑東店",
+    "city": "彰化縣",
+    "district": "埤頭鄉",
+    "address": "彰化縣埤頭鄉斗苑東路78號",
+    "phone": "04-8873322",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 瑞豐店",
+    "city": "高雄市",
+    "district": "鼓山區",
+    "address": "高雄市鼓山區裕誠路1075號",
+    "phone": "07-5866301",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 華榮店",
+    "city": "高雄市",
+    "district": "鼓山區",
+    "address": "高雄市鼓山區華榮路331-1號",
+    "phone": "07-5524828",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 軍校二店",
+    "city": "高雄市",
+    "district": "鼓山區",
+    "address": "高雄市鼓山區明誠三路690號",
+    "phone": "07-5537568",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 幸福店",
+    "city": "新北市",
+    "district": "新莊區",
+    "address": "新北市新莊區幸福路786號",
+    "phone": "02-89935757",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "新北市",
+    "district": "新莊區",
+    "address": "新北市新莊區中正路891-46號",
+    "phone": "02-29081333",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 四維店",
+    "city": "新北市",
+    "district": "新莊區",
+    "address": "新北市新莊區龍安路238號",
+    "phone": "02-22013493",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 雙鳳店",
+    "city": "新北市",
+    "district": "新莊區",
+    "address": "新北市新莊區雙鳳路24號",
+    "phone": "02-29089977",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 輔大店",
+    "city": "新北市",
+    "district": "新莊區",
+    "address": "新北市新莊區中正路516-36號",
+    "phone": "02-29080101",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 福壽店",
+    "city": "新北市",
+    "district": "新莊區",
+    "address": "新北市新莊區福壽街8號",
+    "phone": "02-29907961",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新豐店",
+    "city": "新北市",
+    "district": "新莊區",
+    "address": "新北市新莊區新泰路79號",
+    "phone": "02-22048133",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新泰店",
+    "city": "新北市",
+    "district": "新莊區",
+    "address": "新北市新莊區新泰路323號",
+    "phone": "02-29985566",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 富國店",
+    "city": "新北市",
+    "district": "新莊區",
+    "address": "新北市新莊區富國路76號",
+    "phone": "02-29013399",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 建安店",
+    "city": "新北市",
+    "district": "新莊區",
+    "address": "新北市新莊區建安街36號",
+    "phone": "02-22041384",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 溪南店",
+    "city": "台中市",
+    "district": "烏日區",
+    "address": "台中市烏日區溪南路一段320號",
+    "phone": "04-23355861",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 成功店",
+    "city": "台中市",
+    "district": "烏日區",
+    "address": "台中市烏日區中山路三段593號",
+    "phone": "04-23365899",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中華店",
+    "city": "台中市",
+    "district": "烏日區",
+    "address": "台中市烏日區中華路581號",
+    "phone": "04-23388978",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "台中市",
+    "district": "烏日區",
+    "address": "台中市烏日區中山路一段310號",
+    "phone": "04-23375661",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 彰鹿店",
+    "city": "彰化縣",
+    "district": "鹿港鎮",
+    "address": "彰化縣鹿港鎮復興南路4號",
+    "phone": "04-7767518",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 彰頂店",
+    "city": "彰化縣",
+    "district": "鹿港鎮",
+    "address": "彰化縣鹿港鎮彰頂路327號",
+    "phone": "04-7721868",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 鹿港店",
+    "city": "彰化縣",
+    "district": "鹿港鎮",
+    "address": "彰化縣鹿港鎮鹿東路54號",
+    "phone": "04-7786711",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 鹿港二店",
+    "city": "彰化縣",
+    "district": "鹿港鎮",
+    "address": "彰化縣鹿港鎮鹿草路一段81號",
+    "phone": "04-7785235",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民權店",
+    "city": "彰化縣",
+    "district": "鹿港鎮",
+    "address": "彰化縣鹿港鎮民權路273號",
+    "phone": "04-7776876",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 後勁夜市店",
+    "city": "高雄市",
+    "district": "楠梓區",
+    "address": "高雄市楠梓區後昌路79號",
+    "phone": "07-3655811",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 後昌店",
+    "city": "高雄市",
+    "district": "楠梓區",
+    "address": "高雄市楠梓區後昌路841號",
+    "phone": "07-3601993",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 德中店",
+    "city": "高雄市",
+    "district": "楠梓區",
+    "address": "高雄市楠梓區德中路538號",
+    "phone": "07-3625861",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 德賢店",
+    "city": "高雄市",
+    "district": "楠梓區",
+    "address": "高雄市楠梓區德賢路232號",
+    "phone": "07-3648181",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 清豐店",
+    "city": "高雄市",
+    "district": "楠梓區",
+    "address": "高雄市楠梓區清豐二路76號",
+    "phone": "07-3541515",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 遠東店",
+    "city": "台南市",
+    "district": "新化區",
+    "address": "台南市新化區中正路1201號",
+    "phone": "06-5981666",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新化店",
+    "city": "台南市",
+    "district": "新化區",
+    "address": "台南市新化區信義路195號",
+    "phone": "06-5908166",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "台南市",
+    "district": "新化區",
+    "address": "台南市新化區中山路471號",
+    "phone": "06-5801667",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 俊英店",
+    "city": "新北市",
+    "district": "樹林區",
+    "address": "新北市樹林區俊英街137號",
+    "phone": "02-26888218",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大保店",
+    "city": "新北市",
+    "district": "樹林區",
+    "address": "新北市樹林區保安街一段263號",
+    "phone": "02-26753135",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 鎮前店",
+    "city": "新北市",
+    "district": "樹林區",
+    "address": "新北市樹林區鎮前街62號",
+    "phone": "02-26821608",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 育英店",
+    "city": "新北市",
+    "district": "樹林區",
+    "address": "新北市樹林區育英街42號",
+    "phone": "02-26824567",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 太元店",
+    "city": "新北市",
+    "district": "樹林區",
+    "address": "新北市樹林區太元街59號",
+    "phone": "02-86866165",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文化店",
+    "city": "台中市",
+    "district": "梧棲區",
+    "address": "台中市梧棲區文化路二段268號",
+    "phone": "04-26571693",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中央店",
+    "city": "台中市",
+    "district": "梧棲區",
+    "address": "台中市梧棲區中央路一段914-3號",
+    "phone": "04-26581569",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "彰化縣",
+    "district": "溪州鄉",
+    "address": "彰化縣溪州鄉中山路三段297號",
+    "phone": "04-8898608",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 路竹店",
+    "city": "高雄市",
+    "district": "路竹區",
+    "address": "高雄市路竹區中正路29號",
+    "phone": "07-6968961",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 忠孝店",
+    "city": "高雄市",
+    "district": "路竹區",
+    "address": "高雄市路竹區大社路37號",
+    "phone": "07-6073376",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民生店",
+    "city": "台南市",
+    "district": "新市區",
+    "address": "台南市新市區民生路5號",
+    "phone": "06-5899688",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 復興店",
+    "city": "新北市",
+    "district": "蘆洲區",
+    "address": "新北市蘆洲區復興路114號",
+    "phone": "02-25507985",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 三民店",
+    "city": "新北市",
+    "district": "蘆洲區",
+    "address": "新北市蘆洲區中山一路115號",
+    "phone": "02-82835516",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 得勝店",
+    "city": "新北市",
+    "district": "蘆洲區",
+    "address": "新北市蘆洲區得勝街123號",
+    "phone": "02-22889666",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 永樂店",
+    "city": "新北市",
+    "district": "蘆洲區",
+    "address": "新北市蘆洲區永樂街43-1號",
+    "phone": "02-22883862",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民義店",
+    "city": "新北市",
+    "district": "蘆洲區",
+    "address": "新北市蘆洲區民義街119-1號",
+    "phone": "02-22881627",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 光華店",
+    "city": "新北市",
+    "district": "蘆洲區",
+    "address": "新北市蘆洲區光華路85號",
+    "phone": "02-22830005",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民族店",
+    "city": "新北市",
+    "district": "蘆洲區",
+    "address": "新北市蘆洲區民族路208號",
+    "phone": "02-22882621",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中華店",
+    "city": "新北市",
+    "district": "蘆洲區",
+    "address": "新北市蘆洲區中華街25-1號",
+    "phone": "02-22830707",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中華店",
+    "city": "台中市",
+    "district": "清水區",
+    "address": "台中市清水區中華路470號",
+    "phone": "04-26223673",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 西環店",
+    "city": "彰化縣",
+    "district": "溪湖鎮",
+    "address": "彰化縣溪湖鎮西環路79號",
+    "phone": "04-8816522",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 彰水店",
+    "city": "彰化縣",
+    "district": "溪湖鎮",
+    "address": "彰化縣溪湖鎮彰水路三段273號",
+    "phone": "04-8611579",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 林森店",
+    "city": "高雄市",
+    "district": "新興區",
+    "address": "高雄市新興區林森一路35號",
+    "phone": "07-2828678",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "高雄市",
+    "district": "新興區",
+    "address": "高雄市新興區林森一路174號",
+    "phone": "07-2117789",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 八德店",
+    "city": "高雄市",
+    "district": "新興區",
+    "address": "高雄市新興區八德一路384號",
+    "phone": "07-2362020",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 瑞源店",
+    "city": "高雄市",
+    "district": "新興區",
+    "address": "高雄市新興區自立二路128-1號",
+    "phone": "07-2878668",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新營店",
+    "city": "台南市",
+    "district": "新營區",
+    "address": "台南市新營區復興路82號",
+    "phone": "06-6372313",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "新北市",
+    "district": "鶯歌區",
+    "address": "新北市鶯歌區中正三路83號",
+    "phone": "02-26771771",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 鶯桃店",
+    "city": "新北市",
+    "district": "鶯歌區",
+    "address": "新北市鶯歌區鶯桃路636號",
+    "phone": "02-26790661",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 建國店",
+    "city": "新北市",
+    "district": "鶯歌區",
+    "address": "新北市鶯歌區光明街113號",
+    "phone": "02-26772222",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 南雅店",
+    "city": "新北市",
+    "district": "鶯歌區",
+    "address": "新北市鶯歌區南雅路41號",
+    "phone": "02-26700701",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 興安店",
+    "city": "台中市",
+    "district": "新社區",
+    "address": "台中市新社區興安路18-40號",
+    "phone": "04-25823417",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 沿海店",
+    "city": "彰化縣",
+    "district": "福興鄉",
+    "address": "彰化縣福興鄉沿海路五段324號",
+    "phone": "04-7768586",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 西勢店",
+    "city": "彰化縣",
+    "district": "福興鄉",
+    "address": "彰化縣福興鄉員鹿路二段213號",
+    "phone": "04-7756668",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 彰水店",
+    "city": "彰化縣",
+    "district": "福興鄉",
+    "address": "彰化縣福興鄉彰水路86號",
+    "phone": "04-7696996",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 五甲夜市店",
+    "city": "高雄市",
+    "district": "鳳山區",
+    "address": "高雄市鳳山區自強二路120號",
+    "phone": "07-8319961",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文山店",
+    "city": "高雄市",
+    "district": "鳳山區",
+    "address": "高雄市鳳山區青年路二段372號",
+    "phone": "07-7676711",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 青年店",
+    "city": "高雄市",
+    "district": "鳳山區",
+    "address": "高雄市鳳山區青年路一段337號",
+    "phone": "07-7456766",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 自強二店",
+    "city": "高雄市",
+    "district": "鳳山區",
+    "address": "高雄市鳳山區五甲二路434號",
+    "phone": "07-7685119",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 王生明店",
+    "city": "高雄市",
+    "district": "鳳山區",
+    "address": "高雄市鳳山區中山東路5號",
+    "phone": "07-7196711",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 文衡店",
+    "city": "高雄市",
+    "district": "鳳山區",
+    "address": "高雄市鳳山區文衡路157號",
+    "phone": "07-7771125",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 五甲店",
+    "city": "高雄市",
+    "district": "鳳山區",
+    "address": "高雄市鳳山區南華路102號",
+    "phone": "07-7114111",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大明店",
+    "city": "高雄市",
+    "district": "鳳山區",
+    "address": "高雄市鳳山區大明路164號",
+    "phone": "07-7673286",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 歸仁店",
+    "city": "台南市",
+    "district": "歸仁區",
+    "address": "台南市歸仁區民權南路179號",
+    "phone": "06-2395372",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "台南市",
+    "district": "歸仁區",
+    "address": "台南市歸仁區中正一街65號",
+    "phone": "06-2306606",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 豐興店",
+    "city": "台中市",
+    "district": "潭子區",
+    "address": "台中市潭子區豐興路一段467號",
+    "phone": "04-25395345",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 頭張店",
+    "city": "台中市",
+    "district": "潭子區",
+    "address": "台中市潭子區頭張路一段42號",
+    "phone": "04-25341917",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 興華店",
+    "city": "台中市",
+    "district": "潭子區",
+    "address": "台中市潭子區大豐路三段117號-1",
+    "phone": "04-25317571",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 榮興店",
+    "city": "台中市",
+    "district": "潭子區",
+    "address": "台中市潭子區榮興街47號",
+    "phone": "04-25359171",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 勝利店",
+    "city": "台中市",
+    "district": "潭子區",
+    "address": "台中市潭子區勝利路127號",
+    "phone": "04-25355829",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 東寶店",
+    "city": "台中市",
+    "district": "潭子區",
+    "address": "台中市潭子區昌平路三段108號",
+    "phone": "04-25341422",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 光陽店",
+    "city": "台中市",
+    "district": "潭子區",
+    "address": "台中市潭子區福潭路488號",
+    "phone": "04-25362558",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大新店",
+    "city": "台中市",
+    "district": "潭子區",
+    "address": "台中市潭子區大新路88號",
+    "phone": "04-25361356",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 線東店",
+    "city": "彰化縣",
+    "district": "彰化市",
+    "address": "彰化縣彰化市線東路一段466-1號",
+    "phone": "04-7510228",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 彰美店",
+    "city": "彰化縣",
+    "district": "彰化市",
+    "address": "彰化縣彰化市彰美路一段241號(過溝仔)",
+    "phone": "04-7296258",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 一心店",
+    "city": "彰化縣",
+    "district": "彰化市",
+    "address": "彰化縣彰化市彰南路三段266號",
+    "phone": "04-7375386",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 實踐店",
+    "city": "彰化縣",
+    "district": "彰化市",
+    "address": "彰化縣彰化市實踐路40號",
+    "phone": "04-7238768",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 華山店",
+    "city": "彰化縣",
+    "district": "彰化市",
+    "address": "彰化縣彰化市華山路201號",
+    "phone": "04-7261233",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 泰和店",
+    "city": "彰化縣",
+    "district": "彰化市",
+    "address": "彰化縣彰化市泰和路二段413號",
+    "phone": "04-7223186",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 自強店",
+    "city": "彰化縣",
+    "district": "彰化市",
+    "address": "彰化縣彰化市自強路185-1號",
+    "phone": "04-7330336",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民生店",
+    "city": "彰化縣",
+    "district": "彰化市",
+    "address": "彰化縣彰化市民生路46號",
+    "phone": "04-7221911",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "彰化縣",
+    "district": "彰化市",
+    "address": "彰化縣彰化市中正路二段580號",
+    "phone": "04-7221917",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 大埔二店",
+    "city": "彰化縣",
+    "district": "彰化市",
+    "address": "彰化縣彰化市大埔路423號",
+    "phone": "04-7128383",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 延平店",
+    "city": "高雄市",
+    "district": "旗山區",
+    "address": "高雄市旗山區延平一路722-2號",
+    "phone": "07-6627668",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 關廟店",
+    "city": "台南市",
+    "district": "關廟區",
+    "address": "台南市關廟區南雄路一段1165號",
+    "phone": "06-5950311",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中央二店",
+    "city": "台中市",
+    "district": "龍井區",
+    "address": "台中市龍井區沙田路四段590號",
+    "phone": "04-26352308",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 遊園店",
+    "city": "台中市",
+    "district": "龍井區",
+    "address": "台中市龍井區遊園南路151號",
+    "phone": "04-26529779",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 新興店",
+    "city": "台中市",
+    "district": "龍井區",
+    "address": "台中市龍井區新興路38-5號",
+    "phone": "04-26521766",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中央店",
+    "city": "台中市",
+    "district": "龍井區",
+    "address": "台中市龍井區中央路二段239號",
+    "phone": "04-26380783",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 鹽水店",
+    "city": "台南市",
+    "district": "鹽水區",
+    "address": "台南市鹽水區朝琴路110號",
+    "phone": "06-6528555",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 沿海店",
+    "city": "彰化縣",
+    "district": "線西鄉",
+    "address": "彰化縣線西鄉沿海路一段904號",
+    "phone": "04-7586778",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 燕巢店",
+    "city": "高雄市",
+    "district": "燕巢區",
+    "address": "高雄市燕巢區中西路28-1號",
+    "phone": "07-6160568",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中山店",
+    "city": "台中市",
+    "district": "豐原區",
+    "address": "台中市豐原區中山路458-2號",
+    "phone": "04-25151996",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 水源店",
+    "city": "台中市",
+    "district": "豐原區",
+    "address": "台中市豐原區水源路227號",
+    "phone": "04-25255538",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 站前店",
+    "city": "台中市",
+    "district": "豐原區",
+    "address": "台中市豐原區三民路90號",
+    "phone": "04-25222225",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 成功店",
+    "city": "台中市",
+    "district": "豐原區",
+    "address": "台中市豐原區成功路173號",
+    "phone": "04-25121265",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 豐東店",
+    "city": "台中市",
+    "district": "豐原區",
+    "address": "台中市豐原區豐東路212號",
+    "phone": "04-25283916",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 田心店",
+    "city": "台中市",
+    "district": "豐原區",
+    "address": "台中市豐原區田心路二段188號",
+    "phone": "04-25151885",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "台中市",
+    "district": "豐原區",
+    "address": "台中市豐原區中正路729號",
+    "phone": "04-25270175",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 三豐店",
+    "city": "台中市",
+    "district": "豐原區",
+    "address": "台中市豐原區三豐路二段218號",
+    "phone": "04-25150558",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 橋頭店",
+    "city": "高雄市",
+    "district": "橋頭區",
+    "address": "高雄市橋頭區隆豐路213號",
+    "phone": "07-6115886",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 亞大店",
+    "city": "台中市",
+    "district": "霧峰區",
+    "address": "台中市霧峰區柳豐路458號",
+    "phone": "04-23309922",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 德維店",
+    "city": "台中市",
+    "district": "霧峰區",
+    "address": "台中市霧峰區中正路1118號",
+    "phone": "04-23311166",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 民生店",
+    "city": "台中市",
+    "district": "霧峰區",
+    "address": "台中市霧峰區吉峰路154號",
+    "phone": "04-23326681",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 四德店",
+    "city": "台中市",
+    "district": "霧峰區",
+    "address": "台中市霧峰區四德路348號",
+    "phone": "04-23319911",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 中正店",
+    "city": "台中市",
+    "district": "霧峰區",
+    "address": "台中市霧峰區中正路822號",
+    "phone": "04-23331658",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 彌陀店",
+    "city": "高雄市",
+    "district": "彌陀區",
+    "address": "高雄市彌陀區中正路36號",
+    "phone": "07-6108216",
+    "operatingHours": "09:00 - 22:00"
+  },
+  {
+    "name": "清心福全 七賢三店",
+    "city": "高雄市",
+    "district": "鹽埕區",
+    "address": "高雄市鹽埕區大仁路157號",
+    "phone": "07-5215886",
+    "operatingHours": "09:00 - 22:00"
+  }
+]

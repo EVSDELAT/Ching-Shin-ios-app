@@ -176,20 +176,42 @@ enum CupSize: String, CaseIterable, Identifiable {
 }
 
 // MARK: - Store Model
-struct Store: Identifiable {
-    let id = UUID()
+struct Store: Identifiable, Hashable {
+    let id: UUID
     let name: String
+    var city: String
+    var district: String
     let address: String
     let phone: String
-    let distance: String
+    var distance: String
     let isOpen: Bool
     let operatingHours: String
+    
+    init(id: UUID = UUID(), name: String, city: String = "", district: String = "", address: String, phone: String = "", distance: String = "1.2 km", isOpen: Bool = true, operatingHours: String = "09:00 - 22:00") {
+        self.id = id
+        self.name = name
+        self.city = city
+        self.district = district
+        self.address = address
+        self.phone = phone
+        self.distance = distance
+        self.isOpen = isOpen
+        self.operatingHours = operatingHours
+    }
     
     var shortName: String {
         if let idx = name.firstIndex(of: "(") {
             return String(name[..<idx]).trimmingCharacters(in: .whitespaces)
         }
         return name
+    }
+    
+    static func == (lhs: Store, rhs: Store) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 
@@ -297,16 +319,9 @@ struct SampleData {
         )
     ]
     
-    static let sampleStores: [Store] = [
-        Store(name: "清心福全 台南總店(西門二店)", address: "台南市中西區西門路二段222號", phone: "06-2288899", distance: "1.2 km", isOpen: true, operatingHours: "09:00 - 22:00"),
-        Store(name: "清心福全 台南協進店", address: "台南市中西區金華路四段42號", phone: "06-2212399", distance: "1.8 km", isOpen: true, operatingHours: "09:00 - 22:00"),
-        Store(name: "清心福全 台南五期店", address: "台南市安平區平通路508號", phone: "06-2985588", distance: "2.4 km", isOpen: true, operatingHours: "09:30 - 22:30"),
-        Store(name: "清心福全 台南成大店", address: "台南市東區勝利路118號", phone: "06-2357788", distance: "3.1 km", isOpen: true, operatingHours: "09:00 - 22:30"),
-        Store(name: "清心福全 台南永康復國店", address: "台南市永康區復國一路576號", phone: "06-3112233", distance: "4.5 km", isOpen: true, operatingHours: "09:00 - 22:00"),
-        Store(name: "清心福全 台南安和店", address: "台南市安南區安和路四段562號", phone: "06-3561188", distance: "5.8 km", isOpen: true, operatingHours: "09:00 - 21:30"),
-        Store(name: "清心福全 台南新市民生店", address: "台南市新市區民生路5號", phone: "06-5899988", distance: "12.0 km", isOpen: true, operatingHours: "09:00 - 21:30"),
-        Store(name: "清心福全 台南善化大成店", address: "台南市善化區大成路206號", phone: "06-5813355", distance: "15.2 km", isOpen: true, operatingHours: "09:00 - 21:30")
-    ]
+    static var sampleStores: [Store] {
+        TaiwanStoresData.allStores
+    }
     
     static let drinks: [Drink] = [
         Drink(name: "烏龍綠茶", category: .premiumTea, priceM: 30, priceL: 35, description: "清心福全經典鎮店之寶！嚴選高山烏龍與清香綠茶完美調和。", isHotItem: true, cupStyle: .greenTea),

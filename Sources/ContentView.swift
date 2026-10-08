@@ -238,97 +238,189 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Store Locator Main View with Map Button (Requirement #4)
+// MARK: - Store Locator Main View with Map Button (All Taiwan Stores)
 struct StoreLocatorMainView: View {
     @Binding var selectedStore: Store
     @Binding var selectedTab: Int
+    @AppStorage("isDarkMode") private var isDarkMode = false
     @State private var mapStoreTarget: Store? = nil
+    @State private var searchStoreText: String = ""
+    @State private var selectedCity: String = "全部"
+    
+    var filteredStores: [Store] {
+        TaiwanStoresData.allStores.filter { store in
+            let matchCity = (selectedCity == "全部") || store.city == selectedCity || store.address.hasPrefix(selectedCity)
+            let matchSearch = searchStoreText.isEmpty ||
+                              store.name.localizedCaseInsensitiveContains(searchStoreText) ||
+                              store.address.localizedCaseInsensitiveContains(searchStoreText) ||
+                              store.district.localizedCaseInsensitiveContains(searchStoreText)
+            return matchCity && matchSearch
+        }
+    }
     
     var body: some View {
         NavigationStack {
-            List(SampleData.sampleStores) { store in
-                VStack(alignment: .leading, spacing: 10) {
-                    HStack(spacing: 12) {
-                        ZStack {
-                            Circle()
-                                .fill(store.id == selectedStore.id ? Color(hex: "008B47") : Color.gray.opacity(0.12))
-                                .frame(width: 42, height: 42)
-                            Image(systemName: "mappin.circle.fill")
-                                .font(.title2)
-                                .foregroundColor(store.id == selectedStore.id ? .white : Color(hex: "008B47"))
+            ZStack {
+                AppTheme.bg(isDarkMode).ignoresSafeArea()
+                
+                VStack(spacing: 0) {
+                    // Search Bar
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                        TextField("搜尋全台門市名稱、區、路名...", text: $searchStoreText)
+                            .font(.system(size: 14))
+                            .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                        if !searchStoreText.isEmpty {
+                            Button(action: { searchStoreText = "" }) {
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                            }
                         }
-                        
-                        VStack(alignment: .leading, spacing: 4) {
-                            HStack {
-                                Text(store.name)
-                                    .font(.headline)
-                                Spacer()
-                                if store.id == selectedStore.id {
-                                    Text("預設門市")
-                                        .font(.system(size: 9, weight: .bold))
-                                        .padding(.horizontal, 8)
-                                        .padding(.vertical, 3)
-                                        .background(Color(hex: "008B47"))
-                                        .foregroundColor(.white)
+                    }
+                    .padding(12)
+                    .background(AppTheme.inputBg(isDarkMode))
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .padding(.horizontal, 16)
+                    .padding(.top, 12)
+                    
+                    // City Filter Horizontal Scroll
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
+                            ForEach(TaiwanStoresData.cities, id: \.self) { city in
+                                Button(action: {
+                                    SoundManager.shared.playTapSound()
+                                    selectedCity = city
+                                }) {
+                                    Text(city)
+                                        .font(.system(size: 13, weight: selectedCity == city ? .bold : .medium))
+                                        .padding(.horizontal, 14)
+                                        .padding(.vertical, 7)
+                                        .background(selectedCity == city ? AppTheme.primaryGreen : AppTheme.cardBg(isDarkMode))
+                                        .foregroundColor(selectedCity == city ? .white : AppTheme.textPrimary(isDarkMode))
                                         .clipShape(Capsule())
+                                        .overlay(
+                                            Capsule()
+                                                .stroke(selectedCity == city ? Color.clear : AppTheme.border(isDarkMode), lineWidth: 1)
+                                        )
                                 }
-                            }
-                            
-                            Text(store.address)
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                            
-                            HStack(spacing: 10) {
-                                HStack(spacing: 4) {
-                                    Circle().fill(Color.green).frame(width: 6, height: 6)
-                                    Text("營業中 (\(store.operatingHours))")
-                                        .font(.caption2)
-                                        .foregroundColor(.green)
-                                }
-                                Text("電話: \(store.phone)")
-                                    .font(.caption2)
-                                    .foregroundColor(.gray)
                             }
                         }
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 10)
                     }
                     
-                    // Action Buttons Row (Map Navigation + Store Select - Requirement #4)
-                    HStack(spacing: 10) {
-                        Button(action: {
-                            SoundManager.shared.playTapSound()
-                            mapStoreTarget = store
-                        }) {
-                            HStack(spacing: 4) {
-                                Image(systemName: "map.fill")
-                                    .font(.caption2)
-                                Text("查看地圖導航")
-                                    .font(.caption)
-                                    .bold()
-                            }
-                            .foregroundColor(Color(hex: "008B47"))
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 6)
-                            .background(Color(hex: "008B47").opacity(0.12))
-                            .clipShape(Capsule())
-                        }
-                        
+                    // Results count
+                    HStack {
+                        Text("全台門市共 \(TaiwanStoresData.allStores.count) 家 ‧ 目前篩選出 \(filteredStores.count) 家")
+                            .font(.system(size: 12))
+                            .foregroundColor(AppTheme.textSecondary(isDarkMode))
                         Spacer()
-                        
-                        if store.id != selectedStore.id {
-                            Button("選擇此門市") {
-                                SoundManager.shared.playTapSound()
-                                selectedStore = store
-                                selectedTab = 0
-                            }
-                            .font(.caption)
-                            .bold()
-                            .buttonStyle(.borderedProminent)
-                            .tint(Color(hex: "008B47"))
-                        }
                     }
-                    .padding(.top, 4)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 6)
+                    
+                    // Stores List
+                    ScrollView {
+                        LazyVStack(spacing: 12) {
+                            ForEach(filteredStores) { store in
+                                VStack(alignment: .leading, spacing: 10) {
+                                    HStack(spacing: 12) {
+                                        ZStack {
+                                            Circle()
+                                                .fill(store.id == selectedStore.id ? AppTheme.primaryGreen : AppTheme.inputBg(isDarkMode))
+                                                .frame(width: 42, height: 42)
+                                            Image(systemName: "mappin.circle.fill")
+                                                .font(.title2)
+                                                .foregroundColor(store.id == selectedStore.id ? .white : AppTheme.primaryGreen)
+                                        }
+                                        
+                                        VStack(alignment: .leading, spacing: 4) {
+                                            HStack {
+                                                Text(store.name)
+                                                    .font(.system(size: 15, weight: .bold))
+                                                    .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                                Spacer()
+                                                if store.id == selectedStore.id {
+                                                    Text("目前選擇")
+                                                        .font(.system(size: 10, weight: .bold))
+                                                        .padding(.horizontal, 8)
+                                                        .padding(.vertical, 3)
+                                                        .background(AppTheme.primaryGreen)
+                                                        .foregroundColor(.white)
+                                                        .clipShape(Capsule())
+                                                }
+                                            }
+                                            
+                                            Text(store.address)
+                                                .font(.system(size: 12))
+                                                .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                            
+                                            HStack(spacing: 10) {
+                                                HStack(spacing: 4) {
+                                                    Circle().fill(Color.green).frame(width: 6, height: 6)
+                                                    Text("營業中 (\(store.operatingHours))")
+                                                        .font(.system(size: 11))
+                                                        .foregroundColor(.green)
+                                                }
+                                                if !store.phone.isEmpty {
+                                                    Text("電話: \(store.phone)")
+                                                        .font(.system(size: 11))
+                                                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                                }
+                                            }
+                                        }
+                                    }
+                                    
+                                    Divider()
+                                        .background(AppTheme.border(isDarkMode))
+                                    
+                                    // Action Buttons Row (Map Navigation + Store Select)
+                                    HStack(spacing: 10) {
+                                        Button(action: {
+                                            SoundManager.shared.playTapSound()
+                                            mapStoreTarget = store
+                                        }) {
+                                            HStack(spacing: 4) {
+                                                Image(systemName: "map.fill")
+                                                    .font(.caption2)
+                                                Text("查看地圖導航")
+                                                    .font(.system(size: 12, weight: .bold))
+                                            }
+                                            .foregroundColor(AppTheme.primaryGreen)
+                                            .padding(.horizontal, 12)
+                                            .padding(.vertical, 6)
+                                            .background(AppTheme.primaryGreen.opacity(0.12))
+                                            .clipShape(Capsule())
+                                        }
+                                        
+                                        Spacer()
+                                        
+                                        if store.id != selectedStore.id {
+                                            Button("選擇此門市") {
+                                                SoundManager.shared.playTapSound()
+                                                selectedStore = store
+                                                selectedTab = 0
+                                            }
+                                            .font(.system(size: 12, weight: .bold))
+                                            .padding(.horizontal, 14)
+                                            .padding(.vertical, 6)
+                                            .background(AppTheme.primaryGreen)
+                                            .foregroundColor(.white)
+                                            .clipShape(Capsule())
+                                        }
+                                    }
+                                }
+                                .padding(14)
+                                .background(AppTheme.cardBg(isDarkMode))
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                                .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.04), radius: 4, x: 0, y: 2)
+                            }
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 90)
+                    }
                 }
-                .padding(.vertical, 6)
             }
             .navigationTitle("門市據點")
             .sheet(item: $mapStoreTarget) { store in

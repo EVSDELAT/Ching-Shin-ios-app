@@ -697,10 +697,10 @@ struct DeliverySetupSheet: View {
                         Button(action: {
                             SoundManager.shared.playTapSound()
                             isLocating = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                            LocationManager.shared.fetchCurrentLocation { district, address in
                                 isLocating = false
-                                deliveryInfo.district = "中西區"
-                                deliveryInfo.address = "台南市中西區西門路二段100號"
+                                deliveryInfo.district = district
+                                deliveryInfo.address = address
                                 showLocatedToast = true
                                 SoundManager.shared.playAddToCartSound()
                             }
@@ -711,7 +711,7 @@ struct DeliverySetupSheet: View {
                                 } else {
                                     Image(systemName: "location.circle.fill").font(.system(size: 18))
                                 }
-                                Text(isLocating ? "定位抓取中..." : "📍 自動定位 (使用目前 GPS 位置)")
+                                Text(isLocating ? "衛星定位抓取中..." : "📍 自動定位 (使用目前 GPS 位置)")
                                     .font(.system(size: 14, weight: .bold))
                                 Spacer()
                                 Image(systemName: "chevron.right").font(.system(size: 12, weight: .bold))
@@ -733,7 +733,7 @@ struct DeliverySetupSheet: View {
                         if showLocatedToast {
                             HStack {
                                 Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
-                                Text("已自動定位帶入：台南市中西區西門路二段100號")
+                                Text("已自動定位帶入：\(deliveryInfo.address)")
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
                             }
