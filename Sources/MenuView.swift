@@ -11,7 +11,8 @@ struct MenuView: View {
     var onOpenCart: () -> Void
     var onOpenStoreLocator: () -> Void
     
-    @State private var selectedCategory: DrinkCategory? = .popular // nil means '全部' (All Drinks)
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    @State private var selectedCategory: DrinkCategory? = .popular
     @State private var searchText: String = ""
     @State private var isSearchExpanded: Bool = false
     @State private var currentPromoIndex: Int = 0
@@ -29,7 +30,7 @@ struct MenuView: View {
             if let category = selectedCategory {
                 matchesCategory = (category == .popular) ? drink.isHotItem : (drink.category == category)
             } else {
-                matchesCategory = true // '全部' selected
+                matchesCategory = true
             }
             
             let matchesSearch = searchText.isEmpty || drink.name.contains(searchText) || drink.description.contains(searchText)
@@ -40,16 +41,27 @@ struct MenuView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                // Top Header Area (Compact & Space-saving)
+                // Top Header Area with Official Brand Logo (Screenshot 3)
                 VStack(spacing: 10) {
-                    // Row 1: Brand & Order Mode Switch
+                    // Row 1: Official Brand Logo & Mode Switch
                     HStack {
+                        // Official Horizontal Red Heart Logo (Screenshot 3)
                         HStack(spacing: 6) {
-                            Image(systemName: "drop.fill")
-                                .foregroundColor(Color(hex: "008B47"))
-                            Text("清心福全")
-                                .font(.system(size: 18, weight: .black))
-                                .foregroundColor(Color(hex: "008B47"))
+                            if let logoImage = UIImage(contentsOfFile: "/Users/zhao/工作專區/清心ios app/Sources/Resources/brand_logo.png") {
+                                Image(uiImage: logoImage)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 28)
+                            } else {
+                                HStack(spacing: 4) {
+                                    Image(systemName: "heart.fill")
+                                        .font(.system(size: 18))
+                                        .foregroundColor(.red)
+                                    Text("清心福全")
+                                        .font(.system(size: 18, weight: .black))
+                                        .foregroundColor(Color(hex: "008B47"))
+                                }
+                            }
                         }
                         
                         Spacer()
@@ -100,7 +112,7 @@ struct MenuView: View {
                         .clipShape(Capsule())
                     }
                     
-                    // Row 2: Selected Store & Delivery Address
+                    // Row 2: Store Selector Bar
                     Button(action: {
                         SoundManager.shared.playTapSound()
                         if orderMode == .takeout {
@@ -118,15 +130,15 @@ struct MenuView: View {
                                 HStack(spacing: 4) {
                                     Text(orderMode == .takeout ? currentStore.name : "外送門市: \(currentStore.name)")
                                         .font(.system(size: 13, weight: .bold))
-                                        .foregroundColor(Color(hex: "1F2937"))
+                                        .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                     Image(systemName: "chevron.down")
                                         .font(.system(size: 10, weight: .bold))
-                                        .foregroundColor(Color(hex: "6B7280"))
+                                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
                                 }
                                 
                                 Text(orderMode == .takeout ? currentStore.address : "配送至: \(deliveryInfo.address)")
                                     .font(.system(size: 11))
-                                    .foregroundColor(Color(hex: "6B7280"))
+                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
                                     .lineLimit(1)
                             }
                             
@@ -147,21 +159,21 @@ struct MenuView: View {
                         }
                         .padding(.horizontal, 12)
                         .padding(.vertical, 8)
-                        .background(Color(hex: "F3F4F6"))
+                        .background(AppTheme.cardBg(isDarkMode))
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                     }
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 10)
                 .padding(.bottom, 8)
-                .background(Color.white)
+                .background(AppTheme.cardBg(isDarkMode))
                 
                 Divider()
                 
-                // Scrollable Body
+                // Scrollable Content Body
                 ScrollView {
                     VStack(spacing: 14) {
-                        // Promotion Banner Carousel
+                        // Promotion Carousel
                         VStack(spacing: 8) {
                             TabView(selection: $currentPromoIndex) {
                                 PromoBannerCard(
@@ -204,12 +216,11 @@ struct MenuView: View {
                         .padding(.horizontal, 16)
                         .padding(.top, 10)
                         
-                        // Category Bar with "全部分類" Button & Integrated Search (Mandatory Requirement #1)
+                        // Category Selector & Integrated Search Button
                         VStack(alignment: .leading, spacing: 10) {
-                            // Horizontal Category Selector Chips
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 8) {
-                                    // "全部分類" Drawer Trigger Button
+                                    // "全部分類" Button
                                     Button(action: {
                                         SoundManager.shared.playTapSound()
                                         showCategoryDrawer = true
@@ -233,21 +244,21 @@ struct MenuView: View {
                                     Divider()
                                         .frame(height: 18)
                                     
-                                    // "全部" (All Drinks) Chip
+                                    // "全部" (All) Chip
                                     Button(action: {
                                         SoundManager.shared.playTapSound()
                                         withAnimation { selectedCategory = nil }
                                     }) {
                                         Text("全部飲品")
                                             .font(.system(size: 13, weight: selectedCategory == nil ? .bold : .medium))
-                                            .foregroundColor(selectedCategory == nil ? .white : Color(hex: "374151"))
+                                            .foregroundColor(selectedCategory == nil ? .white : AppTheme.textPrimary(isDarkMode))
                                             .padding(.horizontal, 14)
                                             .padding(.vertical, 8)
-                                            .background(selectedCategory == nil ? Color(hex: "008B47") : Color.white)
+                                            .background(selectedCategory == nil ? Color(hex: "008B47") : AppTheme.cardBg(isDarkMode))
                                             .clipShape(Capsule())
                                             .overlay(
                                                 Capsule()
-                                                    .stroke(selectedCategory == nil ? Color(hex: "008B47") : Color(hex: "E5E7EB"), lineWidth: 1)
+                                                    .stroke(selectedCategory == nil ? Color(hex: "008B47") : AppTheme.border(isDarkMode), lineWidth: 1)
                                             )
                                     }
                                     
@@ -260,14 +271,14 @@ struct MenuView: View {
                                         }) {
                                             Text(cat.rawValue)
                                                 .font(.system(size: 13, weight: selectedCategory == cat ? .bold : .medium))
-                                                .foregroundColor(selectedCategory == cat ? .white : Color(hex: "374151"))
+                                                .foregroundColor(selectedCategory == cat ? .white : AppTheme.textPrimary(isDarkMode))
                                                 .padding(.horizontal, 14)
                                                 .padding(.vertical, 8)
-                                                .background(selectedCategory == cat ? Color(hex: "008B47") : Color.white)
+                                                .background(selectedCategory == cat ? Color(hex: "008B47") : AppTheme.cardBg(isDarkMode))
                                                 .clipShape(Capsule())
                                                 .overlay(
                                                     Capsule()
-                                                        .stroke(selectedCategory == cat ? Color(hex: "008B47") : Color(hex: "E5E7EB"), lineWidth: 1)
+                                                        .stroke(selectedCategory == cat ? Color(hex: "008B47") : AppTheme.border(isDarkMode), lineWidth: 1)
                                                 )
                                         }
                                     }
@@ -275,19 +286,18 @@ struct MenuView: View {
                                 .padding(.horizontal, 16)
                             }
                             
-                            // Category Title Header with Integrated Search (Replacing old top search bar)
+                            // Category Title Header with Integrated Search
                             HStack {
                                 Text(selectedCategory?.rawValue ?? "全部飲品列表")
                                     .font(.system(size: 17, weight: .bold))
-                                    .foregroundColor(Color(hex: "1F2937"))
+                                    .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 
                                 Text("(\(filteredDrinks.count)款)")
                                     .font(.system(size: 13))
-                                    .foregroundColor(Color(hex: "6B7280"))
+                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
                                 
                                 Spacer()
                                 
-                                // Integrated Search Bar (Relocated as requested in Screenshot 1)
                                 HStack(spacing: 6) {
                                     if isSearchExpanded {
                                         HStack(spacing: 4) {
@@ -297,19 +307,20 @@ struct MenuView: View {
                                             
                                             TextField("搜尋飲料...", text: $searchText)
                                                 .font(.system(size: 12))
+                                                .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                                 .frame(width: 100)
                                             
                                             if !searchText.isEmpty {
                                                 Button(action: { searchText = "" }) {
                                                     Image(systemName: "xmark.circle.fill")
                                                         .font(.system(size: 12))
-                                                        .foregroundColor(Color(hex: "9CA3AF"))
+                                                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
                                                 }
                                             }
                                         }
                                         .padding(.horizontal, 8)
                                         .padding(.vertical, 4)
-                                        .background(Color.white)
+                                        .background(AppTheme.cardBg(isDarkMode))
                                         .clipShape(Capsule())
                                         .overlay(Capsule().stroke(Color(hex: "008B47"), lineWidth: 1.5))
                                     } else {
@@ -342,10 +353,10 @@ struct MenuView: View {
                             VStack(spacing: 12) {
                                 Image(systemName: "mug.fill")
                                     .font(.system(size: 44))
-                                    .foregroundColor(Color(hex: "D1D5DB"))
+                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
                                 Text("沒有找到相符的飲料品項")
                                     .font(.system(size: 14))
-                                    .foregroundColor(Color(hex: "6B7280"))
+                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
                             }
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 40)
@@ -363,7 +374,7 @@ struct MenuView: View {
                     }
                     .padding(.bottom, 130)
                 }
-                .background(Color(hex: "F9FAFB"))
+                .background(AppTheme.bg(isDarkMode))
             }
             .navigationBarHidden(true)
             .sheet(isPresented: $isShowingDeliverySetup) {
@@ -379,135 +390,7 @@ struct MenuView: View {
     }
 }
 
-// Drawer Sheet View for All Drink Categories (Requirement #2: Added '全部' Option)
-struct AllCategoriesDrawerSheetView: View {
-    @Binding var selectedCategory: DrinkCategory?
-    @Binding var isPresented: Bool
-    
-    var body: some View {
-        NavigationView {
-            ZStack {
-                Color(hex: "F8F9FA").ignoresSafeArea()
-                
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 16) {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("全部分類菜單目錄")
-                                    .font(.system(size: 20, weight: .bold))
-                                    .foregroundColor(Color(hex: "1F2937"))
-                                Text("點擊類別快速切換飲料項目 (共 13 大系列)")
-                                    .font(.system(size: 12))
-                                    .foregroundColor(Color(hex: "6B7280"))
-                            }
-                            Spacer()
-                            
-                            Button(action: {
-                                SoundManager.shared.playTapSound()
-                                isPresented = false
-                            }) {
-                                Image(systemName: "xmark.circle.fill")
-                                    .font(.system(size: 24))
-                                    .foregroundColor(Color(hex: "9CA3AF"))
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                        .padding(.top, 20)
-                        
-                        // "全部 (All Drinks)" Master Option Card (Requirement #2)
-                        Button(action: {
-                            SoundManager.shared.playTapSound()
-                            selectedCategory = nil // nil = 全部品項
-                            isPresented = false
-                        }) {
-                            HStack(spacing: 12) {
-                                ZStack {
-                                    Circle()
-                                        .fill(Color(hex: "008B47"))
-                                        .frame(width: 44, height: 44)
-                                    Image(systemName: "square.grid.3x3.fill")
-                                        .font(.system(size: 20))
-                                        .foregroundColor(.white)
-                                }
-                                
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("全部飲料品項 (不分系列)")
-                                        .font(.system(size: 16, weight: .bold))
-                                        .foregroundColor(Color(hex: "1F2937"))
-                                    Text("一次瀏覽清心福全所有完整飲料目錄")
-                                        .font(.system(size: 12))
-                                        .foregroundColor(Color(hex: "6B7280"))
-                                }
-                                
-                                Spacer()
-                                
-                                Image(systemName: "chevron.right")
-                                    .font(.system(size: 14, weight: .bold))
-                                    .foregroundColor(Color(hex: "008B47"))
-                            }
-                            .padding(14)
-                            .background(Color.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 16)
-                                    .stroke(selectedCategory == nil ? Color(hex: "008B47") : Color.clear, lineWidth: 2)
-                            )
-                            .shadow(color: Color.black.opacity(0.04), radius: 6, x: 0, y: 2)
-                            .padding(.horizontal, 20)
-                        }
-                        
-                        // 2-Column Categories Grid
-                        LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
-                            ForEach(DrinkCategory.allCases) { cat in
-                                Button(action: {
-                                    SoundManager.shared.playTapSound()
-                                    selectedCategory = cat
-                                    isPresented = false
-                                }) {
-                                    HStack(spacing: 10) {
-                                        ZStack {
-                                            Circle()
-                                                .fill(Color(hex: "008B47").opacity(0.12))
-                                                .frame(width: 38, height: 38)
-                                            Image(systemName: cat.iconName)
-                                                .font(.system(size: 15))
-                                                .foregroundColor(Color(hex: "008B47"))
-                                        }
-                                        
-                                        VStack(alignment: .leading, spacing: 2) {
-                                            Text(cat.rawValue)
-                                                .font(.system(size: 14, weight: .bold))
-                                                .foregroundColor(Color(hex: "1F2937"))
-                                                .lineLimit(1)
-                                            Text("查看飲料")
-                                                .font(.system(size: 10))
-                                                .foregroundColor(Color(hex: "6B7280"))
-                                        }
-                                        
-                                        Spacer(minLength: 0)
-                                    }
-                                    .padding(12)
-                                    .background(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: 14))
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 14)
-                                            .stroke(selectedCategory == cat ? Color(hex: "008B47") : Color(hex: "E5E7EB"), lineWidth: selectedCategory == cat ? 2 : 1)
-                                    )
-                                    .shadow(color: Color.black.opacity(0.03), radius: 4, x: 0, y: 2)
-                                }
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 30)
-                    }
-                }
-            }
-            .navigationBarHidden(true)
-        }
-    }
-}
-
-// Promo Banner Card
+// Helper Components
 struct PromoBannerCard: View {
     let badge: String
     let title: String
@@ -557,10 +440,10 @@ struct PromoBannerCard: View {
     }
 }
 
-// Drink Grid Card
 struct DrinkGridCard: View {
     let drink: Drink
     let onSelect: () -> Void
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     var body: some View {
         Button(action: onSelect) {
@@ -569,7 +452,7 @@ struct DrinkGridCard: View {
                     RoundedRectangle(cornerRadius: 14)
                         .fill(
                             LinearGradient(
-                                gradient: Gradient(colors: [Color(hex: "F3F4F6"), Color(hex: "E5E7EB")]),
+                                gradient: Gradient(colors: [Color(hex: "008B47").opacity(0.12), Color(hex: "008B47").opacity(0.04)]),
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
@@ -595,12 +478,12 @@ struct DrinkGridCard: View {
                 VStack(alignment: .leading, spacing: 5) {
                     Text(drink.name)
                         .font(.system(size: 14, weight: .bold))
-                        .foregroundColor(Color(hex: "1F2937"))
+                        .foregroundColor(AppTheme.textPrimary(isDarkMode))
                         .lineLimit(1)
                     
                     Text(drink.description)
                         .font(.system(size: 10))
-                        .foregroundColor(Color(hex: "6B7280"))
+                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
                         .frame(height: 26, alignment: .topLeading)
@@ -632,15 +515,141 @@ struct DrinkGridCard: View {
                     .padding(.top, 4)
                 }
                 .padding(10)
-                .background(Color.white)
+                .background(AppTheme.cardBg(isDarkMode))
             }
             .clipShape(RoundedRectangle(cornerRadius: 16))
-            .shadow(color: Color.black.opacity(0.04), radius: 6, x: 0, y: 3)
+            .shadow(color: Color.black.opacity(isDarkMode ? 0.2 : 0.04), radius: 6, x: 0, y: 3)
         }
     }
 }
 
-// Delivery Setup Sheet
+struct AllCategoriesDrawerSheetView: View {
+    @Binding var selectedCategory: DrinkCategory?
+    @Binding var isPresented: Bool
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    
+    var body: some View {
+        NavigationView {
+            ZStack {
+                AppTheme.bg(isDarkMode).ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 16) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("全部分類菜單目錄")
+                                    .font(.system(size: 20, weight: .bold))
+                                    .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                Text("點擊類別快速切換飲料項目 (共 13 大系列)")
+                                    .font(.system(size: 12))
+                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                            }
+                            Spacer()
+                            
+                            Button(action: {
+                                SoundManager.shared.playTapSound()
+                                isPresented = false
+                            }) {
+                                Image(systemName: "xmark.circle.fill")
+                                    .font(.system(size: 24))
+                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                            }
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.top, 20)
+                        
+                        // "全部 (All Drinks)" Master Option Card
+                        Button(action: {
+                            SoundManager.shared.playTapSound()
+                            selectedCategory = nil
+                            isPresented = false
+                        }) {
+                            HStack(spacing: 12) {
+                                ZStack {
+                                    Circle()
+                                        .fill(Color(hex: "008B47"))
+                                        .frame(width: 44, height: 44)
+                                    Image(systemName: "square.grid.3x3.fill")
+                                        .font(.system(size: 20))
+                                        .foregroundColor(.white)
+                                }
+                                
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("全部飲料品項 (不分系列)")
+                                        .font(.system(size: 16, weight: .bold))
+                                        .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                    Text("一次瀏覽清心福全所有完整飲料目錄")
+                                        .font(.system(size: 12))
+                                        .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                }
+                                
+                                Spacer()
+                                
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 14, weight: .bold))
+                                    .foregroundColor(Color(hex: "008B47"))
+                            }
+                            .padding(14)
+                            .background(AppTheme.cardBg(isDarkMode))
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .stroke(selectedCategory == nil ? Color(hex: "008B47") : Color.clear, lineWidth: 2)
+                            )
+                            .shadow(color: Color.black.opacity(isDarkMode ? 0.2 : 0.04), radius: 6, x: 0, y: 2)
+                            .padding(.horizontal, 20)
+                        }
+                        
+                        LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
+                            ForEach(DrinkCategory.allCases) { cat in
+                                Button(action: {
+                                    SoundManager.shared.playTapSound()
+                                    selectedCategory = cat
+                                    isPresented = false
+                                }) {
+                                    HStack(spacing: 10) {
+                                        ZStack {
+                                            Circle()
+                                                .fill(Color(hex: "008B47").opacity(0.12))
+                                                .frame(width: 38, height: 38)
+                                            Image(systemName: cat.iconName)
+                                                .font(.system(size: 15))
+                                                .foregroundColor(Color(hex: "008B47"))
+                                        }
+                                        
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text(cat.rawValue)
+                                                .font(.system(size: 14, weight: .bold))
+                                                .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                                .lineLimit(1)
+                                            Text("查看飲料")
+                                                .font(.system(size: 10))
+                                                .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                        }
+                                        
+                                        Spacer(minLength: 0)
+                                    }
+                                    .padding(12)
+                                    .background(AppTheme.cardBg(isDarkMode))
+                                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 14)
+                                            .stroke(selectedCategory == cat ? Color(hex: "008B47") : AppTheme.border(isDarkMode), lineWidth: selectedCategory == cat ? 2 : 1)
+                                    )
+                                    .shadow(color: Color.black.opacity(isDarkMode ? 0.2 : 0.03), radius: 4, x: 0, y: 2)
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 30)
+                    }
+                }
+            }
+            .navigationBarHidden(true)
+        }
+    }
+}
+
 struct DeliverySetupSheet: View {
     @Binding var deliveryInfo: DeliveryInfo
     @Binding var isPresented: Bool

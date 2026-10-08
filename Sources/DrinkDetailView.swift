@@ -5,12 +5,14 @@ struct DrinkDetailView: View {
     var onAddToCart: (CartItem) -> Void
     
     @Environment(\.dismiss) private var dismiss
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     @State private var selectedSize: CupSize = .large
     @State private var selectedSugar: SugarLevel = .half5
     @State private var selectedIce: IceLevel = .lessIce
     @State private var selectedToppings: Set<Topping> = []
     @State private var quantity: Int = 1
+    @State private var isToppingsExpanded: Bool = false
     
     var unitPrice: Int {
         let basePrice = (selectedSize == .large) ? drink.priceL : (drink.priceM ?? drink.priceL)
@@ -26,246 +28,262 @@ struct DrinkDetailView: View {
     let iceOptions: [IceLevel] = IceLevel.allCases
     let toppingOptions: [Topping] = Topping.allCases
     
-    let toppingColumns = [
-        GridItem(.flexible(), spacing: 10),
-        GridItem(.flexible(), spacing: 10)
-    ]
-    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottom) {
-                Color(hex: "F8F9FA").ignoresSafeArea()
+                AppTheme.bg(isDarkMode).ignoresSafeArea()
                 
-                ScrollView {
-                    VStack(spacing: 20) {
-                        // Drink Header Card with Visual Preview
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(
-                                    LinearGradient(
-                                        gradient: Gradient(colors: [Color(hex: "008B47").opacity(0.12), Color(hex: "008B47").opacity(0.04)]),
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
-                                    )
-                                )
-                            
-                            HStack(spacing: 16) {
-                                Drink3DThumbnailView(style: drink.cupStyle, size: 90)
-                                
-                                VStack(alignment: .leading, spacing: 6) {
-                                    HStack {
-                                        Text(drink.name)
-                                            .font(.system(size: 20, weight: .bold))
-                                            .foregroundColor(Color(hex: "1F2937"))
-                                        
-                                        if drink.isHotItem {
-                                            Text("HOT")
-                                                .font(.system(size: 10, weight: .bold))
-                                                .foregroundColor(.white)
-                                                .padding(.horizontal, 6)
-                                                .padding(.vertical, 2)
-                                                .background(Color.red)
-                                                .clipShape(Capsule())
-                                        }
-                                    }
-                                    
-                                    Text(drink.description)
-                                        .font(.system(size: 12))
-                                        .foregroundColor(Color(hex: "6B7280"))
-                                        .lineLimit(2)
-                                    
-                                    HStack(spacing: 8) {
-                                        Text("單杯單價:")
-                                            .font(.system(size: 12))
-                                            .foregroundColor(Color(hex: "9CA3AF"))
-                                        Text("NT$ \(unitPrice)")
-                                            .font(.system(size: 18, weight: .bold))
-                                            .foregroundColor(Color(hex: "008B47"))
-                                    }
-                                    .padding(.top, 2)
-                                }
-                                
-                                Spacer(minLength: 0)
-                            }
-                            .padding(16)
-                        }
-                        .padding(.horizontal, 16)
-                        .padding(.top, 12)
+                VStack(spacing: 12) {
+                    // Compact Drink Header Card
+                    HStack(spacing: 12) {
+                        Drink3DThumbnailView(style: drink.cupStyle, size: 65)
                         
-                        // Option Section 1: Cup Size (容量選擇)
-                        DetailOptionGroup(title: "容量大小", subtitle: "選擇容量規格") {
-                            HStack(spacing: 12) {
-                                if let pM = drink.priceM {
-                                    SelectableChip(
-                                        title: "中杯 (M)",
-                                        subtitle: "NT$ \(pM)",
-                                        isSelected: selectedSize == .medium
-                                    ) {
-                                        SoundManager.shared.playTapSound()
-                                        selectedSize = .medium
-                                    }
-                                }
+                        VStack(alignment: .leading, spacing: 3) {
+                            HStack {
+                                Text(drink.name)
+                                    .font(.system(size: 18, weight: .bold))
+                                    .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 
-                                SelectableChip(
-                                    title: "大杯 (L)",
-                                    subtitle: "NT$ \(drink.priceL)",
-                                    isSelected: selectedSize == .large
+                                if drink.isHotItem {
+                                    Text("HOT")
+                                        .font(.system(size: 9, weight: .bold))
+                                        .foregroundColor(.white)
+                                        .padding(.horizontal, 5)
+                                        .padding(.vertical, 2)
+                                        .background(Color.red)
+                                        .clipShape(Capsule())
+                                }
+                            }
+                            
+                            Text(drink.description)
+                                .font(.system(size: 11))
+                                .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                .lineLimit(1)
+                            
+                            HStack(spacing: 6) {
+                                Text("單價:")
+                                    .font(.system(size: 11))
+                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                Text("NT$ \(unitPrice)")
+                                    .font(.system(size: 16, weight: .bold))
+                                    .foregroundColor(AppTheme.primaryGreen)
+                            }
+                        }
+                        
+                        Spacer(minLength: 0)
+                    }
+                    .padding(12)
+                    .background(AppTheme.cardBg(isDarkMode))
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .shadow(color: Color.black.opacity(isDarkMode ? 0.2 : 0.04), radius: 4, x: 0, y: 2)
+                    .padding(.horizontal, 14)
+                    .padding(.top, 8)
+                    
+                    // Section 1: Cup Size (容量規格)
+                    CompactOptionRow(title: "容量規格") {
+                        HStack(spacing: 8) {
+                            if let pM = drink.priceM {
+                                CompactChip(
+                                    title: "中杯 (M) $\(pM)",
+                                    isSelected: selectedSize == .medium,
+                                    isDark: isDarkMode
                                 ) {
                                     SoundManager.shared.playTapSound()
-                                    selectedSize = .large
+                                    selectedSize = .medium
+                                }
+                            }
+                            
+                            CompactChip(
+                                title: "大杯 (L) $\(drink.priceL)",
+                                isSelected: selectedSize == .large,
+                                isDark: isDarkMode
+                            ) {
+                                SoundManager.shared.playTapSound()
+                                selectedSize = .large
+                            }
+                        }
+                    }
+                    
+                    // Section 2: Sugar Level (甜度選擇)
+                    CompactOptionRow(title: "甜度選擇") {
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 6), count: 3), spacing: 6) {
+                            ForEach(sugarOptions, id: \.self) { sugar in
+                                CompactChip(
+                                    title: sugar.rawValue,
+                                    isSelected: selectedSugar == sugar,
+                                    isDark: isDarkMode
+                                ) {
+                                    SoundManager.shared.playTapSound()
+                                    selectedSugar = sugar
                                 }
                             }
                         }
-                        
-                        // Option Section 2: Sugar Level (甜度選擇)
-                        DetailOptionGroup(title: "甜度選擇", subtitle: "本市使用台糖甘蔗液糖") {
-                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                                ForEach(sugarOptions, id: \.self) { sugar in
-                                    SelectableChip(
-                                        title: sugar.rawValue,
-                                        subtitle: nil,
-                                        isSelected: selectedSugar == sugar
-                                    ) {
-                                        SoundManager.shared.playTapSound()
-                                        selectedSugar = sugar
-                                    }
+                    }
+                    
+                    // Section 3: Ice Level (冰熱選擇)
+                    CompactOptionRow(title: "冰熱選擇") {
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 6), count: 3), spacing: 6) {
+                            ForEach(iceOptions, id: \.self) { ice in
+                                CompactChip(
+                                    title: ice.rawValue,
+                                    isSelected: selectedIce == ice,
+                                    isDark: isDarkMode
+                                ) {
+                                    SoundManager.shared.playTapSound()
+                                    selectedIce = ice
                                 }
                             }
                         }
-                        
-                        // Option Section 3: Ice Level (冰熱選擇)
-                        DetailOptionGroup(title: "冰熱選擇", subtitle: "溫度調整") {
-                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                                ForEach(iceOptions, id: \.self) { ice in
-                                    SelectableChip(
-                                        title: ice.rawValue,
-                                        subtitle: nil,
-                                        isSelected: selectedIce == ice
-                                    ) {
-                                        SoundManager.shared.playTapSound()
-                                        selectedIce = ice
-                                    }
-                                }
+                    }
+                    
+                    // Section 4: Toppings (Expandable Accordion - 預設收合省空間 - Mandatory Requirement #2)
+                    VStack(alignment: .leading, spacing: 6) {
+                        Button(action: {
+                            SoundManager.shared.playTapSound()
+                            withAnimation(.spring(response: 0.3)) {
+                                isToppingsExpanded.toggle()
                             }
-                        }
-                        
-                        // Option Section 4: Toppings (加料選擇)
-                        DetailOptionGroup(title: "加料選擇 (額外加價)", subtitle: "可複選多種配料") {
-                            LazyVGrid(columns: toppingColumns, spacing: 10) {
-                                ForEach(toppingOptions, id: \.self) { topping in
-                                    ToppingChipView(
-                                        topping: topping,
-                                        isSelected: selectedToppings.contains(topping),
-                                        onToggle: {
-                                            SoundManager.shared.playTapSound()
-                                            if selectedToppings.contains(topping) {
-                                                selectedToppings.remove(topping)
-                                            } else {
-                                                selectedToppings.insert(topping)
-                                            }
-                                        }
-                                    )
-                                }
-                            }
-                        }
-                        
-                        // Option Section 5: Quantity (購買數量)
-                        VStack(alignment: .leading, spacing: 12) {
+                        }) {
                             HStack {
-                                Text("購買數量")
-                                    .font(.system(size: 15, weight: .bold))
-                                    .foregroundColor(Color(hex: "1F2937"))
+                                HStack(spacing: 6) {
+                                    Image(systemName: "plus.circle.fill")
+                                        .font(.system(size: 12))
+                                        .foregroundColor(AppTheme.primaryGreen)
+                                    Text("加購配料 (珍珠/椰果...)")
+                                        .font(.system(size: 13, weight: .bold))
+                                        .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                    
+                                    if !selectedToppings.isEmpty {
+                                        Text("已選\(selectedToppings.count)種")
+                                            .font(.system(size: 10, weight: .bold))
+                                            .foregroundColor(.white)
+                                            .padding(.horizontal, 6)
+                                            .padding(.vertical, 2)
+                                            .background(AppTheme.primaryGreen)
+                                            .clipShape(Capsule())
+                                    }
+                                }
+                                
                                 Spacer()
                                 
-                                HStack(spacing: 16) {
-                                    Button(action: {
-                                        if quantity > 1 {
-                                            SoundManager.shared.playTapSound()
-                                            quantity -= 1
-                                        }
-                                    }) {
-                                        ZStack {
-                                            Circle()
-                                                .fill(quantity > 1 ? Color(hex: "E5E7EB") : Color(hex: "F3F4F6"))
-                                                .frame(width: 32, height: 32)
-                                            Image(systemName: "minus")
-                                                .font(.system(size: 13, weight: .bold))
-                                                .foregroundColor(quantity > 1 ? Color(hex: "1F2937") : Color(hex: "9CA3AF"))
-                                        }
-                                    }
-                                    
-                                    Text("\(quantity)")
-                                        .font(.system(size: 17, weight: .bold))
-                                        .foregroundColor(Color(hex: "1F2937"))
-                                        .frame(minWidth: 24)
-                                    
-                                    Button(action: {
+                                Image(systemName: isToppingsExpanded ? "chevron.up" : "chevron.down")
+                                    .font(.system(size: 11, weight: .bold))
+                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                            }
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 10)
+                            .background(AppTheme.cardBg(isDarkMode))
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                        }
+                        
+                        if isToppingsExpanded {
+                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 6) {
+                                ForEach(toppingOptions, id: \.self) { topping in
+                                    let isSelected = selectedToppings.contains(topping)
+                                    CompactChip(
+                                        title: "\(topping.cleanName) (+\(topping.price))",
+                                        isSelected: isSelected,
+                                        isDark: isDarkMode
+                                    ) {
                                         SoundManager.shared.playTapSound()
-                                        quantity += 1
-                                    }) {
-                                        ZStack {
-                                            Circle()
-                                                .fill(Color(hex: "008B47"))
-                                                .frame(width: 32, height: 32)
-                                            Image(systemName: "plus")
-                                                .font(.system(size: 13, weight: .bold))
-                                                .foregroundColor(.white)
+                                        if isSelected {
+                                            selectedToppings.remove(topping)
+                                        } else {
+                                            selectedToppings.insert(topping)
                                         }
                                     }
                                 }
                             }
+                            .padding(8)
+                            .background(AppTheme.cardBg(isDarkMode).opacity(0.8))
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                            .transition(.opacity.combined(with: .move(edge: .top)))
                         }
-                        .padding(16)
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .shadow(color: Color.black.opacity(0.03), radius: 6, x: 0, y: 2)
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 100)
                     }
+                    .padding(.horizontal, 14)
+                    
+                    Spacer(minLength: 0)
                 }
+                .padding(.bottom, 80)
                 
-                // Sticky Bottom Cart Button
-                VStack {
-                    Button(action: {
-                        SoundManager.shared.playAddToCartSound()
-                        let newItem = CartItem(
-                            drink: drink,
-                            size: selectedSize,
-                            sugar: selectedSugar,
-                            ice: selectedIce,
-                            toppings: selectedToppings,
-                            quantity: quantity
-                        )
-                        onAddToCart(newItem)
-                        dismiss()
-                    }) {
-                        HStack {
-                            Text("加入購物車")
+                // Sticky Action Bar (Quantity + Add to Cart Button)
+                VStack(spacing: 8) {
+                    HStack(spacing: 12) {
+                        // Quantity Stepper
+                        HStack(spacing: 12) {
+                            Button(action: {
+                                if quantity > 1 {
+                                    SoundManager.shared.playTapSound()
+                                    quantity -= 1
+                                }
+                            }) {
+                                Image(systemName: "minus.circle.fill")
+                                    .font(.system(size: 22))
+                                    .foregroundColor(quantity > 1 ? AppTheme.primaryGreen : Color.gray.opacity(0.4))
+                            }
+                            
+                            Text("\(quantity)")
                                 .font(.system(size: 16, weight: .bold))
-                                .foregroundColor(.white)
+                                .foregroundColor(AppTheme.textPrimary(isDarkMode))
                             
-                            Spacer()
-                            
-                            Text("共 NT$ \(totalPrice)")
-                                .font(.system(size: 17, weight: .bold))
-                                .foregroundColor(.white)
+                            Button(action: {
+                                SoundManager.shared.playTapSound()
+                                quantity += 1
+                            }) {
+                                Image(systemName: "plus.circle.fill")
+                                    .font(.system(size: 22))
+                                    .foregroundColor(AppTheme.primaryGreen)
+                            }
                         }
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 14)
-                        .background(
-                            LinearGradient(
-                                gradient: Gradient(colors: [Color(hex: "008B47"), Color(hex: "006834")]),
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 6)
+                        .background(AppTheme.cardBg(isDarkMode))
                         .clipShape(Capsule())
-                        .shadow(color: Color(hex: "008B47").opacity(0.35), radius: 10, x: 0, y: 4)
+                        .overlay(Capsule().stroke(AppTheme.border(isDarkMode), lineWidth: 1))
+                        
+                        // Add to Cart Button
+                        Button(action: {
+                            SoundManager.shared.playAddToCartSound()
+                            let newItem = CartItem(
+                                drink: drink,
+                                size: selectedSize,
+                                sugar: selectedSugar,
+                                ice: selectedIce,
+                                toppings: selectedToppings,
+                                quantity: quantity
+                            )
+                            onAddToCart(newItem)
+                            dismiss()
+                        }) {
+                            HStack {
+                                Text("加入購物車")
+                                    .font(.system(size: 15, weight: .bold))
+                                    .foregroundColor(.white)
+                                
+                                Spacer()
+                                
+                                Text("共 NT$ \(totalPrice)")
+                                    .font(.system(size: 16, weight: .bold))
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 12)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color(hex: "008B47"), Color(hex: "006834")]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            .clipShape(Capsule())
+                            .shadow(color: Color(hex: "008B47").opacity(0.35), radius: 6, x: 0, y: 3)
+                        }
                     }
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 10)
+                    .background(AppTheme.cardBg(isDarkMode))
+                    .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: -2)
                 }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 20)
-                .background(Color.white.opacity(0.95))
             }
             .navigationTitle("飲料客製化")
             .navigationBarTitleDisplayMode(.inline)
@@ -274,88 +292,61 @@ struct DrinkDetailView: View {
                     Button("取消") {
                         dismiss()
                     }
-                    .foregroundColor(Color(hex: "6B7280"))
+                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
                 }
             }
         }
     }
 }
 
-struct ToppingChipView: View {
-    let topping: Topping
-    let isSelected: Bool
-    let onToggle: () -> Void
-    
-    var body: some View {
-        SelectableChip(
-            title: "\(topping.rawValue)",
-            subtitle: "(+\(topping.price))",
-            isSelected: isSelected,
-            action: onToggle
-        )
-    }
-}
-
-struct DetailOptionGroup<Content: View>: View {
+// Compact Option Section Container
+struct CompactOptionRow<Content: View>: View {
     let title: String
-    let subtitle: String?
     let content: Content
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
-    init(title: String, subtitle: String? = nil, @ViewBuilder content: () -> Content) {
+    init(title: String, @ViewBuilder content: () -> Content) {
         self.title = title
-        self.subtitle = subtitle
         self.content = content()
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Text(title)
-                    .font(.system(size: 15, weight: .bold))
-                    .foregroundColor(Color(hex: "1F2937"))
-                if let sub = subtitle {
-                    Text(sub)
-                        .font(.system(size: 11))
-                        .foregroundColor(Color(hex: "9CA3AF"))
-                }
-            }
+        VStack(alignment: .leading, spacing: 6) {
+            Text(title)
+                .font(.system(size: 12, weight: .bold))
+                .foregroundColor(AppTheme.textSecondary(isDarkMode))
             
             content
         }
-        .padding(14)
-        .background(Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-        .shadow(color: Color.black.opacity(0.03), radius: 6, x: 0, y: 2)
-        .padding(.horizontal, 16)
+        .padding(10)
+        .background(AppTheme.cardBg(isDarkMode))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .shadow(color: Color.black.opacity(isDarkMode ? 0.2 : 0.03), radius: 4, x: 0, y: 2)
+        .padding(.horizontal, 14)
     }
 }
 
-struct SelectableChip: View {
+// Compact Chip Button
+struct CompactChip: View {
     let title: String
-    let subtitle: String?
     let isSelected: Bool
+    let isDark: Bool
     let action: () -> Void
     
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 4) {
-                Text(title)
-                    .font(.system(size: 13, weight: isSelected ? .bold : .medium))
-                if let sub = subtitle {
-                    Text(sub)
-                        .font(.system(size: 11))
-                }
-            }
-            .foregroundColor(isSelected ? .white : Color(hex: "374151"))
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 10)
-            .padding(.horizontal, 8)
-            .background(isSelected ? Color(hex: "008B47") : Color(hex: "F3F4F6"))
-            .clipShape(RoundedRectangle(cornerRadius: 12))
-            .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(isSelected ? Color(hex: "008B47") : Color.clear, lineWidth: 1.5)
-            )
+            Text(title)
+                .font(.system(size: 12, weight: isSelected ? .bold : .medium))
+                .foregroundColor(isSelected ? .white : AppTheme.textPrimary(isDark))
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 4)
+                .background(isSelected ? AppTheme.primaryGreen : AppTheme.bg(isDark))
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(isSelected ? AppTheme.primaryGreen : AppTheme.border(isDark), lineWidth: 1)
+                )
         }
     }
 }

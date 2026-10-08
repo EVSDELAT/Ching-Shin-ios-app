@@ -429,3 +429,61 @@ extension Color {
         )
     }
 }
+
+// MARK: - Official App Coupon Model
+struct AppCoupon: Identifiable, Hashable {
+    let id: String
+    let title: String
+    let subtitle: String
+    let badge: String
+    let minSpend: Int
+    let discountValue: Int // For fixed dollar off or percent representation
+    let isPercent: Bool
+    
+    func calculateDiscount(subtotal: Int) -> Int {
+        if subtotal < minSpend { return 0 }
+        if isPercent {
+            return Int(Double(subtotal) * (Double(discountValue) / 100.0))
+        } else {
+            return min(subtotal, discountValue)
+        }
+    }
+    
+    static func == (lhs: AppCoupon, rhs: AppCoupon) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static let sampleCoupons: [AppCoupon] = [
+        AppCoupon(
+            id: "coupon_9off",
+            title: "新用戶折抵",
+            subtitle: "滿 $100 打 9 折",
+            badge: "首購專屬",
+            minSpend: 100,
+            discountValue: 10,
+            isPercent: true
+        ),
+        AppCoupon(
+            id: "coupon_20off",
+            title: "本月獨享禮券",
+            subtitle: "全單現折 $20",
+            badge: "本月限定",
+            minSpend: 0,
+            discountValue: 20,
+            isPercent: false
+        ),
+        AppCoupon(
+            id: "coupon_50off",
+            title: "VIP 會員折價券",
+            subtitle: "滿 $150 現折 $50",
+            badge: "VIP尊榮",
+            minSpend: 150,
+            discountValue: 50,
+            isPercent: false
+        )
+    ]
+}

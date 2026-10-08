@@ -14,11 +14,14 @@
 		17210AA91D5BED5E83490603 /* SplashVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C10E9CC2A242A9492EB3734 /* SplashVideoView.swift */; };
 		19FC9B9E66F4D93F33FBFE6C /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721A7DC1B6046F610511370 /* App.swift */; };
 		1D380EB4D072131D004EA024 /* DrinkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A627F989B8B3760DF76D6D /* DrinkDetailView.swift */; };
+		1D66B2D6262E5D3C2C708B7D /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9266D3C53CCEEDB978217167 /* AppTheme.swift */; };
 		3062ABA54823C762C45AC8C4 /* MemberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3A44668E8010644C4451 /* MemberCardView.swift */; };
 		31884DA9553E7381DF4E0D32 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B9F86B96964C3E3A63FC34 /* SoundManager.swift */; };
+		3EB87859FDB54C1BA7B4A4E9 /* brand_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D5DB92729A899EACA96771CE /* brand_logo.png */; };
 		43C2B2D3648D8C481FA44D12 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDCA9E38BF827881581AEEA /* Models.swift */; };
 		53B8121B690A8DD079752692 /* ShakingCupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E795F43061CBC7ED1EE /* ShakingCupView.swift */; };
 		5C91E7D36A7C0B25030E3E83 /* 開頭動畫.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7A8287C0B096170A6FBF621B /* 開頭動畫.mp4 */; };
+		60C546528D7AFB3DF49300F4 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9266D3C53CCEEDB978217167 /* AppTheme.swift */; };
 		646CE81C4A8B7DF4DFBE4915 /* 開頭動畫.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7A8287C0B096170A6FBF621B /* 開頭動畫.mp4 */; };
 		659D25DAD26CA611BD36B666 /* StoreLocatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268834885F68BAD0307A149 /* StoreLocatorView.swift */; };
 		66FA570B6CFD8D090BD4AAF7 /* OrderProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B3A2415C7807A96B1D5CC /* OrderProgressView.swift */; };
@@ -42,6 +45,7 @@
 		C2BBB9D54B5E5396DB6C1BA4 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721A7DC1B6046F610511370 /* App.swift */; };
 		C4BDA133CFD063AE4E293C12 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B9F86B96964C3E3A63FC34 /* SoundManager.swift */; };
 		E7314DE4812C807DBEEF1FC1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E4EF70934EEA7C2CF08428 /* SettingsView.swift */; };
+		EB03218667C5093112370BFB /* brand_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D5DB92729A899EACA96771CE /* brand_logo.png */; };
 		FAEDE68C6969602C17F8B620 /* Drink3DThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F05EB5274D2EFF05AA2D6 /* Drink3DThumbnailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,12 +64,14 @@
 		8A3B3A2415C7807A96B1D5CC /* OrderProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProgressView.swift; sourceTree = "<group>"; };
 		8F633B99B1442032D528A012 /* StoreMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMapView.swift; sourceTree = "<group>"; };
 		8FDCA9E38BF827881581AEEA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		9266D3C53CCEEDB978217167 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		9A0F05EB5274D2EFF05AA2D6 /* Drink3DThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink3DThumbnailView.swift; sourceTree = "<group>"; };
 		B5B9F86B96964C3E3A63FC34 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		B7FB185495BCD6819998D260 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		C3A65BFB0235EBE9A198615A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		C5E4EF70934EEA7C2CF08428 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D4356D6D7DAED03ED0621810 /* ChingshinApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ChingshinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5DB92729A899EACA96771CE /* brand_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brand_logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -73,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				0721A7DC1B6046F610511370 /* App.swift */,
+				9266D3C53CCEEDB978217167 /* AppTheme.swift */,
 				B7FB185495BCD6819998D260 /* CartView.swift */,
 				877121A6F441EEDD673E7CA7 /* ContentView.swift */,
 				9A0F05EB5274D2EFF05AA2D6 /* Drink3DThumbnailView.swift */,
@@ -105,6 +112,7 @@
 			children = (
 				7A8287C0B096170A6FBF621B /* 開頭動畫.mp4 */,
 				18CDC30EE3D4B5E128B72FBF /* Assets.xcassets */,
+				D5DB92729A899EACA96771CE /* brand_logo.png */,
 				54BA058AE699CED19527C731 /* intro.mp4 */,
 			);
 			path = Resources;
@@ -195,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9088A812951A1FF7EA3097CB /* Assets.xcassets in Resources */,
+				3EB87859FDB54C1BA7B4A4E9 /* brand_logo.png in Resources */,
 				9CB0E929DEB6DEFEBFC1D8AA /* intro.mp4 in Resources */,
 				5C91E7D36A7C0B25030E3E83 /* 開頭動畫.mp4 in Resources */,
 			);
@@ -205,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FD4EAC31AFE6462078A688C /* Assets.xcassets in Resources */,
+				EB03218667C5093112370BFB /* brand_logo.png in Resources */,
 				01A731B964AAF89E55C33F3F /* intro.mp4 in Resources */,
 				646CE81C4A8B7DF4DFBE4915 /* 開頭動畫.mp4 in Resources */,
 			);
@@ -218,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19FC9B9E66F4D93F33FBFE6C /* App.swift in Sources */,
+				1D66B2D6262E5D3C2C708B7D /* AppTheme.swift in Sources */,
 				AF2EC0E75ED141AA9029848B /* CartView.swift in Sources */,
 				BDE5DAB7FB01960434499F85 /* ContentView.swift in Sources */,
 				FAEDE68C6969602C17F8B620 /* Drink3DThumbnailView.swift in Sources */,
@@ -240,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2BBB9D54B5E5396DB6C1BA4 /* App.swift in Sources */,
+				60C546528D7AFB3DF49300F4 /* AppTheme.swift in Sources */,
 				A0F1735A72D823D233669557 /* CartView.swift in Sources */,
 				0D853F99FC430C4E2E5C12CE /* ContentView.swift in Sources */,
 				7F88357896005221ED42C6E9 /* Drink3DThumbnailView.swift in Sources */,
