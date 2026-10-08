@@ -1,0 +1,23 @@
+{
+  "/Users/zhao/工作專區/清心ios app/Sources/ContentView.swift" : {
+    "const-values" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/ContentView.dia",
+    "object" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/ContentView.swiftdeps"
+  },
+  "/Users/zhao/工作專區/清心ios app/Sources/Drink3DThumbnailView.swift" : {
+    "const-values" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/Drink3DThumbnailView.swiftconstvalues",
+    "dependencies" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/Drink3DThumbnailView.d",
+    "diagnostics" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/Drink3DThumbnailView.dia",
+    "object" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/Drink3DThumbnailView.o",
+    "swift-dependencies" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/Drink3DThumbnailView.swiftdeps"
+  },
+  "/Users/zhao/工作專區/清心ios app/Sources/DrinkDetailView.swift" : {
+    "const-values" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/DrinkDetailView.swiftconstvalues",
+    "dependencies" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/DrinkDetailView.d",
+    "diagnostics" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/DrinkDetailView.dia",
+    "object" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/DrinkDetailView.o",
+    "swift-dependencies" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/DrinkDetailView.swiftdeps"
+  }
+}

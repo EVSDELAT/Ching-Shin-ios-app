@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("isDarkMode") private var isDarkMode = false
-    @AppStorage("themeMode") private var themeMode: String = "system"
+    @AppStorage("themeMode") private var themeMode: String = "light"
     @AppStorage("isSoundEnabled") private var isSoundEnabled = true
     @AppStorage("isHapticEnabled") private var isHapticEnabled = true
     @AppStorage("isNotificationEnabled") private var isNotificationEnabled = true
@@ -41,10 +41,9 @@ struct SettingsView: View {
                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 
                                 Picker("主題模式", selection: $themeMode) {
-                                    Text("💻 系統預設").tag("system")
-                                    Text("☀️ 淺色模式").tag("light")
-                                    Text("🌙 深色模式").tag("dark")
-                                }
+                                    Text("☀️ 淺色模式 (預設)").tag("light")
+                                                                        Text("💻 系統預設").tag("system")
+                                                                    }
                                 .pickerStyle(.segmented)
                                 .onChange(of: themeMode) { newMode in
                                     SoundManager.shared.playTapSound()

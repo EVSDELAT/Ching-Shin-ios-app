@@ -1,0 +1,2 @@
+Target dependency graph (1 target)
+Target 'ChingshinApp' in project 'ChingshinApp' (no dependencies)

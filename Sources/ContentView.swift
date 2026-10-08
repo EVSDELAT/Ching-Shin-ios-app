@@ -3,7 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var isShowingSplash: Bool = true
     @AppStorage("isDarkMode") private var isDarkMode = false
-    @AppStorage("themeMode") private var themeMode: String = "system"
+    @AppStorage("themeMode") private var themeMode: String = "light"
     
     @State private var cartItems: [CartItem] = []
     @State private var selectedDrink: Drink? = nil
@@ -93,7 +93,11 @@ struct ContentView: View {
                         }
                         .tag(2)
                         
-                        OrderHistoryView(orders: completedOrders)
+                        OrderHistoryView(orders: completedOrders, onReorder: { items in
+                            cartItems.append(contentsOf: items)
+                            selectedTab = 0
+                            isShowingCart = true
+                        })
                         .tabItem {
                             Label("歷史訂單", systemImage: "clock.fill")
                         }
@@ -334,94 +338,3 @@ struct StoreLocatorMainView: View {
     }
 }
 
-struct OrderHistoryView: View {
-    let orders: [CompletedOrder]
-    
-    var body: some View {
-        NavigationStack {
-            Group {
-                if orders.isEmpty {
-                    VStack(spacing: 16) {
-                        Spacer()
-                        Image(systemName: "clock.badge.exclamationmark")
-                            .font(.system(size: 64))
-                            .foregroundColor(.gray.opacity(0.4))
-                        Text("目前尚無歷史訂單")
-                            .font(.title3)
-                            .foregroundColor(.secondary)
-                        Text("完成點餐後，訂單紀錄將會自動儲存在這裡！")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                        Spacer()
-                    }
-                } else {
-                    List {
-                        ForEach(orders) { order in
-                            VStack(alignment: .leading, spacing: 10) {
-                                HStack {
-                                    HStack(spacing: 6) {
-                                        Text(order.orderModeName)
-                                            .font(.system(size: 9, weight: .bold))
-                                            .padding(.horizontal, 6)
-                                            .padding(.vertical, 2)
-                                            .background(Color(hex: "008B47").opacity(0.15))
-                                            .foregroundColor(Color(hex: "008B47"))
-                                            .clipShape(Capsule())
-                                        
-                                        Text(order.storeName)
-                                            .font(.headline)
-                                            .bold()
-                                    }
-                                    Spacer()
-                                    Text(order.status)
-                                        .font(.caption)
-                                        .bold()
-                                        .foregroundColor(Color(hex: "008B47"))
-                                }
-                                
-                                Text("訂單編號: \(order.orderNo) ‧ \(order.dateString)")
-                                    .font(.caption2)
-                                    .foregroundColor(.secondary)
-                                
-                                Divider()
-                                
-                                VStack(alignment: .leading, spacing: 6) {
-                                    ForEach(order.items) { item in
-                                        HStack {
-                                            Text("‧ \(item.drink.name)")
-                                                .font(.subheadline)
-                                                .bold()
-                                            Text("(\(item.customizationSummary))")
-                                                .font(.caption)
-                                                .foregroundColor(.secondary)
-                                            Spacer()
-                                            Text("x\(item.quantity)")
-                                                .font(.caption)
-                                                .bold()
-                                        }
-                                    }
-                                }
-                                
-                                Divider()
-                                
-                                HStack {
-                                    Text("共 \(order.items.reduce(0) { $0 + $1.quantity }) 杯飲料")
-                                        .font(.caption)
-                                        .foregroundColor(.secondary)
-                                    Spacer()
-                                    Text("實付金額: NT$ \(order.totalPrice)")
-                                        .font(.headline)
-                                        .bold()
-                                        .foregroundColor(Color(hex: "008B47"))
-                                }
-                            }
-                            .padding(.vertical, 6)
-                        }
-                    }
-                    .listStyle(.insetGrouped)
-                }
-            }
-            .navigationTitle("歷史訂單紀錄")
-        }
-    }
-}

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AppTheme {
-    @AppStorage("themeMode") static var themeMode: String = "system" // "system", "light", "dark"
+    @AppStorage("themeMode") static var themeMode: String = "light" // "system", "light", "dark"
     
     static func isDark(_ systemScheme: ColorScheme) -> Bool {
         if themeMode == "dark" { return true }

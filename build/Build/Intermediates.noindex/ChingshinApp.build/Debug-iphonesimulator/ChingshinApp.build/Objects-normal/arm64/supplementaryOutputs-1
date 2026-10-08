@@ -1,0 +1,23 @@
+{
+  "/Users/zhao/工作專區/清心ios app/Sources/App.swift" : {
+    "const-values" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/App.swiftconstvalues",
+    "dependencies" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/App.d",
+    "diagnostics" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/App.dia",
+    "object" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/App.o",
+    "swift-dependencies" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/App.swiftdeps"
+  },
+  "/Users/zhao/工作專區/清心ios app/Sources/AppTheme.swift" : {
+    "const-values" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/AppTheme.swiftconstvalues",
+    "dependencies" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/AppTheme.d",
+    "diagnostics" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/AppTheme.dia",
+    "object" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/AppTheme.o",
+    "swift-dependencies" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/AppTheme.swiftdeps"
+  },
+  "/Users/zhao/工作專區/清心ios app/Sources/CartView.swift" : {
+    "const-values" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/CartView.swiftconstvalues",
+    "dependencies" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/CartView.d",
+    "diagnostics" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/CartView.dia",
+    "object" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/CartView.o",
+    "swift-dependencies" : "/Users/zhao/工作專區/清心ios app/build/Build/Intermediates.noindex/ChingshinApp.build/Debug-iphonesimulator/ChingshinApp.build/Objects-normal/arm64/CartView.swiftdeps"
+  }
+}
