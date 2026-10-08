@@ -5,14 +5,54 @@ struct SplashVideoView: View {
     var onFinished: () -> Void
     
     @State private var player: AVPlayer? = nil
+    @State private var isVideoReady = false
+    @State private var pulseLogo = false
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
             Color.black.ignoresSafeArea()
             
-            if let player = player {
-                VideoPlayerView(player: player)
+            if let player = player, isVideoReady {
+                VideoPlayerContainerView(player: player)
                     .ignoresSafeArea()
+            } else {
+                // Fallback brand animated splash if video is loading or unsupported
+                VStack(spacing: 24) {
+                    Spacer()
+                    
+                    ZStack {
+                        Circle()
+                            .fill(Color(hex: "008641").opacity(0.2))
+                            .frame(width: 140, height: 140)
+                            .scaleEffect(pulseLogo ? 1.15 : 0.95)
+                        
+                        Circle()
+                            .fill(Color(hex: "008641"))
+                            .frame(width: 100, height: 100)
+                        
+                        Image(systemName: "heart.fill")
+                            .font(.system(size: 44))
+                            .foregroundColor(.red)
+                    }
+                    
+                    VStack(spacing: 8) {
+                        Text("清心福全")
+                            .font(.system(size: 32, weight: .bold))
+                            .foregroundColor(.white)
+                        
+                        Text("Ching Shin Fu Chuan · 1987")
+                            .font(.subheadline)
+                            .foregroundColor(.white.opacity(0.7))
+                    }
+                    
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .onAppear {
+                    withAnimation(.easeInOut(duration: 1.0).repeatForever(autoreverses: true)) {
+                        pulseLogo = true
+                    }
+                }
             }
             
             // Skip Button
@@ -21,22 +61,22 @@ struct SplashVideoView: View {
                 onFinished()
             }) {
                 HStack(spacing: 4) {
-                    Text("跳過")
-                        .font(.caption)
-                        .bold()
+                    Text("跳過動畫")
+                        .font(.system(size: 13, weight: .semibold))
                     Image(systemName: "chevron.right")
-                        .font(.caption2)
+                        .font(.system(size: 11, weight: .bold))
                 }
                 .foregroundColor(.white)
-                .padding(.horizontal, 14)
+                .padding(.horizontal, 16)
                 .padding(.vertical, 8)
-                .background(Color.black.opacity(0.6))
+                .background(Color(hex: "008641").opacity(0.85))
                 .clipShape(Capsule())
                 .overlay(
                     Capsule()
                         .stroke(Color.white.opacity(0.4), lineWidth: 1)
                 )
-                .padding(.top, 50)
+                .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: 3)
+                .padding(.top, 56)
                 .padding(.trailing, 20)
             }
         }
@@ -50,10 +90,31 @@ struct SplashVideoView: View {
     }
     
     private func setupPlayer() {
-        let videoPath = "/Users/zhao/工作專區/清心ios app/share/開頭動畫.mp4"
-        let videoURL = URL(fileURLWithPath: videoPath)
-        let avPlayer = AVPlayer(url: videoURL)
+        // Try finding video bundle resources first, then absolute path
+        var videoURL: URL? = nil
+        
+        if let bundleURL = Bundle.main.url(forResource: "開頭動畫", withExtension: "mp4") {
+            videoURL = bundleURL
+        } else if let bundleURL = Bundle.main.url(forResource: "intro", withExtension: "mp4") {
+            videoURL = bundleURL
+        } else {
+            let localPath = "/Users/zhao/工作專區/清心ios app/share/開頭動畫.mp4"
+            if FileManager.default.fileExists(atPath: localPath) {
+                videoURL = URL(fileURLWithPath: localPath)
+            }
+        }
+        
+        guard let url = videoURL else {
+            // Fallback timeout to proceed after 2.5s if no video file
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                onFinished()
+            }
+            return
+        }
+        
+        let avPlayer = AVPlayer(url: url)
         self.player = avPlayer
+        self.isVideoReady = true
         
         NotificationCenter.default.addObserver(
             forName: .AVPlayerItemDidPlayToEndTime,
@@ -67,27 +128,41 @@ struct SplashVideoView: View {
     }
 }
 
-struct VideoPlayerView: UIViewRepresentable {
+struct VideoPlayerContainerView: UIViewRepresentable {
     let player: AVPlayer
     
-    func makeUIView(context: Context) -> UIView {
-        let view = UIView(frame: .zero)
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(playerLayer)
-        context.coordinator.playerLayer = playerLayer
+    func makeUIView(context: Context) -> PlayerUIView {
+        let view = PlayerUIView(player: player)
         return view
     }
     
-    func updateUIView(_ uiView: UIView, context: Context) {
-        context.coordinator.playerLayer?.frame = uiView.bounds
+    func updateUIView(_ uiView: PlayerUIView, context: Context) {
+        uiView.updatePlayer(player: player)
+    }
+}
+
+class PlayerUIView: UIView {
+    private let playerLayer = AVPlayerLayer()
+    
+    init(player: AVPlayer) {
+        super.init(frame: .zero)
+        playerLayer.player = player
+        playerLayer.videoGravity = .resizeAspectFill
+        layer.addSublayer(playerLayer)
     }
     
-    func makeCoordinator() -> Coordinator {
-        Coordinator()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    class Coordinator {
-        var playerLayer: AVPlayerLayer?
+    func updatePlayer(player: AVPlayer) {
+        if playerLayer.player != player {
+            playerLayer.player = player
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        playerLayer.frame = bounds
     }
 }

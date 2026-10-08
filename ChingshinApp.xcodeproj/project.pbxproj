@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A731B964AAF89E55C33F3F /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 54BA058AE699CED19527C731 /* intro.mp4 */; };
 		061615F3FDBC4B8E8425F1A1 /* ShakingCupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E795F43061CBC7ED1EE /* ShakingCupView.swift */; };
 		0D853F99FC430C4E2E5C12CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877121A6F441EEDD673E7CA7 /* ContentView.swift */; };
 		12030C8415210A2E8A8986A5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDCA9E38BF827881581AEEA /* Models.swift */; };
@@ -16,13 +17,19 @@
 		3062ABA54823C762C45AC8C4 /* MemberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3A44668E8010644C4451 /* MemberCardView.swift */; };
 		43C2B2D3648D8C481FA44D12 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDCA9E38BF827881581AEEA /* Models.swift */; };
 		53B8121B690A8DD079752692 /* ShakingCupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A68E795F43061CBC7ED1EE /* ShakingCupView.swift */; };
+		5C91E7D36A7C0B25030E3E83 /* 開頭動畫.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7A8287C0B096170A6FBF621B /* 開頭動畫.mp4 */; };
+		646CE81C4A8B7DF4DFBE4915 /* 開頭動畫.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7A8287C0B096170A6FBF621B /* 開頭動畫.mp4 */; };
 		659D25DAD26CA611BD36B666 /* StoreLocatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268834885F68BAD0307A149 /* StoreLocatorView.swift */; };
 		66FA570B6CFD8D090BD4AAF7 /* OrderProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B3A2415C7807A96B1D5CC /* OrderProgressView.swift */; };
 		6E93B8F5816C78DBD2EAB787 /* DrinkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A627F989B8B3760DF76D6D /* DrinkDetailView.swift */; };
 		733563D5F8B2D32B27F081FC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A65BFB0235EBE9A198615A /* MenuView.swift */; };
 		7B10F70C92BABF799212699E /* MemberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB3A44668E8010644C4451 /* MemberCardView.swift */; };
 		7F88357896005221ED42C6E9 /* Drink3DThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F05EB5274D2EFF05AA2D6 /* Drink3DThumbnailView.swift */; };
+		7FD4EAC31AFE6462078A688C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CDC30EE3D4B5E128B72FBF /* Assets.xcassets */; };
 		9072D96D35AAF826BB5D8C24 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A65BFB0235EBE9A198615A /* MenuView.swift */; };
+		9088A812951A1FF7EA3097CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CDC30EE3D4B5E128B72FBF /* Assets.xcassets */; };
+		963C3075373DA551FDED1544 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E4EF70934EEA7C2CF08428 /* SettingsView.swift */; };
+		9CB0E929DEB6DEFEBFC1D8AA /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 54BA058AE699CED19527C731 /* intro.mp4 */; };
 		A0F1735A72D823D233669557 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB185495BCD6819998D260 /* CartView.swift */; };
 		A12CFD3E77C43BCCDB193392 /* SplashVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C10E9CC2A242A9492EB3734 /* SplashVideoView.swift */; };
 		AF2EC0E75ED141AA9029848B /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB185495BCD6819998D260 /* CartView.swift */; };
@@ -30,15 +37,19 @@
 		B68303D2540A3318320FDA3B /* StoreLocatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268834885F68BAD0307A149 /* StoreLocatorView.swift */; };
 		BDE5DAB7FB01960434499F85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877121A6F441EEDD673E7CA7 /* ContentView.swift */; };
 		C2BBB9D54B5E5396DB6C1BA4 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0721A7DC1B6046F610511370 /* App.swift */; };
+		E7314DE4812C807DBEEF1FC1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E4EF70934EEA7C2CF08428 /* SettingsView.swift */; };
 		FAEDE68C6969602C17F8B620 /* Drink3DThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0F05EB5274D2EFF05AA2D6 /* Drink3DThumbnailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0721A7DC1B6046F610511370 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		0C10E9CC2A242A9492EB3734 /* SplashVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVideoView.swift; sourceTree = "<group>"; };
+		18CDC30EE3D4B5E128B72FBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21AB3A44668E8010644C4451 /* MemberCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCardView.swift; sourceTree = "<group>"; };
 		4268834885F68BAD0307A149 /* StoreLocatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreLocatorView.swift; sourceTree = "<group>"; };
 		44A627F989B8B3760DF76D6D /* DrinkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailView.swift; sourceTree = "<group>"; };
+		54BA058AE699CED19527C731 /* intro.mp4 */ = {isa = PBXFileReference; path = intro.mp4; sourceTree = "<group>"; };
+		7A8287C0B096170A6FBF621B /* 開頭動畫.mp4 */ = {isa = PBXFileReference; path = "開頭動畫.mp4"; sourceTree = "<group>"; };
 		7FC5F86B2DEE2285918A1FD4 /* ChingShinApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ChingShinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A68E795F43061CBC7ED1EE /* ShakingCupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakingCupView.swift; sourceTree = "<group>"; };
 		877121A6F441EEDD673E7CA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +58,7 @@
 		9A0F05EB5274D2EFF05AA2D6 /* Drink3DThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink3DThumbnailView.swift; sourceTree = "<group>"; };
 		B7FB185495BCD6819998D260 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		C3A65BFB0235EBE9A198615A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		C5E4EF70934EEA7C2CF08428 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D4356D6D7DAED03ED0621810 /* ChingshinApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ChingshinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -63,9 +75,11 @@
 				C3A65BFB0235EBE9A198615A /* MenuView.swift */,
 				8FDCA9E38BF827881581AEEA /* Models.swift */,
 				8A3B3A2415C7807A96B1D5CC /* OrderProgressView.swift */,
+				C5E4EF70934EEA7C2CF08428 /* SettingsView.swift */,
 				80A68E795F43061CBC7ED1EE /* ShakingCupView.swift */,
 				0C10E9CC2A242A9492EB3734 /* SplashVideoView.swift */,
 				4268834885F68BAD0307A149 /* StoreLocatorView.swift */,
+				5F618739BF04AE9AEDEECE59 /* Resources */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -76,6 +90,16 @@
 				162DA796E5EB514F186B4475 /* Sources */,
 				D8DE4A1D129035113A790AF1 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		5F618739BF04AE9AEDEECE59 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A8287C0B096170A6FBF621B /* 開頭動畫.mp4 */,
+				18CDC30EE3D4B5E128B72FBF /* Assets.xcassets */,
+				54BA058AE699CED19527C731 /* intro.mp4 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D8DE4A1D129035113A790AF1 /* Products */ = {
@@ -95,6 +119,7 @@
 			buildConfigurationList = 3710527758299BAE7CF28373 /* Build configuration list for PBXNativeTarget "ChingShinApp" */;
 			buildPhases = (
 				B25659A9D6ADEE943B0CCB75 /* Sources */,
+				188F1C03A39CD2D047CCC3FD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -112,6 +137,7 @@
 			buildConfigurationList = 2949BC57863C460B4453092A /* Build configuration list for PBXNativeTarget "ChingshinApp" */;
 			buildPhases = (
 				C59DA95FF73FD1D1BEBB22DE /* Sources */,
+				9E3A0BAE034F4591E04951AD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -155,6 +181,29 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		188F1C03A39CD2D047CCC3FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9088A812951A1FF7EA3097CB /* Assets.xcassets in Resources */,
+				9CB0E929DEB6DEFEBFC1D8AA /* intro.mp4 in Resources */,
+				5C91E7D36A7C0B25030E3E83 /* 開頭動畫.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E3A0BAE034F4591E04951AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FD4EAC31AFE6462078A688C /* Assets.xcassets in Resources */,
+				01A731B964AAF89E55C33F3F /* intro.mp4 in Resources */,
+				646CE81C4A8B7DF4DFBE4915 /* 開頭動畫.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B25659A9D6ADEE943B0CCB75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -169,6 +218,7 @@
 				733563D5F8B2D32B27F081FC /* MenuView.swift in Sources */,
 				43C2B2D3648D8C481FA44D12 /* Models.swift in Sources */,
 				66FA570B6CFD8D090BD4AAF7 /* OrderProgressView.swift in Sources */,
+				963C3075373DA551FDED1544 /* SettingsView.swift in Sources */,
 				53B8121B690A8DD079752692 /* ShakingCupView.swift in Sources */,
 				A12CFD3E77C43BCCDB193392 /* SplashVideoView.swift in Sources */,
 				B68303D2540A3318320FDA3B /* StoreLocatorView.swift in Sources */,
@@ -188,6 +238,7 @@
 				9072D96D35AAF826BB5D8C24 /* MenuView.swift in Sources */,
 				12030C8415210A2E8A8986A5 /* Models.swift in Sources */,
 				B3F4736386783ABC0F9DA804 /* OrderProgressView.swift in Sources */,
+				E7314DE4812C807DBEEF1FC1 /* SettingsView.swift in Sources */,
 				061615F3FDBC4B8E8425F1A1 /* ShakingCupView.swift in Sources */,
 				17210AA91D5BED5E83490603 /* SplashVideoView.swift in Sources */,
 				659D25DAD26CA611BD36B666 /* StoreLocatorView.swift in Sources */,
@@ -321,7 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "清心福全";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -341,7 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "清心福全";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -361,7 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "清心福全";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -381,7 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "清心福全";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

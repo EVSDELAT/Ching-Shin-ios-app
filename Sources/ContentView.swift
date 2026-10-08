@@ -96,6 +96,12 @@ struct ContentView: View {
                             Label("歷史訂單", systemImage: "clock.fill")
                         }
                         .tag(3)
+                        
+                        SettingsView()
+                        .tabItem {
+                            Label("系統設定", systemImage: "gearshape.fill")
+                        }
+                        .tag(4)
                     }
                     .accentColor(Color(hex: "008B47"))
                     
@@ -148,67 +154,59 @@ struct ContentView: View {
                                     
                                     Image(systemName: "chevron.right")
                                         .font(.caption)
-                                        .bold()
                                         .foregroundColor(.white)
                                 }
                                 .padding(.horizontal, 16)
-                                .padding(.vertical, 12)
+                                .padding(.vertical, 10)
                                 .background(
                                     LinearGradient(
-                                        colors: [Color(hex: "00A550"), Color(hex: "008B47")],
+                                        gradient: Gradient(colors: [Color(hex: "008B47"), Color(hex: "006834")]),
                                         startPoint: .leading,
                                         endPoint: .trailing
                                     )
                                 )
-                                .clipShape(RoundedRectangle(cornerRadius: 20))
-                                .shadow(color: Color(hex: "008B47").opacity(0.4), radius: 10, x: 0, y: 5)
-                                .padding(.horizontal)
-                                .padding(.bottom, 54)
+                                .clipShape(Capsule())
+                                .shadow(color: Color.black.opacity(0.25), radius: 10, x: 0, y: 5)
                             }
                         }
-                        .transition(.move(edge: .bottom).combined(with: .opacity))
-                        .animation(.spring(response: 0.4, dampingFraction: 0.7), value: cartItems.count)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 60)
                     }
                 }
-                // Drink Customization Modal Sheet
-                .sheet(item: $selectedDrink) { drink in
-                    DrinkDetailView(drink: drink) { newItem in
-                        withAnimation(.spring()) {
-                            cartItems.append(newItem)
-                            triggerCartBounce()
-                        }
-                    }
-                }
-                // Cart Summary Modal Sheet
-                .sheet(isPresented: $isShowingCart) {
-                    CartView(
-                        cartItems: $cartItems,
-                        orderMode: orderMode,
-                        deliveryInfo: deliveryInfo
-                    ) {
-                        pendingCheckoutItems = cartItems
-                        cartItems.removeAll()
+            }
+        }
+        .sheet(item: $selectedDrink) { drink in
+            DrinkDetailView(drink: drink) { newItem in
+                cartItems.append(newItem)
+                triggerCartBounce()
+            }
+        }
+        .sheet(isPresented: $isShowingCart) {
+            CartView(
+                cartItems: $cartItems,
+                orderMode: orderMode,
+                deliveryInfo: deliveryInfo,
+                onCheckout: {
+                    pendingCheckoutItems = cartItems
+                    isShowingCart = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         isShowingOrderProgress = true
                     }
                 }
-                // Store Locator Modal Sheet
-                .sheet(isPresented: $isShowingStoreLocator) {
-                    StoreLocatorView(selectedStore: $selectedStore)
+            )
+        }
+        .fullScreenCover(isPresented: $isShowingOrderProgress) {
+            OrderProgressView(
+                orderItems: pendingCheckoutItems,
+                storeName: selectedStore.name,
+                orderModeName: orderMode.rawValue,
+                onComplete: { completedOrder in
+                    completedOrders.insert(completedOrder, at: 0)
+                    cartItems.removeAll()
+                    isShowingOrderProgress = false
+                    selectedTab = 3 // Switch to History Tab
                 }
-                // Order Progress Simulation Screen
-                .fullScreenCover(isPresented: $isShowingOrderProgress) {
-                    OrderProgressView(
-                        orderItems: pendingCheckoutItems,
-                        storeName: orderMode == .takeout ? selectedStore.name : "外送門市: \(selectedStore.name)",
-                        onComplete: { newOrder in
-                            withAnimation(.spring()) {
-                                completedOrders.insert(newOrder, at: 0)
-                                selectedTab = 3 // 切換至歷史訂單 Tab
-                            }
-                        }
-                    )
-                }
-            }
+            )
         }
     }
     
