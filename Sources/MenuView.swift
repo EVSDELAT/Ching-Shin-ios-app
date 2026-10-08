@@ -9,6 +9,7 @@ struct MenuView: View {
     
     @State private var selectedCategory: DrinkCategory = .popular
     @State private var searchText: String = ""
+    @State private var currentPromoIndex: Int = 0
     
     let columns = [
         GridItem(.flexible(), spacing: 14),
@@ -26,7 +27,7 @@ struct MenuView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                // Top Store Selector Header
+                // Top Real Tainan Store Selector Header
                 Button(action: onOpenStoreLocator) {
                     HStack(spacing: 10) {
                         ZStack {
@@ -99,54 +100,63 @@ struct MenuView: View {
                 
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 14) {
-                        // Hero PROMO Banner Card
-                        ZStack(alignment: .leading) {
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(
-                                    LinearGradient(
-                                        colors: [Color(hex: "008B47"), Color(hex: "00572C")],
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
-                                    )
-                                )
-                            
-                            HStack(alignment: .center) {
-                                VStack(alignment: .leading, spacing: 6) {
-                                    HStack(spacing: 6) {
-                                        Text("PROMO 招牌特調")
-                                            .font(.system(size: 10, weight: .bold))
-                                            .padding(.horizontal, 8)
-                                            .padding(.vertical, 3)
-                                            .background(Color.yellow)
-                                            .foregroundColor(.black)
-                                            .clipShape(Capsule())
+                        // Real Ching Shin Promotions Banner Carousel
+                        TabView(selection: $currentPromoIndex) {
+                            ForEach(0..<SampleData.promos.count, id: \.self) { idx in
+                                let promo = SampleData.promos[idx]
+                                ZStack(alignment: .leading) {
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .fill(
+                                            LinearGradient(
+                                                colors: promo.bgColors,
+                                                startPoint: .topLeading,
+                                                endPoint: .bottomTrailing
+                                            )
+                                        )
+                                    
+                                    HStack(alignment: .center) {
+                                        VStack(alignment: .leading, spacing: 6) {
+                                            HStack(spacing: 6) {
+                                                Text(promo.tag)
+                                                    .font(.system(size: 10, weight: .bold))
+                                                    .padding(.horizontal, 8)
+                                                    .padding(.vertical, 3)
+                                                    .background(Color.yellow)
+                                                    .foregroundColor(.black)
+                                                    .clipShape(Capsule())
+                                                
+                                                Text("清心福全 2026 最新企劃")
+                                                    .font(.caption2)
+                                                    .foregroundColor(.white.opacity(0.9))
+                                            }
+                                            
+                                            Text(promo.title)
+                                                .font(.headline)
+                                                .bold()
+                                                .foregroundColor(.white)
+                                            
+                                            Text(promo.subtitle)
+                                                .font(.caption2)
+                                                .foregroundColor(.white.opacity(0.85))
+                                                .lineLimit(2)
+                                        }
                                         
-                                        Text("清心經典重現")
-                                            .font(.caption2)
-                                            .foregroundColor(.white.opacity(0.9))
+                                        Spacer()
+                                        
+                                        Image(systemName: promo.iconName)
+                                            .font(.system(size: 32))
+                                            .foregroundColor(.yellow)
                                     }
-                                    
-                                    Text("隱藏版 珍珠蜂蜜鮮奶普洱")
-                                        .font(.title3)
-                                        .bold()
-                                        .foregroundColor(.white)
-                                    
-                                    Text("高山普洱與濃香奶味，雙料爆棚極致口感！")
-                                        .font(.caption2)
-                                        .foregroundColor(.white.opacity(0.85))
-                                        .lineLimit(1)
+                                    .padding(16)
                                 }
-                                
-                                Spacer()
-                                
-                                Drink3DThumbnailView(style: .hiddenSpecial, size: 75)
+                                .padding(.horizontal, 16)
+                                .tag(idx)
                             }
-                            .padding(16)
                         }
-                        .frame(height: 110)
-                        .padding(.horizontal, 16)
+                        .frame(height: 120)
+                        .tabViewStyle(.page(indexDisplayMode: .always))
                         
-                        // Official Category Pills Bar (依據清心菜單所有分類)
+                        // Category Pills Bar (依據清心菜單所有分類，每個按鈕對應完整菜單)
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 8) {
                                 ForEach(DrinkCategory.allCases) { category in
@@ -174,7 +184,17 @@ struct MenuView: View {
                             .padding(.horizontal, 16)
                         }
                         
-                        // 2-Column Grid Layout (真實菜單價格與雙排卡片)
+                        // Category Drinks Count Header
+                        HStack {
+                            Text("\(selectedCategory.rawValue) (\(filteredDrinks.count)款)")
+                                .font(.caption)
+                                .bold()
+                                .foregroundColor(.secondary)
+                            Spacer()
+                        }
+                        .padding(.horizontal, 16)
+                        
+                        // 2-Column Grid Layout (真實菜單 M/L 標價卡片)
                         LazyVGrid(columns: columns, spacing: 14) {
                             ForEach(filteredDrinks) { drink in
                                 DrinkGridCard(drink: drink) {

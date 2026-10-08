@@ -1,20 +1,27 @@
 import SwiftUI
 
 struct OrderProgressView: View {
+    var orderItems: [CartItem]
+    var storeName: String
+    var onComplete: (CompletedOrder) -> Void
+    
     @Environment(\.dismiss) private var dismiss
     
     @State private var currentStep: Int = 1
     @State private var progressValue: Double = 0.25
     @State private var isShakingCup: Bool = true
-    @State private var timerActive: Bool = true
     @State private var isCompleted: Bool = false
     
     let steps = [
-        ("訂單已接收", "清心福全門市已收到您的訂單"),
+        ("訂單已接收", "門市已收到您的點餐需求"),
         ("手搖調配中", "專業吧檯手正在為您精準搖調飲品..."),
         ("封口包裝完成", "已完成封口並貼上專屬甜度冰量標籤"),
         ("準備完成！", "請出示畫面至門市取餐，祝您享用愉快！")
     ]
+    
+    var totalPrice: Int {
+        orderItems.reduce(0) { $0 + $1.totalPrice }
+    }
     
     var body: some View {
         NavigationStack {
@@ -27,7 +34,7 @@ struct OrderProgressView: View {
                         .padding(.horizontal)
                     
                     HStack {
-                        Text("預計取餐時間: 8 分鐘")
+                        Text("\(storeName) ‧ 預計取餐 8 分鐘")
                             .font(.caption)
                             .bold()
                             .foregroundColor(Color(hex: "008B47"))
@@ -70,10 +77,10 @@ struct OrderProgressView: View {
                             }
                             .transition(.scale)
                         } else if isCompleted {
-                            Text("🎉 製作完成！可取餐")
+                            Text("🎉 製作完成！已加入歷史訂單")
                                 .font(.headline)
                                 .bold()
-                                .foregroundColor(.red)
+                                .foregroundColor(Color(hex: "008B47"))
                         }
                     }
                 }
@@ -122,8 +129,24 @@ struct OrderProgressView: View {
                 Spacer()
                 
                 // Bottom Done/Close Button
-                Button(action: { dismiss() }) {
-                    Text(isCompleted ? "完成並返回首頁" : "回到菜單（背景製作中）")
+                Button(action: {
+                    let orderNo = "#CS-\(Int.random(in: 100000...999999))"
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+                    let nowString = dateFormatter.string(from: Date())
+                    
+                    let newOrder = CompletedOrder(
+                        orderNo: orderNo,
+                        storeName: storeName,
+                        items: orderItems,
+                        totalPrice: totalPrice,
+                        dateString: nowString,
+                        status: "製作完成 (可取餐)"
+                    )
+                    onComplete(newOrder)
+                    dismiss()
+                }) {
+                    Text(isCompleted ? "查看歷史訂單紀錄" : "完成（前往歷史訂單）")
                         .font(.headline)
                         .bold()
                         .foregroundColor(.white)
@@ -135,7 +158,7 @@ struct OrderProgressView: View {
                 }
                 .padding(.bottom)
             }
-            .navigationTitle("訂單追蹤（模擬演示）")
+            .navigationTitle("訂單追蹤與調配進度")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 startOrderSimulation()
@@ -144,13 +167,11 @@ struct OrderProgressView: View {
     }
     
     private func startOrderSimulation() {
-        // Step 1: Receiving
         currentStep = 0
         progressValue = 0.25
         isShakingCup = true
         
-        // Step 2: Shaking
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             withAnimation(.easeInOut) {
                 currentStep = 1
                 progressValue = 0.55
@@ -158,8 +179,7 @@ struct OrderProgressView: View {
             }
         }
         
-        // Step 3: Sealed
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
             withAnimation(.easeInOut) {
                 currentStep = 2
                 progressValue = 0.85
@@ -167,8 +187,7 @@ struct OrderProgressView: View {
             }
         }
         
-        // Step 4: Ready
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
             withAnimation(.easeInOut) {
                 currentStep = 3
                 progressValue = 1.0
@@ -177,8 +196,4 @@ struct OrderProgressView: View {
             }
         }
     }
-}
-
-#Preview {
-    OrderProgressView()
 }
