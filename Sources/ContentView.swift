@@ -81,7 +81,7 @@ struct ContentView: View {
                         }
                         .tag(0)
                         
-                        StoreLocatorMainView(selectedStore: $selectedStore)
+                        StoreLocatorMainView(selectedStore: $selectedStore, selectedTab: $selectedTab)
                         .tabItem {
                             Label("門市據點", systemImage: "mappin.and.ellipse")
                         }
@@ -230,6 +230,7 @@ struct ContentView: View {
 // MARK: - Store Locator Main View with Map Button (Requirement #4)
 struct StoreLocatorMainView: View {
     @Binding var selectedStore: Store
+    @Binding var selectedTab: Int
     @State private var mapStoreTarget: Store? = nil
     
     var body: some View {
@@ -306,6 +307,7 @@ struct StoreLocatorMainView: View {
                             Button("選擇此門市") {
                                 SoundManager.shared.playTapSound()
                                 selectedStore = store
+                                selectedTab = 0
                             }
                             .font(.caption)
                             .bold()

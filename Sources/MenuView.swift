@@ -15,7 +15,6 @@ struct MenuView: View {
     @AppStorage("isDarkMode") private var isDarkMode = false
     @State private var selectedCategory: DrinkCategory? = .popular
     @State private var searchText: String = ""
-    @State private var isSearchExpanded: Bool = false
     @State private var currentPromoIndex: Int = 0
     @State private var isShowingDeliverySetup: Bool = false
     @State private var showCategoryDrawer: Bool = false
@@ -29,18 +28,19 @@ struct MenuView: View {
     
     var filteredDrinks: [Drink] {
         SampleData.drinks.filter { drink in
-            let matchesCategory = (selectedCategory == nil) ? true : (drink.category == selectedCategory)
+            let matchesCategory: Bool
+            if let cat = selectedCategory {
+                if cat == .popular {
+                    matchesCategory = drink.isHotItem || drink.category == .premiumTea || drink.category == .winterMelon || drink.category == .freshMilkLatte
+                } else {
+                    matchesCategory = (drink.category == cat)
+                }
+            } else {
+                matchesCategory = true
+            }
             let matchesSearch = searchText.isEmpty || drink.name.contains(searchText) || drink.description.contains(searchText)
             return matchesCategory && matchesSearch
         }
-    }
-    
-    var totalCartPrice: Int {
-        cartItems.reduce(0) { $0 + $1.totalPrice }
-    }
-    
-    var totalCartCount: Int {
-        cartItems.reduce(0) { $0 + $1.quantity }
     }
     
     var body: some View {
@@ -49,26 +49,31 @@ struct MenuView: View {
                 AppTheme.bg(isDarkMode).ignoresSafeArea()
                 
                 VStack(spacing: 0) {
-                    // Top Bar (Official Brand Logo & Mode Switcher)
+                    // Top Bar (Official Brand Logo Badge & Mode Switcher)
                     VStack(spacing: 8) {
                         HStack {
-                            // Official Brand Logo
-                            if let logoPath = Bundle.main.path(forResource: "brand_logo", ofType: "png"),
-                               let uiImage = UIImage(contentsOfFile: logoPath) {
-                                Image(uiImage: uiImage)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 32)
-                            } else {
-                                HStack(spacing: 4) {
+                            // Official Brand Logo (Clean Pill Badge Container)
+                            HStack(spacing: 4) {
+                                if let logoPath = Bundle.main.path(forResource: "brand_logo", ofType: "png"),
+                                   let uiImage = UIImage(contentsOfFile: logoPath) {
+                                    Image(uiImage: uiImage)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(height: 22)
+                                } else {
                                     Image(systemName: "heart.fill")
-                                        .font(.system(size: 18))
+                                        .font(.system(size: 16))
                                         .foregroundColor(.red)
                                     Text("清心福全")
-                                        .font(.system(size: 18, weight: .black))
+                                        .font(.system(size: 16, weight: .black))
                                         .foregroundColor(AppTheme.primaryGreen)
                                 }
                             }
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 5)
+                            .background(Color.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .shadow(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 1)
                             
                             Spacer()
                             
@@ -80,14 +85,15 @@ struct MenuView: View {
                                         orderMode = .takeout
                                     }
                                 }) {
-                                    HStack(spacing: 4) {
+                                    HStack(spacing: 3) {
                                         Image(systemName: "bag.fill")
-                                            .font(.system(size: 11))
+                                            .font(.system(size: 10))
                                         Text("外帶自取")
-                                            .font(.system(size: 12, weight: .bold))
+                                            .font(.system(size: 11, weight: .bold))
+                                            .lineLimit(1)
                                     }
                                     .foregroundColor(orderMode == .takeout ? .white : AppTheme.textSecondary(isDarkMode))
-                                    .padding(.horizontal, 12)
+                                    .padding(.horizontal, 10)
                                     .padding(.vertical, 6)
                                     .background(orderMode == .takeout ? AppTheme.primaryGreen : Color.clear)
                                     .clipShape(Capsule())
@@ -99,34 +105,35 @@ struct MenuView: View {
                                         orderMode = .delivery
                                     }
                                 }) {
-                                    HStack(spacing: 4) {
+                                    HStack(spacing: 3) {
                                         Image(systemName: "bicycle")
-                                            .font(.system(size: 11))
+                                            .font(.system(size: 10))
                                         Text("外送上門")
-                                            .font(.system(size: 12, weight: .bold))
+                                            .font(.system(size: 11, weight: .bold))
+                                            .lineLimit(1)
                                     }
                                     .foregroundColor(orderMode == .delivery ? .white : AppTheme.textSecondary(isDarkMode))
-                                    .padding(.horizontal, 12)
+                                    .padding(.horizontal, 10)
                                     .padding(.vertical, 6)
                                     .background(orderMode == .delivery ? AppTheme.primaryGreen : Color.clear)
                                     .clipShape(Capsule())
                                 }
                             }
-                            .padding(3)
+                            .padding(2)
                             .background(AppTheme.inputBg(isDarkMode))
                             .clipShape(Capsule())
+                            .fixedSize()
                         }
                         
-                        // Row 2: Store & Location Bar (Requirements 2 & 3)
+                        // Row 2: Store & Location Bar
                         if orderMode == .takeout {
-                            // Takeout Mode: Single Store Selector Button
                             Button(action: {
                                 SoundManager.shared.playTapSound()
                                 onOpenStoreLocator()
                             }) {
                                 HStack(spacing: 8) {
                                     Image(systemName: "mappin.circle.fill")
-                                        .font(.system(size: 16))
+                                        .font(.system(size: 15))
                                         .foregroundColor(AppTheme.primaryGreen)
                                     
                                     VStack(alignment: .leading, spacing: 2) {
@@ -137,7 +144,7 @@ struct MenuView: View {
                                                 .lineLimit(1)
                                                 .truncationMode(.tail)
                                             Image(systemName: "chevron.down")
-                                                .font(.system(size: 10, weight: .bold))
+                                                .font(.system(size: 9, weight: .bold))
                                                 .foregroundColor(AppTheme.textSecondary(isDarkMode))
                                         }
                                         
@@ -169,14 +176,13 @@ struct MenuView: View {
                         } else {
                             // Delivery Mode: Split Bar (Store Selector + Address Picker)
                             HStack(spacing: 8) {
-                                // Store Picker Pill (Requirement 3: Delivery mode can choose store!)
                                 Button(action: {
                                     SoundManager.shared.playTapSound()
                                     onOpenStoreLocator()
                                 }) {
                                     HStack(spacing: 4) {
                                         Image(systemName: "storefront.fill")
-                                            .font(.system(size: 12))
+                                            .font(.system(size: 11))
                                             .foregroundColor(AppTheme.primaryGreen)
                                         Text("門市: \(currentStore.shortName)")
                                             .font(.system(size: 12, weight: .bold))
@@ -194,14 +200,13 @@ struct MenuView: View {
                                     .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.04), radius: 3, x: 0, y: 1)
                                 }
                                 
-                                // Delivery Address Pill (Requirement 2)
                                 Button(action: {
                                     SoundManager.shared.playTapSound()
                                     isShowingDeliverySetup = true
                                 }) {
                                     HStack(spacing: 4) {
                                         Image(systemName: "location.fill")
-                                            .font(.system(size: 12))
+                                            .font(.system(size: 11))
                                             .foregroundColor(AppTheme.primaryGreen)
                                         Text("配送: \(deliveryInfo.address)")
                                             .font(.system(size: 12, weight: .bold))
@@ -231,7 +236,7 @@ struct MenuView: View {
                     // Scrollable Content Body
                     ScrollView {
                         VStack(spacing: 14) {
-                            // Promotion Auto Carousel (Requirement 4)
+                            // Promotion Auto Carousel
                             VStack(spacing: 8) {
                                 TabView(selection: $currentPromoIndex) {
                                     PromoBannerCard(
@@ -266,7 +271,6 @@ struct MenuView: View {
                                     }
                                 }
                                 
-                                // Indicators
                                 HStack(spacing: 6) {
                                     ForEach(0..<3, id: \.self) { idx in
                                         Circle()
@@ -283,7 +287,6 @@ struct MenuView: View {
                             VStack(alignment: .leading, spacing: 10) {
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack(spacing: 8) {
-                                        // "全部" (All categories button)
                                         Button(action: {
                                             SoundManager.shared.playTapSound()
                                             showCategoryDrawer = true
@@ -303,7 +306,6 @@ struct MenuView: View {
                                             .clipShape(Capsule())
                                         }
                                         
-                                        // "全部飲品" Pill
                                         CategoryPill(
                                             title: "全部飲品",
                                             isSelected: selectedCategory == nil,
@@ -313,7 +315,6 @@ struct MenuView: View {
                                             selectedCategory = nil
                                         }
                                         
-                                        // Main Category Pills
                                         ForEach(DrinkCategory.allCases) { cat in
                                             CategoryPill(
                                                 title: cat.rawValue,
@@ -341,7 +342,6 @@ struct MenuView: View {
                                 
                                 Spacer()
                                 
-                                // Compact Inline Search TextField
                                 HStack(spacing: 6) {
                                     Image(systemName: "magnifyingglass")
                                         .font(.system(size: 12))
@@ -391,72 +391,8 @@ struct MenuView: View {
                                 .padding(.horizontal, 16)
                             }
                         }
-                        .padding(.bottom, totalCartCount > 0 ? 110 : 80)
+                        .padding(.bottom, 120)
                     }
-                }
-                
-                // Sticky Cart Floating Bar
-                if totalCartCount > 0 {
-                    VStack {
-                        Button(action: {
-                            SoundManager.shared.playTapSound()
-                            onOpenCart()
-                        }) {
-                            HStack(spacing: 12) {
-                                ZStack {
-                                    Circle()
-                                        .fill(AppTheme.primaryGreen)
-                                        .frame(width: 44, height: 44)
-                                    Image(systemName: "cart.fill")
-                                        .font(.system(size: 18))
-                                        .foregroundColor(.white)
-                                    
-                                    Text("\(totalCartCount)")
-                                        .font(.system(size: 10, weight: .bold))
-                                        .foregroundColor(.white)
-                                        .padding(4)
-                                        .background(Color.red)
-                                        .clipShape(Circle())
-                                        .offset(x: 14, y: -14)
-                                }
-                                
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("已選點餐 (\(orderMode.rawValue)・\(totalCartCount)杯)")
-                                        .font(.system(size: 14, weight: .bold))
-                                        .foregroundColor(.white)
-                                    Text(orderMode == .takeout ? currentStore.name : deliveryInfo.address)
-                                        .font(.system(size: 11))
-                                        .foregroundColor(.white.opacity(0.8))
-                                        .lineLimit(1)
-                                }
-                                
-                                Spacer()
-                                
-                                HStack(spacing: 4) {
-                                    Text("NT$ \(totalCartPrice)")
-                                        .font(.system(size: 17, weight: .bold))
-                                        .foregroundColor(.white)
-                                    Image(systemName: "chevron.right")
-                                        .font(.system(size: 13, weight: .bold))
-                                        .foregroundColor(.white.opacity(0.8))
-                                }
-                            }
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 10)
-                            .background(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [Color(hex: "008B47"), Color(hex: "005C2B")]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
-                            .clipShape(Capsule())
-                            .shadow(color: AppTheme.primaryGreen.opacity(0.4), radius: 10, x: 0, y: 4)
-                        }
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 65)
-                    .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
             .navigationBarHidden(true)
@@ -473,7 +409,7 @@ struct MenuView: View {
     }
 }
 
-// Category Pill
+// Category Pill Component
 struct CategoryPill: View {
     let title: String
     let isSelected: Bool
@@ -498,7 +434,7 @@ struct CategoryPill: View {
     }
 }
 
-// Drink Card View
+// Drink Card Component
 struct DrinkCardView: View {
     let drink: Drink
     let isDark: Bool
@@ -568,7 +504,7 @@ struct DrinkCardView: View {
     }
 }
 
-// Banner Card
+// Banner Card Component
 struct PromoBannerCard: View {
     let badge: String
     let title: String
@@ -624,7 +560,7 @@ struct PromoBannerCard: View {
     }
 }
 
-// Category Drawer Sheet
+// Category Drawer Component
 struct CategoryDrawerSheet: View {
     @Binding var selectedCategory: DrinkCategory?
     @Binding var isPresented: Bool
@@ -654,7 +590,6 @@ struct CategoryDrawerSheet: View {
                         .padding(.horizontal, 20)
                         .padding(.top, 20)
                         
-                        // "全部 (All Drinks)" Master Card
                         Button(action: {
                             SoundManager.shared.playTapSound()
                             selectedCategory = nil
@@ -746,7 +681,7 @@ struct CategoryDrawerSheet: View {
     }
 }
 
-// Redesigned Delivery Setup Sheet (Requirements 2 & Screenshot 2)
+// Delivery Setup Sheet Component
 struct DeliverySetupSheet: View {
     @Binding var deliveryInfo: DeliveryInfo
     @Binding var isPresented: Bool
@@ -764,7 +699,6 @@ struct DeliverySetupSheet: View {
                 
                 ScrollView {
                     VStack(spacing: 16) {
-                        // Card 1: GPS Auto Location Button (Requirement 2)
                         Button(action: {
                             SoundManager.shared.playTapSound()
                             isLocating = true
@@ -778,17 +712,14 @@ struct DeliverySetupSheet: View {
                         }) {
                             HStack(spacing: 10) {
                                 if isLocating {
-                                    ProgressView()
-                                        .tint(.white)
+                                    ProgressView().tint(.white)
                                 } else {
-                                    Image(systemName: "location.circle.fill")
-                                        .font(.system(size: 18))
+                                    Image(systemName: "location.circle.fill").font(.system(size: 18))
                                 }
                                 Text(isLocating ? "定位抓取中..." : "📍 自動定位 (使用目前 GPS 位置)")
                                     .font(.system(size: 14, weight: .bold))
                                 Spacer()
-                                Image(systemName: "chevron.right")
-                                    .font(.system(size: 12, weight: .bold))
+                                Image(systemName: "chevron.right").font(.system(size: 12, weight: .bold))
                             }
                             .foregroundColor(.white)
                             .padding(.horizontal, 16)
@@ -806,8 +737,7 @@ struct DeliverySetupSheet: View {
                         
                         if showLocatedToast {
                             HStack {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(.green)
+                                Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
                                 Text("已自動定位帶入：台南市中西區西門路二段100號")
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
@@ -818,7 +748,6 @@ struct DeliverySetupSheet: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         }
                         
-                        // Card 2: District Picker
                         VStack(alignment: .leading, spacing: 10) {
                             Text("選擇配送區域")
                                 .font(.system(size: 13, weight: .bold))
@@ -841,18 +770,14 @@ struct DeliverySetupSheet: View {
                         .padding(14)
                         .background(AppTheme.cardBg(isDarkMode))
                         .clipShape(RoundedRectangle(cornerRadius: 14))
-                        .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.04), radius: 4, x: 0, y: 2)
                         
-                        // Card 3: Address & Contact Inputs
                         VStack(alignment: .leading, spacing: 12) {
                             Text("配送詳細地址與電話")
                                 .font(.system(size: 13, weight: .bold))
                                 .foregroundColor(AppTheme.textSecondary(isDarkMode))
                             
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("街道門牌地址")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                Text("街道門牌地址").font(.system(size: 11)).foregroundColor(AppTheme.textSecondary(isDarkMode))
                                 TextField("請輸入詳細地址", text: $deliveryInfo.address)
                                     .font(.system(size: 13))
                                     .padding(10)
@@ -862,9 +787,7 @@ struct DeliverySetupSheet: View {
                             }
                             
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("聯絡電話")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                Text("聯絡電話").font(.system(size: 11)).foregroundColor(AppTheme.textSecondary(isDarkMode))
                                 TextField("請輸入手機號碼", text: $deliveryInfo.phone)
                                     .font(.system(size: 13))
                                     .padding(10)
@@ -874,9 +797,7 @@ struct DeliverySetupSheet: View {
                             }
                             
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("外送備註 (例如：到達打電話)")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                Text("外送備註 (例如：到達打電話)").font(.system(size: 11)).foregroundColor(AppTheme.textSecondary(isDarkMode))
                                 TextField("備註說明", text: $deliveryInfo.notes)
                                     .font(.system(size: 13))
                                     .padding(10)
@@ -888,40 +809,29 @@ struct DeliverySetupSheet: View {
                         .padding(14)
                         .background(AppTheme.cardBg(isDarkMode))
                         .clipShape(RoundedRectangle(cornerRadius: 14))
-                        .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.04), radius: 4, x: 0, y: 2)
                         
-                        // Card 4: Delivery Fees
                         VStack(alignment: .leading, spacing: 10) {
                             Text("外送運費說明")
                                 .font(.system(size: 13, weight: .bold))
                                 .foregroundColor(AppTheme.textSecondary(isDarkMode))
                             
                             HStack {
-                                Text("起送門檻")
-                                    .font(.system(size: 14))
-                                    .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                Text("起送門檻").font(.system(size: 14)).foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 Spacer()
-                                Text("NT$ \(deliveryInfo.minDeliveryThreshold)")
-                                    .font(.system(size: 14, weight: .bold))
-                                    .foregroundColor(AppTheme.primaryGreen)
+                                Text("NT$ \(deliveryInfo.minDeliveryThreshold)").font(.system(size: 14, weight: .bold)).foregroundColor(AppTheme.primaryGreen)
                             }
                             
                             Divider()
                             
                             HStack {
-                                Text("基本外送費")
-                                    .font(.system(size: 14))
-                                    .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                Text("基本外送費").font(.system(size: 14)).foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 Spacer()
-                                Text("NT$ \(deliveryInfo.deliveryFee) (滿$150免運)")
-                                    .font(.system(size: 13))
-                                    .foregroundColor(AppTheme.textSecondary(isDarkMode))
+                                Text("NT$ \(deliveryInfo.deliveryFee) (滿$150免運)").font(.system(size: 13)).foregroundColor(AppTheme.textSecondary(isDarkMode))
                             }
                         }
                         .padding(14)
                         .background(AppTheme.cardBg(isDarkMode))
                         .clipShape(RoundedRectangle(cornerRadius: 14))
-                        .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.04), radius: 4, x: 0, y: 2)
                     }
                     .padding(16)
                 }

@@ -17,15 +17,15 @@ struct MemberCardView: View {
                 AppTheme.bg(isDarkMode).ignoresSafeArea()
                 
                 ScrollView {
-                    VStack(spacing: 20) {
+                    VStack(spacing: 16) {
                         // Header
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text("會員專區")
-                                    .font(.system(size: 26, weight: .bold))
+                                    .font(.system(size: 24, weight: .bold))
                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 Text("尊榮專屬禮遇與積點卡包")
-                                    .font(.system(size: 13))
+                                    .font(.system(size: 12))
                                     .foregroundColor(AppTheme.textSecondary(isDarkMode))
                             }
                             
@@ -37,7 +37,7 @@ struct MemberCardView: View {
                             }) {
                                 HStack(spacing: 4) {
                                     Image(systemName: "pencil")
-                                        .font(.system(size: 12))
+                                        .font(.system(size: 11))
                                     Text("編輯資料")
                                         .font(.system(size: 12, weight: .bold))
                                 }
@@ -49,11 +49,10 @@ struct MemberCardView: View {
                             }
                         }
                         .padding(.horizontal, 20)
-                        .padding(.top, 16)
+                        .padding(.top, 14)
                         
-                        // Luxury Metallic VIP Member Pass Card (Requirement 7)
+                        // Luxury Metallic VIP Member Pass Card
                         ZStack(alignment: .bottomLeading) {
-                            // Metallic Dark Emerald + Gold Gradient
                             LinearGradient(
                                 gradient: Gradient(colors: [
                                     Color(hex: "064E3B"),
@@ -63,9 +62,9 @@ struct MemberCardView: View {
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
-                            .clipShape(RoundedRectangle(cornerRadius: 22))
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
                             .overlay(
-                                RoundedRectangle(cornerRadius: 22)
+                                RoundedRectangle(cornerRadius: 20)
                                     .stroke(
                                         LinearGradient(
                                             gradient: Gradient(colors: [Color(hex: "F59E0B"), Color(hex: "FCD34D"), Color(hex: "059669")]),
@@ -75,36 +74,34 @@ struct MemberCardView: View {
                                         lineWidth: 1.5
                                     )
                             )
-                            .shadow(color: Color(hex: "064E3B").opacity(0.4), radius: 12, x: 0, y: 6)
+                            .shadow(color: Color(hex: "064E3B").opacity(0.4), radius: 10, x: 0, y: 5)
                             
-                            // Watermark Crown Pattern Background
                             VStack {
                                 HStack {
                                     Spacer()
                                     Image(systemName: "crown.fill")
-                                        .font(.system(size: 120))
+                                        .font(.system(size: 110))
                                         .foregroundColor(Color(hex: "F59E0B").opacity(0.08))
-                                        .offset(x: 30, y: -20)
+                                        .offset(x: 25, y: -15)
                                 }
                                 Spacer()
                             }
                             
-                            // Content
-                            VStack(alignment: .leading, spacing: 18) {
+                            VStack(alignment: .leading, spacing: 14) {
                                 HStack {
                                     HStack(spacing: 8) {
                                         ZStack {
                                             Circle()
                                                 .fill(Color(hex: "F59E0B").opacity(0.2))
-                                                .frame(width: 32, height: 32)
+                                                .frame(width: 30, height: 30)
                                             Image(systemName: "crown.fill")
-                                                .font(.system(size: 16))
+                                                .font(.system(size: 14))
                                                 .foregroundColor(Color(hex: "FCD34D"))
                                         }
                                         
                                         VStack(alignment: .leading, spacing: 1) {
                                             Text(memberLevel)
-                                                .font(.system(size: 14, weight: .black))
+                                                .font(.system(size: 13, weight: .black))
                                                 .foregroundColor(Color(hex: "FCD34D"))
                                             Text("VIP GOLD MEMBER")
                                                 .font(.system(size: 9, weight: .bold))
@@ -114,14 +111,13 @@ struct MemberCardView: View {
                                     
                                     Spacer()
                                     
-                                    // Barcode Scanner Button
                                     Button(action: {
                                         SoundManager.shared.playTapSound()
                                         showBarcodeModal = true
                                     }) {
                                         HStack(spacing: 4) {
                                             Image(systemName: "qrcode")
-                                                .font(.system(size: 14))
+                                                .font(.system(size: 12))
                                             Text("出示條碼")
                                                 .font(.system(size: 11, weight: .bold))
                                         }
@@ -136,39 +132,38 @@ struct MemberCardView: View {
                                 HStack(alignment: .bottom) {
                                     VStack(alignment: .leading, spacing: 2) {
                                         Text("持卡人 (Member)")
-                                            .font(.system(size: 10))
+                                            .font(.system(size: 9))
                                             .foregroundColor(.white.opacity(0.6))
                                         Text(userProfile.name)
-                                            .font(.system(size: 20, weight: .bold))
+                                            .font(.system(size: 18, weight: .bold))
                                             .foregroundColor(.white)
                                     }
                                     
                                     Spacer()
                                     
                                     VStack(alignment: .trailing, spacing: 2) {
-                                        Text("目前紅利積點")
-                                            .font(.system(size: 10))
+                                        Text("紅利積點")
+                                            .font(.system(size: 9))
                                             .foregroundColor(.white.opacity(0.6))
                                         HStack(alignment: .firstTextBaseline, spacing: 2) {
                                             Text("\(points)")
-                                                .font(.system(size: 26, weight: .black))
+                                                .font(.system(size: 24, weight: .black))
                                                 .foregroundColor(Color(hex: "FCD34D"))
                                             Text("點")
-                                                .font(.system(size: 12, weight: .bold))
+                                                .font(.system(size: 11, weight: .bold))
                                                 .foregroundColor(.white)
                                         }
                                     }
                                 }
                                 
-                                // Progress Bar to Next Tier
                                 VStack(alignment: .leading, spacing: 4) {
                                     HStack {
                                         Text("距離下一階級 (鑽石尊爵) 差 30 點")
-                                            .font(.system(size: 10, weight: .medium))
+                                            .font(.system(size: 9, weight: .medium))
                                             .foregroundColor(.white.opacity(0.8))
                                         Spacer()
                                         Text("320 / 350")
-                                            .font(.system(size: 10, weight: .bold))
+                                            .font(.system(size: 9, weight: .bold))
                                             .foregroundColor(Color(hex: "FCD34D"))
                                     }
                                     
@@ -176,7 +171,7 @@ struct MemberCardView: View {
                                         ZStack(alignment: .leading) {
                                             Capsule()
                                                 .fill(Color.white.opacity(0.15))
-                                                .frame(height: 6)
+                                                .frame(height: 5)
                                             Capsule()
                                                 .fill(
                                                     LinearGradient(
@@ -185,33 +180,79 @@ struct MemberCardView: View {
                                                         endPoint: .trailing
                                                     )
                                                 )
-                                                .frame(width: geo.size.width * (320.0 / 350.0), height: 6)
+                                                .frame(width: geo.size.width * (320.0 / 350.0), height: 5)
                                         }
                                     }
-                                    .frame(height: 6)
+                                    .frame(height: 5)
                                 }
                             }
-                            .padding(20)
+                            .padding(16)
                         }
-                        .frame(height: 200)
+                        .frame(height: 185)
+                        .padding(.horizontal, 20)
+                        
+                        // Carrier Barcode Card (電子發票載具條碼 - Mandatory Feature)
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack {
+                                Image(systemName: "barcode.viewfinder")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(AppTheme.primaryGreen)
+                                Text("電子發票手機載具條碼")
+                                    .font(.system(size: 13, weight: .bold))
+                                    .foregroundColor(AppTheme.textPrimary(isDarkMode))
+                                Spacer()
+                                Text("結帳掃描")
+                                    .font(.system(size: 10, weight: .bold))
+                                    .foregroundColor(AppTheme.primaryGreen)
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 3)
+                                    .background(AppTheme.primaryGreen.opacity(0.12))
+                                    .clipShape(Capsule())
+                            }
+                            
+                            HStack {
+                                Spacer()
+                                VStack(spacing: 4) {
+                                    HStack(spacing: 2.5) {
+                                        ForEach(0..<26, id: \.self) { idx in
+                                            Rectangle()
+                                                .fill(idx % 3 == 0 ? Color.black : (idx % 2 == 0 ? Color.black.opacity(0.8) : Color.black.opacity(0.4)))
+                                                .frame(width: idx % 5 == 0 ? 4 : (idx % 3 == 0 ? 2.5 : 1.5), height: 38)
+                                        }
+                                    }
+                                    Text(userProfile.carrierBarcode)
+                                        .font(.system(size: 13, weight: .bold, design: .monospaced))
+                                        .foregroundColor(Color(hex: "374151"))
+                                }
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 16)
+                                .background(Color.white)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                Spacer()
+                            }
+                        }
+                        .padding(12)
+                        .background(AppTheme.cardBg(isDarkMode))
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.04), radius: 6, x: 0, y: 2)
                         .padding(.horizontal, 20)
                         
                         // Quick Privileges Grid
-                        HStack(spacing: 12) {
+                        HStack(spacing: 10) {
                             PrivilegePill(icon: "cup.and.saucer.fill", title: "寄杯管家", subtitle: "2 杯待領取")
                             PrivilegePill(icon: "gift.fill", title: "點數兌換", subtitle: "可兌換 4 禮包")
                             PrivilegePill(icon: "tag.fill", title: "專屬券包", subtitle: "\(coupons.count) 張可用")
                         }
                         .padding(.horizontal, 20)
                         
-                        // Coupon Section (Requirements: 3 exact coupons)
+                        // Coupon Section
                         VStack(alignment: .leading, spacing: 12) {
                             HStack {
                                 Image(systemName: "ticket.fill")
-                                    .font(.system(size: 15))
+                                    .font(.system(size: 14))
                                     .foregroundColor(AppTheme.primaryGreen)
                                 Text("會員專屬獨享優惠券 (\(coupons.count)張)")
-                                    .font(.system(size: 16, weight: .bold))
+                                    .font(.system(size: 15, weight: .bold))
                                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
                                 Spacer()
                             }
@@ -224,7 +265,7 @@ struct MemberCardView: View {
                             }
                             .padding(.horizontal, 20)
                         }
-                        .padding(.bottom, 110)
+                        .padding(.bottom, 160) // Extra padding so it clears bottom tab bar
                     }
                 }
             }
@@ -248,18 +289,18 @@ struct PrivilegePill: View {
     
     var body: some View {
         Button(action: { SoundManager.shared.playTapSound() }) {
-            VStack(spacing: 6) {
+            VStack(spacing: 4) {
                 ZStack {
                     Circle()
                         .fill(AppTheme.primaryGreen.opacity(0.12))
-                        .frame(width: 36, height: 36)
+                        .frame(width: 32, height: 32)
                     Image(systemName: icon)
-                        .font(.system(size: 15))
+                        .font(.system(size: 14))
                         .foregroundColor(AppTheme.primaryGreen)
                 }
                 
                 Text(title)
-                    .font(.system(size: 13, weight: .bold))
+                    .font(.system(size: 12, weight: .bold))
                     .foregroundColor(AppTheme.textPrimary(isDarkMode))
                 
                 Text(subtitle)
@@ -267,7 +308,7 @@ struct PrivilegePill: View {
                     .foregroundColor(AppTheme.textSecondary(isDarkMode))
             }
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 12)
+            .padding(.vertical, 10)
             .background(AppTheme.cardBg(isDarkMode))
             .clipShape(RoundedRectangle(cornerRadius: 14))
             .shadow(color: Color.black.opacity(isDarkMode ? 0.3 : 0.03), radius: 4, x: 0, y: 2)
@@ -275,7 +316,7 @@ struct PrivilegePill: View {
     }
 }
 
-// Coupon Card View (Unified Green Styling)
+// Coupon Card View (Clean Badge Format)
 struct CouponCardView: View {
     let coupon: AppCoupon
     let isDark: Bool
@@ -283,10 +324,11 @@ struct CouponCardView: View {
     var body: some View {
         HStack(spacing: 0) {
             // Left Value Badge
-            VStack(spacing: 4) {
-                Text(coupon.subtitle)
+            VStack(spacing: 2) {
+                Text(coupon.discountBadgeText)
                     .font(.system(size: 18, weight: .black))
                     .foregroundColor(.white)
+                    .lineLimit(1)
                 
                 Text(coupon.badge)
                     .font(.system(size: 9, weight: .bold))
@@ -296,7 +338,7 @@ struct CouponCardView: View {
                     .background(Color.white.opacity(0.2))
                     .clipShape(Capsule())
             }
-            .frame(width: 105)
+            .frame(width: 95)
             .frame(maxHeight: .infinity)
             .background(
                 LinearGradient(
@@ -307,22 +349,23 @@ struct CouponCardView: View {
             )
             
             // Right Content Details
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 4) {
                 HStack {
                     Text(coupon.title)
-                        .font(.system(size: 15, weight: .bold))
+                        .font(.system(size: 14, weight: .bold))
                         .foregroundColor(AppTheme.textPrimary(isDark))
+                        .lineLimit(1)
                     Spacer()
                     Text("可使用")
                         .font(.system(size: 10, weight: .bold))
                         .foregroundColor(AppTheme.primaryGreen)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 3)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
                         .background(AppTheme.primaryGreen.opacity(0.12))
                         .clipShape(Capsule())
                 }
                 
-                Text("滿 $\(coupon.minSpend) 即可使用折抵")
+                Text("滿 $\(coupon.minSpend) 即可折抵優惠")
                     .font(.system(size: 11))
                     .foregroundColor(AppTheme.textSecondary(isDark))
                     .lineLimit(1)
@@ -334,7 +377,7 @@ struct CouponCardView: View {
                     Spacer()
                     Button(action: { SoundManager.shared.playTapSound() }) {
                         Text("立即使用")
-                            .font(.system(size: 11, weight: .bold))
+                            .font(.system(size: 10, weight: .bold))
                             .foregroundColor(.white)
                             .padding(.horizontal, 10)
                             .padding(.vertical, 4)
@@ -343,16 +386,27 @@ struct CouponCardView: View {
                     }
                 }
             }
-            .padding(12)
+            .padding(10)
         }
-        .frame(height: 90)
+        .frame(height: 80)
         .background(AppTheme.cardBg(isDark))
         .clipShape(RoundedRectangle(cornerRadius: 14))
-        .shadow(color: Color.black.opacity(isDark ? 0.3 : 0.04), radius: 6, x: 0, y: 3)
+        .shadow(color: Color.black.opacity(isDark ? 0.3 : 0.04), radius: 4, x: 0, y: 2)
     }
 }
 
-// Member Barcode Modal View (Counter Scan)
+// AppCoupon Extension for Clean Left Badge Text
+extension AppCoupon {
+    var discountBadgeText: String {
+        if isPercent {
+            return "9 折"
+        } else {
+            return "折 $\(discountValue)"
+        }
+    }
+}
+
+// Member Barcode Modal View
 struct MemberBarcodeModalView: View {
     let userProfile: UserProfile
     let points: Int
@@ -374,7 +428,6 @@ struct MemberBarcodeModalView: View {
                             .foregroundColor(AppTheme.textSecondary(isDarkMode))
                     }
                     
-                    // Card
                     VStack(spacing: 20) {
                         HStack {
                             Text(userProfile.name)
@@ -386,7 +439,6 @@ struct MemberBarcodeModalView: View {
                                 .foregroundColor(Color(hex: "008B47"))
                         }
                         
-                        // Barcode Placeholder Graphic
                         VStack(spacing: 8) {
                             HStack(spacing: 3) {
                                 ForEach(0..<30, id: \.self) { idx in
@@ -404,7 +456,6 @@ struct MemberBarcodeModalView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                         .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.gray.opacity(0.3), lineWidth: 1))
                         
-                        // Carrier Barcode
                         VStack(spacing: 6) {
                             Text("手機載具條碼: \(userProfile.carrierBarcode)")
                                 .font(.system(size: 13, weight: .bold))
