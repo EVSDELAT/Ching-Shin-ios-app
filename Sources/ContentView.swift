@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isShowingSplash: Bool = true
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     @State private var cartItems: [CartItem] = []
     @State private var selectedDrink: Drink? = nil
@@ -71,7 +72,7 @@ struct ContentView: View {
                                 isShowingCart = true
                             },
                             onOpenStoreLocator: {
-                                isShowingStoreLocator = true
+                                selectedTab = 1 // Switch to Store Tab
                             }
                         )
                         .tabItem {
@@ -109,6 +110,7 @@ struct ContentView: View {
                     if !cartItems.isEmpty && selectedTab == 0 {
                         VStack {
                             Button(action: {
+                                SoundManager.shared.playTapSound()
                                 isShowingCart = true
                             }) {
                                 HStack {
@@ -175,6 +177,7 @@ struct ContentView: View {
                 }
             }
         }
+        .preferredColorScheme(isDarkMode ? .dark : .light)
         .sheet(item: $selectedDrink) { drink in
             DrinkDetailView(drink: drink) { newItem in
                 cartItems.append(newItem)
@@ -201,6 +204,7 @@ struct ContentView: View {
                 storeName: selectedStore.name,
                 orderModeName: orderMode.rawValue,
                 onComplete: { completedOrder in
+                    SoundManager.shared.playOrderSuccessSound()
                     completedOrders.insert(completedOrder, at: 0)
                     cartItems.removeAll()
                     isShowingOrderProgress = false
@@ -222,69 +226,100 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Subviews for Store & History Tabs
+// MARK: - Store Locator Main View with Map Button (Requirement #4)
 struct StoreLocatorMainView: View {
     @Binding var selectedStore: Store
+    @State private var mapStoreTarget: Store? = nil
     
     var body: some View {
         NavigationStack {
             List(SampleData.sampleStores) { store in
-                HStack(spacing: 12) {
-                    ZStack {
-                        Circle()
-                            .fill(store.id == selectedStore.id ? Color(hex: "008B47") : Color.gray.opacity(0.12))
-                            .frame(width: 42, height: 42)
-                        Image(systemName: "mappin.circle.fill")
-                            .font(.title2)
-                            .foregroundColor(store.id == selectedStore.id ? .white : Color(hex: "008B47"))
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 4) {
-                        HStack {
-                            Text(store.name)
-                                .font(.headline)
-                            Spacer()
-                            if store.id == selectedStore.id {
-                                Text("預設門市")
-                                    .font(.system(size: 9, weight: .bold))
-                                    .padding(.horizontal, 8)
-                                    .padding(.vertical, 3)
-                                    .background(Color(hex: "008B47"))
-                                    .foregroundColor(.white)
-                                    .clipShape(Capsule())
-                            }
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack(spacing: 12) {
+                        ZStack {
+                            Circle()
+                                .fill(store.id == selectedStore.id ? Color(hex: "008B47") : Color.gray.opacity(0.12))
+                                .frame(width: 42, height: 42)
+                            Image(systemName: "mappin.circle.fill")
+                                .font(.title2)
+                                .foregroundColor(store.id == selectedStore.id ? .white : Color(hex: "008B47"))
                         }
                         
-                        Text(store.address)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                        
-                        HStack(spacing: 10) {
-                            HStack(spacing: 4) {
-                                Circle().fill(Color.green).frame(width: 6, height: 6)
-                                Text("營業中 (\(store.operatingHours))")
+                        VStack(alignment: .leading, spacing: 4) {
+                            HStack {
+                                Text(store.name)
+                                    .font(.headline)
+                                Spacer()
+                                if store.id == selectedStore.id {
+                                    Text("預設門市")
+                                        .font(.system(size: 9, weight: .bold))
+                                        .padding(.horizontal, 8)
+                                        .padding(.vertical, 3)
+                                        .background(Color(hex: "008B47"))
+                                        .foregroundColor(.white)
+                                        .clipShape(Capsule())
+                                }
+                            }
+                            
+                            Text(store.address)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            
+                            HStack(spacing: 10) {
+                                HStack(spacing: 4) {
+                                    Circle().fill(Color.green).frame(width: 6, height: 6)
+                                    Text("營業中 (\(store.operatingHours))")
+                                        .font(.caption2)
+                                        .foregroundColor(.green)
+                                }
+                                Text("電話: \(store.phone)")
                                     .font(.caption2)
-                                    .foregroundColor(.green)
+                                    .foregroundColor(.gray)
                             }
-                            Text("電話: \(store.phone)")
-                                .font(.caption2)
-                                .foregroundColor(.gray)
                         }
                     }
                     
-                    if store.id != selectedStore.id {
-                        Button("選擇") {
-                            selectedStore = store
+                    // Action Buttons Row (Map Navigation + Store Select - Requirement #4)
+                    HStack(spacing: 10) {
+                        Button(action: {
+                            SoundManager.shared.playTapSound()
+                            mapStoreTarget = store
+                        }) {
+                            HStack(spacing: 4) {
+                                Image(systemName: "map.fill")
+                                    .font(.caption2)
+                                Text("查看地圖導航")
+                                    .font(.caption)
+                                    .bold()
+                            }
+                            .foregroundColor(Color(hex: "008B47"))
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 6)
+                            .background(Color(hex: "008B47").opacity(0.12))
+                            .clipShape(Capsule())
                         }
-                        .font(.caption)
-                        .bold()
-                        .buttonStyle(.borderedProminent)
-                        .tint(Color(hex: "008B47"))
+                        
+                        Spacer()
+                        
+                        if store.id != selectedStore.id {
+                            Button("選擇此門市") {
+                                SoundManager.shared.playTapSound()
+                                selectedStore = store
+                            }
+                            .font(.caption)
+                            .bold()
+                            .buttonStyle(.borderedProminent)
+                            .tint(Color(hex: "008B47"))
+                        }
                     }
+                    .padding(.top, 4)
                 }
                 .padding(.vertical, 6)
             }
             .navigationTitle("台南市清心福全門市據點")
+            .sheet(item: $mapStoreTarget) { store in
+                StoreMapSheet(store: store)
+            }
         }
     }
 }

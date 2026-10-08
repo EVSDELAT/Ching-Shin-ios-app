@@ -22,12 +22,12 @@ struct SplashVideoView: View {
                     
                     ZStack {
                         Circle()
-                            .fill(Color(hex: "008641").opacity(0.2))
+                            .fill(Color(hex: "008B47").opacity(0.2))
                             .frame(width: 140, height: 140)
                             .scaleEffect(pulseLogo ? 1.15 : 0.95)
                         
                         Circle()
-                            .fill(Color(hex: "008641"))
+                            .fill(Color(hex: "008B47"))
                             .frame(width: 100, height: 100)
                         
                         Image(systemName: "heart.fill")
@@ -55,25 +55,24 @@ struct SplashVideoView: View {
                 }
             }
             
-            // Skip Button
+            // Modern Minimalist 'X' Close Button (Mandatory User Requirement #7)
             Button(action: {
+                SoundManager.shared.playTapSound()
                 player?.pause()
                 onFinished()
             }) {
-                HStack(spacing: 4) {
-                    Text("跳過動畫")
-                        .font(.system(size: 13, weight: .semibold))
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 11, weight: .bold))
+                ZStack {
+                    Circle()
+                        .fill(Color.black.opacity(0.6))
+                        .frame(width: 36, height: 36)
+                    
+                    Image(systemName: "xmark")
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundColor(.white)
                 }
-                .foregroundColor(.white)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
-                .background(Color(hex: "008641").opacity(0.85))
-                .clipShape(Capsule())
                 .overlay(
-                    Capsule()
-                        .stroke(Color.white.opacity(0.4), lineWidth: 1)
+                    Circle()
+                        .stroke(Color.white.opacity(0.3), lineWidth: 1)
                 )
                 .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: 3)
                 .padding(.top, 56)
@@ -90,7 +89,6 @@ struct SplashVideoView: View {
     }
     
     private func setupPlayer() {
-        // Try finding video bundle resources first, then absolute path
         var videoURL: URL? = nil
         
         if let bundleURL = Bundle.main.url(forResource: "開頭動畫", withExtension: "mp4") {
@@ -105,7 +103,6 @@ struct SplashVideoView: View {
         }
         
         guard let url = videoURL else {
-            // Fallback timeout to proceed after 2.5s if no video file
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                 onFinished()
             }
