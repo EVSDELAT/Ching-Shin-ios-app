@@ -1,27 +1,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isShowingSplash: Bool = true
+    
     @State private var cartItems: [CartItem] = []
     @State private var selectedDrink: Drink? = nil
     @State private var selectedStore: Store = SampleData.sampleStores[0]
+    @State private var orderMode: OrderMode = .takeout
+    @State private var deliveryInfo: DeliveryInfo = DeliveryInfo()
+    @State private var userProfile: UserProfile = UserProfile()
+    
     @State private var isShowingCart: Bool = false
     @State private var isShowingStoreLocator: Bool = false
     @State private var isShowingOrderProgress: Bool = false
     @State private var cartBounceScale: CGFloat = 1.0
     @State private var selectedTab: Int = 0
     
-    // 歷史訂單紀錄清單
     @State private var completedOrders: [CompletedOrder] = [
         CompletedOrder(
             orderNo: "#CS-883920",
             storeName: "清心福全 台南總店(西門二店)",
+            orderModeName: "外帶自取",
             items: [
                 CartItem(drink: SampleData.drinks[0], size: .large, sugar: .less8, ice: .lessIce, toppings: [.boba], quantity: 1),
                 CartItem(drink: SampleData.drinks[1], size: .large, sugar: .zero, ice: .noIce, toppings: [], quantity: 1)
             ],
             totalPrice: 110,
             dateString: "2026/10/08 11:30",
-            status: "已完成 (外帶)"
+            status: "已完成"
         )
     ]
     
@@ -32,154 +38,177 @@ struct ContentView: View {
     }
     
     var totalCartPrice: Int {
-        cartItems.reduce(0) { $0 + $1.totalPrice }
+        let subtotal = cartItems.reduce(0) { $0 + $1.totalPrice }
+        let discount = subtotal >= 200 ? 20 : 0
+        let fee = orderMode == .delivery ? deliveryInfo.calculateDeliveryFee(subtotal: subtotal) : 0
+        return max(0, subtotal - discount + fee)
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            // Main Tab View
-            TabView(selection: $selectedTab) {
-                MenuView(
-                    cartItems: $cartItems,
-                    currentStore: $selectedStore,
-                    onSelectDrink: { drink in
-                        selectedDrink = drink
-                    },
-                    onOpenCart: {
-                        isShowingCart = true
-                    },
-                    onOpenStoreLocator: {
-                        isShowingStoreLocator = true
+        ZStack {
+            if isShowingSplash {
+                SplashVideoView {
+                    withAnimation(.easeOut(duration: 0.5)) {
+                        isShowingSplash = false
                     }
-                )
-                .tabItem {
-                    Label("菜單點餐", systemImage: "cup.and.saucer.fill")
                 }
-                .tag(0)
-                
-                StoreLocatorMainView(selectedStore: $selectedStore)
-                .tabItem {
-                    Label("門市據點", systemImage: "mappin.and.ellipse")
-                }
-                .tag(1)
-                
-                MemberCardView()
-                .tabItem {
-                    Label("會員專區", systemImage: "person.crop.square.fill")
-                }
-                .tag(2)
-                
-                OrderHistoryView(orders: completedOrders)
-                .tabItem {
-                    Label("歷史訂單", systemImage: "clock.fill")
-                }
-                .tag(3)
-            }
-            .accentColor(Color(hex: "008B47"))
-            
-            // Floating Cart Action Bar (When items present)
-            if !cartItems.isEmpty && selectedTab == 0 {
-                VStack {
-                    Button(action: {
-                        isShowingCart = true
-                    }) {
-                        HStack {
-                            ZStack {
-                                Circle()
-                                    .fill(Color.white)
-                                    .frame(width: 44, height: 44)
-                                
-                                Image(systemName: "cart.fill")
-                                    .font(.title3)
-                                    .foregroundColor(Color(hex: "008B47"))
-                                
-                                ZStack {
-                                    Circle()
-                                        .fill(Color.red)
-                                        .frame(width: 20, height: 20)
-                                    Text("\(totalCartItemsCount)")
-                                        .font(.caption2)
+                .transition(.opacity)
+                .zIndex(999)
+            } else {
+                ZStack(alignment: .bottom) {
+                    // Main Tab View
+                    TabView(selection: $selectedTab) {
+                        MenuView(
+                            cartItems: $cartItems,
+                            currentStore: $selectedStore,
+                            orderMode: $orderMode,
+                            deliveryInfo: $deliveryInfo,
+                            userProfile: $userProfile,
+                            onSelectDrink: { drink in
+                                selectedDrink = drink
+                            },
+                            onOpenCart: {
+                                isShowingCart = true
+                            },
+                            onOpenStoreLocator: {
+                                isShowingStoreLocator = true
+                            }
+                        )
+                        .tabItem {
+                            Label("菜單點餐", systemImage: "cup.and.saucer.fill")
+                        }
+                        .tag(0)
+                        
+                        StoreLocatorMainView(selectedStore: $selectedStore)
+                        .tabItem {
+                            Label("門市據點", systemImage: "mappin.and.ellipse")
+                        }
+                        .tag(1)
+                        
+                        MemberCardView(userProfile: $userProfile)
+                        .tabItem {
+                            Label("會員專區", systemImage: "person.crop.square.fill")
+                        }
+                        .tag(2)
+                        
+                        OrderHistoryView(orders: completedOrders)
+                        .tabItem {
+                            Label("歷史訂單", systemImage: "clock.fill")
+                        }
+                        .tag(3)
+                    }
+                    .accentColor(Color(hex: "008B47"))
+                    
+                    // Floating Cart Action Bar
+                    if !cartItems.isEmpty && selectedTab == 0 {
+                        VStack {
+                            Button(action: {
+                                isShowingCart = true
+                            }) {
+                                HStack {
+                                    ZStack {
+                                        Circle()
+                                            .fill(Color.white)
+                                            .frame(width: 44, height: 44)
+                                        
+                                        Image(systemName: "cart.fill")
+                                            .font(.title3)
+                                            .foregroundColor(Color(hex: "008B47"))
+                                        
+                                        ZStack {
+                                            Circle()
+                                                .fill(Color.red)
+                                                .frame(width: 20, height: 20)
+                                            Text("\(totalCartItemsCount)")
+                                                .font(.caption2)
+                                                .bold()
+                                                .foregroundColor(.white)
+                                        }
+                                        .offset(x: 14, y: -14)
+                                        .scaleEffect(cartBounceScale)
+                                    }
+                                    
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text("已選點餐 (\(orderMode.rawValue) ‧ \(totalCartItemsCount)杯)")
+                                            .font(.subheadline)
+                                            .bold()
+                                            .foregroundColor(.white)
+                                        Text("\(orderMode == .takeout ? selectedStore.name : deliveryInfo.address)")
+                                            .font(.caption2)
+                                            .foregroundColor(.white.opacity(0.85))
+                                            .lineLimit(1)
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    Text("NT$ \(totalCartPrice)")
+                                        .font(.headline)
+                                        .bold()
+                                        .foregroundColor(.white)
+                                    
+                                    Image(systemName: "chevron.right")
+                                        .font(.caption)
                                         .bold()
                                         .foregroundColor(.white)
                                 }
-                                .offset(x: 14, y: -14)
-                                .scaleEffect(cartBounceScale)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 12)
+                                .background(
+                                    LinearGradient(
+                                        colors: [Color(hex: "00A550"), Color(hex: "008B47")],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+                                )
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .shadow(color: Color(hex: "008B47").opacity(0.4), radius: 10, x: 0, y: 5)
+                                .padding(.horizontal)
+                                .padding(.bottom, 54)
                             }
-                            
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text("購物車已選取的飲料 (\(totalCartItemsCount)杯)")
-                                    .font(.subheadline)
-                                    .bold()
-                                    .foregroundColor(.white)
-                                Text("\(selectedStore.name) ‧ 點擊確認明細")
-                                    .font(.caption2)
-                                    .foregroundColor(.white.opacity(0.85))
-                            }
-                            
-                            Spacer()
-                            
-                            Text("NT$ \(totalCartPrice)")
-                                .font(.headline)
-                                .bold()
-                                .foregroundColor(.white)
-                            
-                            Image(systemName: "chevron.right")
-                                .font(.caption)
-                                .bold()
-                                .foregroundColor(.white)
                         }
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 12)
-                        .background(
-                            LinearGradient(
-                                colors: [Color(hex: "00A550"), Color(hex: "008B47")],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .shadow(color: Color(hex: "008B47").opacity(0.4), radius: 10, x: 0, y: 5)
-                        .padding(.horizontal)
-                        .padding(.bottom, 54)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                        .animation(.spring(response: 0.4, dampingFraction: 0.7), value: cartItems.count)
                     }
                 }
-                .transition(.move(edge: .bottom).combined(with: .opacity))
-                .animation(.spring(response: 0.4, dampingFraction: 0.7), value: cartItems.count)
-            }
-        }
-        // Drink Customization Modal Sheet
-        .sheet(item: $selectedDrink) { drink in
-            DrinkDetailView(drink: drink) { newItem in
-                withAnimation(.spring()) {
-                    cartItems.append(newItem)
-                    triggerCartBounce()
-                }
-            }
-        }
-        // Cart Summary Modal Sheet
-        .sheet(isPresented: $isShowingCart) {
-            CartView(cartItems: $cartItems) {
-                pendingCheckoutItems = cartItems
-                cartItems.removeAll()
-                isShowingOrderProgress = true
-            }
-        }
-        // Store Locator Modal Sheet
-        .sheet(isPresented: $isShowingStoreLocator) {
-            StoreLocatorView(selectedStore: $selectedStore)
-        }
-        // Order Progress Simulation Screen
-        .fullScreenCover(isPresented: $isShowingOrderProgress) {
-            OrderProgressView(
-                orderItems: pendingCheckoutItems,
-                storeName: selectedStore.name,
-                onComplete: { newOrder in
-                    withAnimation(.spring()) {
-                        completedOrders.insert(newOrder, at: 0)
-                        selectedTab = 3 // 切換至歷史訂單 Tab！
+                // Drink Customization Modal Sheet
+                .sheet(item: $selectedDrink) { drink in
+                    DrinkDetailView(drink: drink) { newItem in
+                        withAnimation(.spring()) {
+                            cartItems.append(newItem)
+                            triggerCartBounce()
+                        }
                     }
                 }
-            )
+                // Cart Summary Modal Sheet
+                .sheet(isPresented: $isShowingCart) {
+                    CartView(
+                        cartItems: $cartItems,
+                        orderMode: orderMode,
+                        deliveryInfo: deliveryInfo
+                    ) {
+                        pendingCheckoutItems = cartItems
+                        cartItems.removeAll()
+                        isShowingOrderProgress = true
+                    }
+                }
+                // Store Locator Modal Sheet
+                .sheet(isPresented: $isShowingStoreLocator) {
+                    StoreLocatorView(selectedStore: $selectedStore)
+                }
+                // Order Progress Simulation Screen
+                .fullScreenCover(isPresented: $isShowingOrderProgress) {
+                    OrderProgressView(
+                        orderItems: pendingCheckoutItems,
+                        storeName: orderMode == .takeout ? selectedStore.name : "外送門市: \(selectedStore.name)",
+                        onComplete: { newOrder in
+                            withAnimation(.spring()) {
+                                completedOrders.insert(newOrder, at: 0)
+                                selectedTab = 3 // 切換至歷史訂單 Tab
+                            }
+                        }
+                    )
+                }
+            }
         }
     }
     
@@ -287,18 +316,24 @@ struct OrderHistoryView: View {
                         ForEach(orders) { order in
                             VStack(alignment: .leading, spacing: 10) {
                                 HStack {
-                                    Text(order.storeName)
-                                        .font(.headline)
-                                        .bold()
+                                    HStack(spacing: 6) {
+                                        Text(order.orderModeName)
+                                            .font(.system(size: 9, weight: .bold))
+                                            .padding(.horizontal, 6)
+                                            .padding(.vertical, 2)
+                                            .background(Color(hex: "008B47").opacity(0.15))
+                                            .foregroundColor(Color(hex: "008B47"))
+                                            .clipShape(Capsule())
+                                        
+                                        Text(order.storeName)
+                                            .font(.headline)
+                                            .bold()
+                                    }
                                     Spacer()
                                     Text(order.status)
                                         .font(.caption)
                                         .bold()
-                                        .padding(.horizontal, 8)
-                                        .padding(.vertical, 3)
-                                        .background(Color(hex: "008B47").opacity(0.12))
                                         .foregroundColor(Color(hex: "008B47"))
-                                        .clipShape(Capsule())
                                 }
                                 
                                 Text("訂單編號: \(order.orderNo) ‧ \(order.dateString)")

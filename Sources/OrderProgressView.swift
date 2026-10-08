@@ -3,6 +3,7 @@ import SwiftUI
 struct OrderProgressView: View {
     var orderItems: [CartItem]
     var storeName: String
+    var orderModeName: String = "外帶自取"
     var onComplete: (CompletedOrder) -> Void
     
     @Environment(\.dismiss) private var dismiss
@@ -34,7 +35,7 @@ struct OrderProgressView: View {
                         .padding(.horizontal)
                     
                     HStack {
-                        Text("\(storeName) ‧ 預計取餐 8 分鐘")
+                        Text("[\(orderModeName)] \(storeName) ‧ 預計取餐 8 分鐘")
                             .font(.caption)
                             .bold()
                             .foregroundColor(Color(hex: "008B47"))
@@ -138,10 +139,11 @@ struct OrderProgressView: View {
                     let newOrder = CompletedOrder(
                         orderNo: orderNo,
                         storeName: storeName,
+                        orderModeName: orderModeName,
                         items: orderItems,
                         totalPrice: totalPrice,
                         dateString: nowString,
-                        status: "製作完成 (可取餐)"
+                        status: "已完成 (\(orderModeName))"
                     )
                     onComplete(newOrder)
                     dismiss()

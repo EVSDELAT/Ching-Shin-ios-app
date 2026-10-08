@@ -2,6 +2,8 @@ import SwiftUI
 
 struct CartView: View {
     @Binding var cartItems: [CartItem]
+    let orderMode: OrderMode
+    let deliveryInfo: DeliveryInfo
     var onCheckout: () -> Void
     
     @Environment(\.dismiss) private var dismiss
@@ -14,8 +16,12 @@ struct CartView: View {
         subtotal >= 200 ? 20 : 0
     }
     
+    var deliveryFee: Int {
+        orderMode == .delivery ? deliveryInfo.calculateDeliveryFee(subtotal: subtotal) : 0
+    }
+    
     var finalTotal: Int {
-        max(0, subtotal - discount)
+        max(0, subtotal - discount + deliveryFee)
     }
     
     var body: some View {
@@ -37,6 +43,31 @@ struct CartView: View {
                     }
                 } else {
                     List {
+                        Section(header: Text("點餐模式: \(orderMode.rawValue)")) {
+                            if orderMode == .delivery {
+                                HStack {
+                                    Image(systemName: "bicycle")
+                                        .foregroundColor(Color(hex: "008B47"))
+                                    VStack(alignment: .leading) {
+                                        Text("外送地址: \(deliveryInfo.address)")
+                                            .font(.caption)
+                                            .bold()
+                                        Text("聯絡電話: \(deliveryInfo.phone) (備註: \(deliveryInfo.notes))")
+                                            .font(.caption2)
+                                            .foregroundColor(.secondary)
+                                    }
+                                }
+                            } else {
+                                HStack {
+                                    Image(systemName: "bag.fill")
+                                        .foregroundColor(Color(hex: "008B47"))
+                                    Text("外帶自取 ‧ 到店取餐")
+                                        .font(.caption)
+                                        .bold()
+                                }
+                            }
+                        }
+                        
                         Section(header: Text("已點飲料明細 (\(cartItems.count)項)")) {
                             ForEach(cartItems) { item in
                                 HStack(alignment: .top, spacing: 12) {
@@ -76,7 +107,7 @@ struct CartView: View {
                             }
                         }
                         
-                        Section(header: Text("結帳優惠資訊")) {
+                        Section(header: Text("金額試算明細")) {
                             HStack {
                                 Text("小計")
                                 Spacer()
@@ -97,6 +128,16 @@ struct CartView: View {
                                 }
                             }
                             
+                            if orderMode == .delivery {
+                                HStack {
+                                    Text("外送服務費 (滿$150免運)")
+                                    Spacer()
+                                    Text(deliveryFee == 0 ? "免運費" : "+ NT$ \(deliveryFee)")
+                                        .foregroundColor(deliveryFee == 0 ? Color(hex: "008B47") : .orange)
+                                        .bold()
+                                }
+                            }
+                            
                             HStack {
                                 Text("應付總金額")
                                     .font(.headline)
@@ -111,7 +152,7 @@ struct CartView: View {
                     .listStyle(.insetGrouped)
                 }
             }
-            .navigationTitle("購物車明細")
+            .navigationTitle("購物車與點餐明細")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {

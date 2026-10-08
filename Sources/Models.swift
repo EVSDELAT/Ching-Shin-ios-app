@@ -2,11 +2,44 @@ import SwiftUI
 
 // MARK: - App Version
 struct AppInfo {
-    static let version = "v1.0.1"
+    static let version = "v1.1.0"
     static let appName = "清心福全"
 }
 
-// MARK: - Official Menu Categories (依照清心福全官方菜單分類)
+// MARK: - Order Mode (點餐模式)
+enum OrderMode: String, CaseIterable, Identifiable {
+    case takeout = "外帶自取"
+    case delivery = "外送上門"
+    var id: String { self.rawValue }
+}
+
+// MARK: - Delivery Info (外送地址與定位)
+struct DeliveryInfo {
+    var district: String = "中西區"
+    var address: String = "台南市中西區西門路二段100號"
+    var phone: String = "0912-345-678"
+    var notes: String = "到達請打電話"
+    
+    var minDeliveryThreshold: Int { 150 }
+    var deliveryFee: Int { 30 }
+    
+    func calculateDeliveryFee(subtotal: Int) -> Int {
+        if subtotal == 0 { return 0 }
+        return subtotal >= minDeliveryThreshold ? 0 : deliveryFee
+    }
+}
+
+// MARK: - User Profile (會員個人資料)
+struct UserProfile {
+    var name: String = "蕭小狐"
+    var phone: String = "0912-345-678"
+    var carrierBarcode: String = "/ABC1234"
+    var defaultAddress: String = "台南市中西區西門路二段100號"
+    var birthday: String = "1998/06/18"
+    var gender: String = "男"
+}
+
+// MARK: - Official Menu Categories
 enum DrinkCategory: String, CaseIterable, Identifiable {
     case popular = "清心推薦"
     case premiumTea = "茗品系列"
@@ -94,7 +127,7 @@ enum IceLevel: String, CaseIterable, Identifiable {
     }
 }
 
-// MARK: - Official Toppings (清心官方完整加料)
+// MARK: - Official Toppings
 enum Topping: String, CaseIterable, Identifiable {
     case redBean = "紅豆 (+10)"
     case greenTeaJelly = "茶凍 (+10)"
@@ -142,7 +175,7 @@ enum CupSize: String, CaseIterable, Identifiable {
     var id: String { self.rawValue }
 }
 
-// MARK: - Store Model (台南門市資料)
+// MARK: - Store Model
 struct Store: Identifiable {
     let id = UUID()
     let name: String
@@ -209,13 +242,14 @@ struct CompletedOrder: Identifiable {
     let id = UUID()
     let orderNo: String
     let storeName: String
+    let orderModeName: String
     let items: [CartItem]
     let totalPrice: Int
     let dateString: String
     let status: String
 }
 
-// MARK: - Promo Banner Model (清心真實最新聯名活動)
+// MARK: - Promo Banner Model
 struct PromoBanner: Identifiable {
     let id = UUID()
     let title: String
@@ -225,12 +259,12 @@ struct PromoBanner: Identifiable {
     let iconName: String
 }
 
-// MARK: - Official Sample Data (包含真實台南門市、完整菜單、真實活動)
+// MARK: - Official Sample Data
 struct SampleData {
     static let promos: [PromoBanner] = [
         PromoBanner(
             title: "清心福全 × 貓貓蟲咖波",
-            subtitle: "奇幻森林探險隊！9款限定聯名紙杯與咖波變色杯現場加購中",
+            subtitle: "奇幻森林探險隊！9款聯名紙杯與咖波變色杯現場加購中",
             tag: "聯名強打",
             bgColors: [Color(hex: "008B47"), Color(hex: "00572C")],
             iconName: "sparkles"
@@ -251,7 +285,6 @@ struct SampleData {
         )
     ]
     
-    // 台南市真實清心福全門市據點
     static let sampleStores: [Store] = [
         Store(name: "清心福全 台南總店(西門二店)", address: "台南市中西區西門路二段222號", phone: "06-2288899", distance: "1.2 km", isOpen: true, operatingHours: "09:00 - 22:00"),
         Store(name: "清心福全 台南協進店", address: "台南市中西區金華路四段42號", phone: "06-2212399", distance: "1.8 km", isOpen: true, operatingHours: "09:00 - 22:00"),
@@ -263,9 +296,7 @@ struct SampleData {
         Store(name: "清心福全 台南善化大成店", address: "台南市善化區大成路206號", phone: "06-5813355", distance: "15.2 km", isOpen: true, operatingHours: "09:00 - 21:30")
     ]
     
-    // 依據照片上所有分類，100% 完整填寫每個飲品與價格（無空分類）
     static let drinks: [Drink] = [
-        // --- 茗品系列 ---
         Drink(name: "烏龍綠茶", category: .premiumTea, priceM: 30, priceL: 35, description: "清心福全經典鎮店之寶！嚴選高山烏龍與清香綠茶完美調和。", isHotItem: true, cupStyle: .greenTea),
         Drink(name: "特級綠茶", category: .premiumTea, priceM: 30, priceL: 35, description: "嚴選優質綠茶，清香怡人回甘無窮。", isHotItem: false, cupStyle: .greenTea),
         Drink(name: "錫蘭紅茶", category: .premiumTea, priceM: 30, priceL: 35, description: "濃郁麥芽果香，茶湯紅潤滑順。", isHotItem: false, cupStyle: .redTea),
@@ -273,14 +304,12 @@ struct SampleData {
         Drink(name: "原鄉四季", category: .premiumTea, priceM: 30, priceL: 35, description: "獨特花香韻味，清爽順口。", isHotItem: false, cupStyle: .greenTea),
         Drink(name: "特選普洱", category: .premiumTea, priceM: 30, priceL: 35, description: "厚實普洱回甘，茶香濃郁持久。", isHotItem: false, cupStyle: .redTea),
         
-        // --- 冬瓜 / 百香果系列 ---
         Drink(name: "冬瓜茶", category: .winterMelon, priceM: nil, priceL: 40, description: "遵循古法熬煮冬瓜磚，甜而不膩。", isHotItem: false, cupStyle: .redTea),
         Drink(name: "冬瓜青茶", category: .winterMelon, priceM: nil, priceL: 45, description: "古早味冬瓜搭配清香青茶，層次豐富。", isHotItem: false, cupStyle: .greenTea),
         Drink(name: "冬瓜檸檬", category: .winterMelon, priceM: nil, priceL: 60, description: "現榨新鮮檸檬汁與冬瓜甜蜜碰撞。", isHotItem: true, cupStyle: .fruitTea),
         Drink(name: "百香果綠茶", category: .winterMelon, priceM: nil, priceL: 60, description: "滿滿百香果果香與清新綠茶。", isHotItem: false, cupStyle: .fruitTea),
         Drink(name: "雙Q百香果綠茶", category: .winterMelon, priceM: nil, priceL: 70, description: "百香果綠茶搭配珍珠與椰果雙重口感。", isHotItem: true, cupStyle: .bobaMilkTea),
         
-        // --- 季節鮮果系列 ---
         Drink(name: "紅柚茶凍綠", category: .freshJuice, priceM: nil, priceL: 80, description: "新鮮紅柚果肉與特製綠茶凍極致爽口。", isHotItem: true, cupStyle: .fruitTea),
         Drink(name: "紅柚綠茶", category: .freshJuice, priceM: nil, priceL: 70, description: "紅柚鮮果汁與綠茶交織出完美果香。", isHotItem: false, cupStyle: .fruitTea),
         Drink(name: "柳橙綠", category: .freshJuice, priceM: nil, priceL: 70, description: "嚴選柳橙原汁與清香綠茶完美調合。", isHotItem: false, cupStyle: .fruitTea),
@@ -295,7 +324,6 @@ struct SampleData {
         Drink(name: "檸檬紅茶/綠茶", category: .freshJuice, priceM: 50, priceL: 65, description: "經典檸檬果香結合基底茶。", isHotItem: false, cupStyle: .fruitTea),
         Drink(name: "蘆薈蜜香檸檬", category: .freshJuice, priceM: 70, priceL: 90, description: "清爽蘆薈果肉與蜂蜜檸檬特調。", isHotItem: true, cupStyle: .fruitTea),
         
-        // --- 鮮奶 / 拿鐵系列 ---
         Drink(name: "相思紅豆鮮奶茶", category: .freshMilkLatte, priceM: 70, priceL: 80, description: "綿密蜜紅豆與濃郁小農鮮奶茶。", isHotItem: false, cupStyle: .bobaMilkTea),
         Drink(name: "茉綠茶凍拿鐵", category: .freshMilkLatte, priceM: nil, priceL: 70, description: "手作茉綠茶凍搭配純濃鮮奶拿鐵。", isHotItem: true, cupStyle: .greenTea),
         Drink(name: "雙凍拿鐵", category: .freshMilkLatte, priceM: nil, priceL: 75, description: "茶凍加仙草凍雙重極致凍感拿鐵。", isHotItem: false, cupStyle: .bobaMilkTea),
@@ -308,7 +336,6 @@ struct SampleData {
         Drink(name: "珍珠芝麻拿鐵", category: .freshMilkLatte, priceM: nil, priceL: 75, description: "濃郁芝麻香氣與珍珠鮮奶拿鐵。", isHotItem: false, cupStyle: .bobaMilkTea),
         Drink(name: "珍珠琥珀黑糖鮮奶", category: .freshMilkLatte, priceM: 65, priceL: 75, description: "黑糖紋路琥珀斑紋與黑糖珍珠鮮奶。", isHotItem: true, cupStyle: .bobaMilkTea),
         
-        // --- 奶茶系列 ---
         Drink(name: "相思紅豆奶茶", category: .milkTea, priceM: 60, priceL: 70, description: "綿密蜜紅豆與濃郁手搖奶茶。", isHotItem: false, cupStyle: .bobaMilkTea),
         Drink(name: "茶凍奶綠", category: .milkTea, priceM: nil, priceL: 60, description: "茉綠茶凍融入經典奶綠。", isHotItem: false, cupStyle: .greenTea),
         Drink(name: "珍珠/粉圓奶茶", category: .milkTea, priceM: 50, priceL: 60, description: "手搖奶茶搭配彈牙珍珠或粉圓。", isHotItem: true, cupStyle: .bobaMilkTea),
@@ -324,7 +351,6 @@ struct SampleData {
         Drink(name: "芝麻奶茶", category: .milkTea, priceM: nil, priceL: 70, description: "香濃黑芝麻研磨特調奶茶。", isHotItem: false, cupStyle: .bobaMilkTea),
         Drink(name: "琥珀黑糖奶茶", category: .milkTea, priceM: 50, priceL: 60, description: "濃郁黑糖香與經典奶茶。", isHotItem: false, cupStyle: .bobaMilkTea),
         
-        // --- 優多系列 ---
         Drink(name: "優多紅柚茶凍", category: .yogurt, priceM: nil, priceL: 85, description: "乳酸優多結合新鮮紅柚與特製茶凍。", isHotItem: true, cupStyle: .fruitTea),
         Drink(name: "紅心芭樂優多", category: .yogurt, priceM: nil, priceL: 75, description: "紅心芭樂果香結合優多乳酸。", isHotItem: false, cupStyle: .fruitTea),
         Drink(name: "優多百香果綠茶", category: .yogurt, priceM: nil, priceL: 65, description: "優多乳酸、百香果與綠茶三重滋味。", isHotItem: false, cupStyle: .fruitTea),
@@ -332,7 +358,6 @@ struct SampleData {
         Drink(name: "優多綠茶", category: .yogurt, priceM: nil, priceL: 55, description: "雙倍乳酸優多與清香綠茶。", isHotItem: true, cupStyle: .greenTea),
         Drink(name: "蘆薈優多綠茶", category: .yogurt, priceM: nil, priceL: 75, description: "優多綠茶搭配蘆薈果肉咬勁。", isHotItem: false, cupStyle: .fruitTea),
         
-        // --- 果醋系列 ---
         Drink(name: "荔枝蘋果醋", category: .vinegar, priceM: nil, priceL: 75, description: "荔枝果香與蘋果醋天然微酸。", isHotItem: false, cupStyle: .fruitTea),
         Drink(name: "蘋果醋", category: .vinegar, priceM: 45, priceL: 55, description: "天然釀造蘋果醋，清爽開胃。", isHotItem: false, cupStyle: .fruitTea),
         Drink(name: "蘋果醋紅茶", category: .vinegar, priceM: 50, priceL: 60, description: "蘋果醋與錫蘭紅茶交織。", isHotItem: false, cupStyle: .redTea),
@@ -340,7 +365,6 @@ struct SampleData {
         Drink(name: "藍莓醋", category: .vinegar, priceM: 50, priceL: 60, description: "藍莓果香與釀造果醋。", isHotItem: false, cupStyle: .fruitTea),
         Drink(name: "蜜香藍莓醋", category: .vinegar, priceM: 55, priceL: 70, description: "蜂蜜甘甜與藍莓醋風味。", isHotItem: false, cupStyle: .fruitTea),
         
-        // --- 特調系列 ---
         Drink(name: "妃嬪美荔", category: .specialty, priceM: nil, priceL: 75, description: "貴妃荔枝香氣搭配蘆薈與綠茶。", isHotItem: true, cupStyle: .fruitTea),
         Drink(name: "荔枝紅茶", category: .specialty, priceM: nil, priceL: 60, description: "荔枝熱帶果香結合紅茶。", isHotItem: false, cupStyle: .redTea),
         Drink(name: "梅子綠茶", category: .specialty, priceM: 45, priceL: 55, description: "話梅甘甜結合綠茶生津止渴。", isHotItem: false, cupStyle: .greenTea),
@@ -355,12 +379,10 @@ struct SampleData {
         Drink(name: "Red Bull 巨峰葡萄能量優多", category: .specialty, priceM: nil, priceL: 80, description: "葡萄能量結合乳酸優多。", isHotItem: true, cupStyle: .hiddenSpecial),
         Drink(name: "Red Bull 巨峰葡萄能量果醋", category: .specialty, priceM: nil, priceL: 80, description: "葡萄能量果醋爽快勁道。", isHotItem: false, cupStyle: .hiddenSpecial),
         
-        // --- 冰淇淋系列 ---
         Drink(name: "冰淇淋紅茶", category: .iceCream, priceM: 50, priceL: 60, description: "濃郁香草冰淇淋融化在錫蘭紅茶中。", isHotItem: true, cupStyle: .iceCreamType),
         Drink(name: "冰淇淋奶茶", category: .iceCream, priceM: 55, priceL: 75, description: "冰淇淋與奶茶的雙重奶香饗宴。", isHotItem: false, cupStyle: .iceCreamType),
         Drink(name: "【紅茶三兄弟】珍珠冰淇淋布丁紅茶", category: .iceCream, priceM: nil, priceL: 75, description: "珍珠+冰淇淋+布丁三料澎湃組合。", isHotItem: true, cupStyle: .iceCreamType),
         
-        // --- 冬季熱飲系列 ---
         Drink(name: "白醇杏仁奶", category: .hotSpecial, priceM: nil, priceL: 65, description: "溫潤白醇杏仁熱飲。", isHotItem: false, cupStyle: .hotSpecialType),
         Drink(name: "白醇杏仁鮮奶", category: .hotSpecial, priceM: nil, priceL: 85, description: "白醇杏仁與小農鮮奶暖心融和。", isHotItem: true, cupStyle: .hotSpecialType),
         Drink(name: "白醇杏仁頂級可可", category: .hotSpecial, priceM: nil, priceL: 80, description: "杏仁香氣與頂級可可甜香。", isHotItem: false, cupStyle: .hotSpecialType),
@@ -369,7 +391,6 @@ struct SampleData {
         Drink(name: "薑薑好茶", category: .hotSpecial, priceM: 45, priceL: 55, description: "老薑母熬煮，驅寒暖身。", isHotItem: false, cupStyle: .hotSpecialType),
         Drink(name: "薑薑奶茶", category: .hotSpecial, priceM: 55, priceL: 70, description: "老薑微辣香與暖心奶茶。", isHotItem: false, cupStyle: .hotSpecialType),
         
-        // --- 限定販售 ---
         Drink(name: "厚雪烏龍奶蓋", category: .limited, priceM: nil, priceL: 60, description: "鹹甜濃厚雪奶蓋覆蓋香醇烏龍茶。", isHotItem: true, cupStyle: .hiddenSpecial),
         Drink(name: "厚雪紅心芭樂奶蓋", category: .limited, priceM: nil, priceL: 80, description: "紅心芭樂果香與厚雪奶蓋。", isHotItem: false, cupStyle: .hiddenSpecial),
         Drink(name: "厚雪頂級可可奶蓋", category: .limited, priceM: nil, priceL: 80, description: "可可香與綿密厚雪奶蓋。", isHotItem: false, cupStyle: .hiddenSpecial),
