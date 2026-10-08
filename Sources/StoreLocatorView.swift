@@ -142,7 +142,7 @@ struct StoreLocatorView: View {
                                     Image(systemName: "location.fill")
                                         .font(.system(size: 13))
                                 }
-                                Text(isLocating ? "抓取手機 GPS 定位中..." : "📍 自動定位 (依目前 GPS 篩選最近門市)")
+                                Text(isLocating ? "正在取得 GPS 定位..." : "自動定位 (依目前 GPS 篩選最近門市)")
                                     .font(.system(size: 13, weight: .bold))
                                 Spacer()
                                 Image(systemName: "arrow.triangle.turn.up.right.diamond.fill")

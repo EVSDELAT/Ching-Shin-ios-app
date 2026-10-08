@@ -89,7 +89,7 @@ struct OrderProgressView: View {
                                         Image(systemName: "bicycle.circle.fill")
                                             .font(.system(size: 80))
                                             .foregroundColor(AppTheme.primaryGreen)
-                                        Text("🛵 外送專員正火速送達中")
+                                        Text("外送專員正火速送達中")
                                             .font(.headline)
                                             .bold()
                                             .foregroundColor(AppTheme.primaryGreen)
@@ -114,7 +114,7 @@ struct OrderProgressView: View {
                                         }
                                         .transition(.scale)
                                     } else if isCompleted {
-                                        Text(orderModeName == "外帶自取" ? "🎉 飲品製作完成！可以取餐" : "🎉 飲品製作完成！已出發外送")
+                                        Text(orderModeName == "外帶自取" ? "飲品製作完成！可以取餐" : "飲品製作完成！已出發外送")
                                             .font(.headline)
                                             .bold()
                                             .foregroundColor(AppTheme.primaryGreen)

@@ -53,7 +53,7 @@ struct MemberCardView: View {
                         .padding(.top, 14)
                         
                         // Luxury Metallic VIP Member Pass Card
-                        ZStack(alignment: .bottomLeading) {
+                        ZStack {
                             LinearGradient(
                                 gradient: Gradient(colors: [
                                     Color(hex: "064E3B"),
@@ -63,9 +63,9 @@ struct MemberCardView: View {
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .clipShape(RoundedRectangle(cornerRadius: 18))
                             .overlay(
-                                RoundedRectangle(cornerRadius: 20)
+                                RoundedRectangle(cornerRadius: 18)
                                     .stroke(
                                         LinearGradient(
                                             gradient: Gradient(colors: [Color(hex: "F59E0B"), Color(hex: "FCD34D"), Color(hex: "059669")]),
@@ -75,32 +75,33 @@ struct MemberCardView: View {
                                         lineWidth: 1.5
                                     )
                             )
-                            .shadow(color: Color(hex: "064E3B").opacity(0.4), radius: 10, x: 0, y: 5)
+                            .shadow(color: Color(hex: "064E3B").opacity(0.35), radius: 8, x: 0, y: 4)
                             
-                            VStack {
-                                HStack {
-                                    Spacer()
-                                    Image(systemName: "crown.fill")
-                                        .font(.system(size: 110))
-                                        .foregroundColor(Color(hex: "F59E0B").opacity(0.08))
-                                        .offset(x: 25, y: -15)
-                                }
+                            // Background subtle watermark
+                            HStack {
                                 Spacer()
+                                Image(systemName: "crown.fill")
+                                    .font(.system(size: 100))
+                                    .foregroundColor(Color(hex: "F59E0B").opacity(0.07))
+                                    .offset(x: 15, y: -5)
                             }
+                            .clipShape(RoundedRectangle(cornerRadius: 18))
                             
-                            VStack(alignment: .leading, spacing: 14) {
-                                HStack {
+                            // Content strictly vertically balanced & centered
+                            VStack(alignment: .leading, spacing: 0) {
+                                // Top row: Member Badge & Show Barcode
+                                HStack(alignment: .center) {
                                     HStack(spacing: 8) {
                                         ZStack {
                                             Circle()
                                                 .fill(Color(hex: "F59E0B").opacity(0.2))
-                                                .frame(width: 30, height: 30)
+                                                .frame(width: 32, height: 32)
                                             Image(systemName: "crown.fill")
                                                 .font(.system(size: 14))
                                                 .foregroundColor(Color(hex: "FCD34D"))
                                         }
                                         
-                                        VStack(alignment: .leading, spacing: 1) {
+                                        VStack(alignment: .leading, spacing: 2) {
                                             Text(memberLevel)
                                                 .font(.system(size: 14, weight: .black))
                                                 .foregroundColor(Color(hex: "FCD34D"))
@@ -116,7 +117,7 @@ struct MemberCardView: View {
                                         SoundManager.shared.playTapSound()
                                         showBarcodeModal = true
                                     }) {
-                                        HStack(spacing: 4) {
+                                        HStack(spacing: 5) {
                                             Image(systemName: "qrcode")
                                                 .font(.system(size: 12))
                                             Text("出示條碼")
@@ -130,11 +131,14 @@ struct MemberCardView: View {
                                     }
                                 }
                                 
+                                Spacer(minLength: 12)
+                                
+                                // Middle row: Member Name & Points
                                 HStack(alignment: .bottom) {
-                                    VStack(alignment: .leading, spacing: 2) {
+                                    VStack(alignment: .leading, spacing: 3) {
                                         Text("持卡人 (Member)")
                                             .font(.system(size: 9))
-                                            .foregroundColor(.white.opacity(0.6))
+                                            .foregroundColor(.white.opacity(0.65))
                                         Text(userProfile.name)
                                             .font(.system(size: 18, weight: .bold))
                                             .foregroundColor(.white)
@@ -145,7 +149,7 @@ struct MemberCardView: View {
                                     VStack(alignment: .trailing, spacing: 2) {
                                         Text("紅利積點")
                                             .font(.system(size: 9))
-                                            .foregroundColor(.white.opacity(0.6))
+                                            .foregroundColor(.white.opacity(0.65))
                                         HStack(alignment: .firstTextBaseline, spacing: 2) {
                                             Text("\(points)")
                                                 .font(.system(size: 24, weight: .black))
@@ -157,11 +161,14 @@ struct MemberCardView: View {
                                     }
                                 }
                                 
-                                VStack(alignment: .leading, spacing: 4) {
+                                Spacer(minLength: 12)
+                                
+                                // Bottom row: Progress to Next Tier
+                                VStack(alignment: .leading, spacing: 5) {
                                     HStack {
                                         Text("距離下一階級 (鑽石尊爵) 差 30 點")
                                             .font(.system(size: 9, weight: .medium))
-                                            .foregroundColor(.white.opacity(0.8))
+                                            .foregroundColor(.white.opacity(0.85))
                                         Spacer()
                                         Text("320 / 350")
                                             .font(.system(size: 9, weight: .bold))
@@ -171,7 +178,7 @@ struct MemberCardView: View {
                                     GeometryReader { geo in
                                         ZStack(alignment: .leading) {
                                             Capsule()
-                                                .fill(Color.white.opacity(0.15))
+                                                .fill(Color.white.opacity(0.18))
                                                 .frame(height: 5)
                                             Capsule()
                                                 .fill(
@@ -181,15 +188,16 @@ struct MemberCardView: View {
                                                         endPoint: .trailing
                                                     )
                                                 )
-                                                .frame(width: geo.size.width * (320.0 / 350.0), height: 5)
+                                                .frame(width: max(0, min(geo.size.width, geo.size.width * (320.0 / 350.0))), height: 5)
                                         }
                                     }
                                     .frame(height: 5)
                                 }
                             }
-                            .padding(16)
+                            .padding(.horizontal, 18)
+                            .padding(.vertical, 16)
                         }
-                        .frame(height: 185)
+                        .frame(height: 172)
                         .padding(.horizontal, 20)
                         
                         // Carrier Barcode Card (電子發票手機載具條碼 - 動態真實條碼)

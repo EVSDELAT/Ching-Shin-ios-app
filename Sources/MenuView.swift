@@ -711,7 +711,7 @@ struct DeliverySetupSheet: View {
                                 } else {
                                     Image(systemName: "location.circle.fill").font(.system(size: 18))
                                 }
-                                Text(isLocating ? "衛星定位抓取中..." : "📍 自動定位 (使用目前 GPS 位置)")
+                                Text(isLocating ? "正在取得 GPS 定位..." : "自動定位 (使用目前 GPS 位置)")
                                     .font(.system(size: 14, weight: .bold))
                                 Spacer()
                                 Image(systemName: "chevron.right").font(.system(size: 12, weight: .bold))
